@@ -37,7 +37,6 @@
     
        [self.xiaVM getDataFromNetCompleteHandle:^(NSError *error) {
            [self.weekDateBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM weekDateURL]];
-           [self.tableView.header endRefreshing];
            [self.tableView reloadData];
        }];
    
@@ -83,7 +82,54 @@
     return cell;
 }
 
+//去掉缝隙
+kRemoveCellSeparator
 
+//取消点击高亮
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+//添加分区头
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return @[@"流行菜单",@"榜单"][section];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return 100;
+    }
+    else
+    return 0;
+}
+//添加第二个分区尾部按钮
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [UIView new];
+     UIButton *btn = [UIButton buttonWithType:0];
+    [btn setTitle:@"全部菜谱分类" forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+    btn.layer.borderWidth = 1;
+    btn.layer.borderColor = [UIColor redColor].CGColor;
+    btn.layer.cornerRadius = 5;
+    [view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(0);
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.height.mas_equalTo(60);
+    }];
+    if (section == 1) {
+        return view;
+    }
+    
+    return nil;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
