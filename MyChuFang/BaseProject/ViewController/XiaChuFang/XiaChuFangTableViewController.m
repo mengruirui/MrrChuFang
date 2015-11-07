@@ -10,22 +10,30 @@
 #import "XiaChuFangViewModel.h"
 #import "XiaChuFangCell.h"
 #import "iCarousel.h"
+#import "SlotViewModel.h"
+#import "XiaChuFangURLViewController.h"
 
 @interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *faXianBtn;
 @property (weak, nonatomic) IBOutlet UIView *pageView;
-@property (weak, nonatomic) IBOutlet UIButton *fristBtn;
+@property (weak, nonatomic) IBOutlet UIButton *activityBtn;
 @property (weak, nonatomic) IBOutlet UIButton *weekDateBtn;
 @property (weak, nonatomic) IBOutlet UILabel *weekDateLb;
 
 @property (nonatomic,strong)XiaChuFangViewModel *xiaVM;
+@property (nonatomic,strong)SlotViewModel *slotVm;
 @end
 
 @implementation XiaChuFangTableViewController
 {
     iCarousel *_ic;
     UIView * _topView;
+    iCarousel *_pageIc;
+    UILabel *_titleLb;
+    UILabel *_numberLb;
+    UIImageView *_iconIV0;
+    UIImageView *_iconIV1;
 }
 - (UIView *)footerView
 {
@@ -84,12 +92,53 @@
     }];
     _ic.delegate = self;
     _ic.dataSource = self;
-    _ic.type = 1;
+    _ic.type = 4;
     _ic.scrollSpeed = 1;
-    _ic.autoscroll = 0.5;
+    _ic.autoscroll = 0.1;
     return footerView;
 }
-
+- (UIView *)eventPageView
+{
+    UIView *pageView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.pageView.bounds.size.width, self.pageView.bounds.size.height)];
+    UIView *leftView = [UIView new];
+    [pageView addSubview:leftView];
+    [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(pageView.bounds.size.width/2);
+        make.height.mas_equalTo(pageView.mas_height);
+        make.top.left.mas_equalTo(0);
+    }];
+     _titleLb = [UILabel new];
+    _titleLb.textAlignment = NSTextAlignmentCenter;
+    [leftView addSubview:_titleLb];
+    [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(12);
+        make.left.right.mas_equalTo(0);
+    }];
+    
+    _numberLb = [UILabel new];
+    _numberLb.backgroundColor = [UIColor lightGrayColor];
+    _numberLb.textAlignment = NSTextAlignmentCenter;
+    _numberLb.layer.cornerRadius = 10;
+    _numberLb.layer.masksToBounds = YES;
+    [leftView addSubview:_numberLb];
+    [_numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(70, 25));
+        make.top.mas_equalTo(_titleLb.mas_bottom).mas_equalTo(12);
+        make.centerX.mas_equalTo(0);
+    }];
+    
+    UIView *rightView = [UIView new];
+    [pageView addSubview:rightView];
+    rightView.backgroundColor = [UIColor redColor];
+    [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(pageView.bounds.size.width/2);
+        make.height.mas_equalTo(pageView.mas_height);
+        make.top.mas_equalTo(0);
+        make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
+    }];
+    
+    return pageView;
+}
 
 #pragma mark - iCarousel Delegate
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
@@ -100,17 +149,17 @@
 {
     if (!view) {
         view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-        UIButton *btn = [UIButton buttonWithType:0];
-        [view addSubview:btn];
-        btn.tag = 100;
-        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        UIImageView *imageView = [UIImageView new];
+        [view addSubview:imageView];
+        imageView.tag = 100;
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);
         }];
      }
-    UIButton *btn = (UIButton *)[view viewWithTag:100];
-    btn.layer.cornerRadius = 30;
-    btn.layer.masksToBounds = YES;
-    [btn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM userPhotoURLForRow:index]];
+    UIImageView *imageView = (UIImageView *)[view viewWithTag:100];
+    imageView.layer.cornerRadius = 30;
+    imageView.layer.masksToBounds = YES;
+    [imageView setImageWithURL:[self.xiaVM userPhotoURLForRow:index]];
     return view;
 }
 
@@ -127,6 +176,10 @@
     return value;
 }
 
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"%ld",index);
+}
 
 
 -(XiaChuFangViewModel *)xiaVM
@@ -137,22 +190,42 @@
     return _xiaVM;
 }
 
+- (SlotViewModel *)slotVm
+{
+    if (!_slotVm) {
+        _slotVm = [SlotViewModel new];
+    }
+    return _slotVm;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //去掉滑动时的竖线
     self.tableView.showsVerticalScrollIndicator = NO;
        [self.xiaVM getDataFromNetCompleteHandle:^(NSError *error) {
+           //每周更新
            [self.weekDateBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM weekDateURL]];
            //添加尾部视图
            self.tableView.tableFooterView = [self footerView];
            [self.tableView reloadData];
        }];
-   
+    
+    [self.slotVm getDataFromNetCompleteHandle:^(NSError *error) {
+        //活动
+        [self.activityBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.slotVm slotPicUrl]];
+        [self.tableView reloadData];
+    }];
+    [self.activityBtn bk_addEventHandler:^(id sender) {
+        XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWIthURL:[self.slotVm slotDeatilURL]];
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        
+    } forControlEvents:(UIControlEventTouchUpInside)];
     
     
+    [self.pageView addSubview:[self eventPageView]];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

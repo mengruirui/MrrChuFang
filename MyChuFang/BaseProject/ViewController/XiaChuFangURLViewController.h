@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface XiaChuFangURLViewController : UIViewController
+- (id)initWIthURL:(NSURL *)url;
+@property (nonatomic,strong)NSURL *url;
 @end

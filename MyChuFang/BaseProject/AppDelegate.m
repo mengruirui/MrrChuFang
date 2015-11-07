@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Category.h"
+#import "XiaChuFangNetManager.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,9 @@
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
 
+    [XiaChuFangNetManager getSlotCompletionHandle:^(id model, NSError *error) {
+        DDLogVerbose(@"...");
+    }];
     return YES;
 }
 

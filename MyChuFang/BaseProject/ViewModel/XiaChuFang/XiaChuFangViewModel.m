@@ -35,16 +35,13 @@
         self.recipeLists = model.content.pop_recipe_lists.recipe_lists;
         self.events = model.content.pop_events.events;
         self.users = model.content.pop_users.users;
-//        NSMutableArray *arr = [NSMutableArray new];
-//        [arr addObjectsFromArray:model.content.pop_users.users];
-//        self.users = [arr copy];
         completionHandle(error);
     }];
 }
 
 - (InitPageContentModel *)modelInInitPageContent
 {
-    return self.dataArr[0];
+    return self.dataArr.firstObject;
 }
 - (NSURL *)weekDateURL//每周
 {
@@ -60,7 +57,7 @@
 }
 - (InitPageContentPopRecipeListsRecipeListsSampleRecipesModel *)modelForRow:(NSInteger)row
 {
-    return [self modelForRowInRecipeLists:row].sample_recipes[0];
+    return [self modelForRowInRecipeLists:row].sample_recipes.firstObject;
 }
 
 - (InitPageContentPopRecipeListsRecipeListsAuthorModel *)modelForRowInAuthorModel:(NSInteger)row
@@ -109,4 +106,10 @@
 {
     return [NSURL URLWithString:[self modelForRowInUsers:row].photo];
 }
+
+- (InitPageContentPopEventsEventsModel *)modelForRowInEvents:(NSInteger)row
+{
+    return self.events[row];
+}
+
 @end
