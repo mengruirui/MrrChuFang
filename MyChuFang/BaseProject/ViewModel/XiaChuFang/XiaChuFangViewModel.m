@@ -12,7 +12,7 @@
 
 -(NSInteger)listsNumber
 {
-     DDLogVerbose(@"%ld",self.lists.count);
+     //DDLogVerbose(@"%ld",self.lists.count);
     return self.lists.count;
 }
 -(NSInteger)recipeListNumber
@@ -20,7 +20,13 @@
    
     return self.recipeLists.count;
 }
- -(void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle
+
+-(NSInteger)userNumber
+{
+    return self.users.count;
+}
+
+-(void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle
 {
     self.dataTask = [XiaChuFangNetManager getInitPageCompletionHandle:^(InitPageModel *model, NSError *error) {
         [self.dataArr addObject:model.content];
@@ -28,6 +34,9 @@
         self.recipeLists = model.content.pop_recipe_lists.recipe_lists;
         self.events = model.content.pop_events.events;
         self.users = model.content.pop_users.users;
+//        NSMutableArray *arr = [NSMutableArray new];
+//        [arr addObjectsFromArray:model.content.pop_users.users];
+//        self.users = [arr copy];
         completionHandle(error);
     }];
 }
@@ -87,4 +96,16 @@
     return [self modelForRowInAuthorModel:row].name;
 }
 
+- (InitPageContentPopUsersUsersModel *)modelForRowInUsers:(NSInteger)row
+{
+    
+    return self.users[row];
+}
+
+
+//用户头像
+- (NSURL *)userPhotoURLForRow:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modelForRowInUsers:row].photo];
+}
 @end

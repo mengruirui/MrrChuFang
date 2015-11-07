@@ -13,16 +13,20 @@
 @property (nonatomic,strong)NSArray *lists;//榜单
 @property (nonatomic,strong)NSArray *recipeLists;//流行菜单
 @property (nonatomic,strong)NSArray *events;//滚动
-@property (nonatomic,strong)NSArray *users;
+@property (nonatomic,strong)NSArray *users;//用户
 
 @property (nonatomic)NSInteger listsNumber;
 @property (nonatomic)NSInteger recipeListNumber;
+@property (nonatomic)NSInteger userNumber;
 
 - (NSURL *)weekDateURL;//每周
 //- (NSURL *)faXianURL;//发现
 //- (NSURL *)eventImagesURL;//滚动
 
 //- (NSURL *)fristURLForRow:(NSInteger)row;//首次
+
+//用户头像
+- (NSURL *)userPhotoURLForRow:(NSInteger)row;
 
 - (NSURL *)iconURLForRowInLists:(NSInteger)row;//榜单图片
 - (NSURL *)iconURLForRowInRecipeLists:(NSInteger)row;// 流行菜单

@@ -9,8 +9,9 @@
 #import "XiaChuFangTableViewController.h"
 #import "XiaChuFangViewModel.h"
 #import "XiaChuFangCell.h"
+#import "iCarousel.h"
 
-@interface XiaChuFangTableViewController ()
+@interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *faXianBtn;
 @property (weak, nonatomic) IBOutlet UIView *pageView;
@@ -22,6 +23,105 @@
 @end
 
 @implementation XiaChuFangTableViewController
+{
+    iCarousel *_ic;
+}
+- (UIView *)footerView
+{
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, kWindowW/635*475)];
+    //添加底部视图
+    UIView *bottomView = [UIView new];
+    bottomView.backgroundColor = kRGBColor(245, 245, 236);
+    [footerView addSubview:bottomView];
+    [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.height.mas_equalTo(kWindowW/635 *224);
+        make.bottom.mas_equalTo(0);
+    }];
+    UIButton *btn = [UIButton buttonWithType:0];
+    [btn setTitle:@"+创建菜谱" forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    btn.backgroundColor = kRGBColor(244, 78, 63);
+    btn.layer.cornerRadius = 5;
+    [bottomView addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.mas_equalTo(12);
+        make.right.mas_equalTo(-12);
+        make.height.mas_equalTo(kWindowW/580*90);
+    }];
+    UILabel *label = [UILabel new];
+    label.text = @"意见反馈";
+    label.textColor = kRGBColor(105, 95, 90);
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:15];
+    [bottomView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(btn.mas_bottom).mas_equalTo(20);
+        make.left.right.mas_equalTo(0);
+    }];
+    
+    UIView *topView = [UIView new];
+    topView.backgroundColor = kRGBColor(225, 226, 214);
+    [footerView addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
+    }];
+    UILabel *topLb = [UILabel new];
+    topLb.text = @"下厨房的厨友们";
+    [topView addSubview:topLb];
+    [topLb mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.mas_equalTo(12);
+    }];
+    _ic = [iCarousel new];
+    [topView addSubview:_ic];
+    [_ic mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(topLb.mas_bottom).mas_equalTo(15);
+        make.bottom.mas_equalTo(0);
+    }];
+    _ic.delegate = self;
+    _ic.dataSource = self;
+    _ic.type = 0;
+    _ic.scrollSpeed = 1;
+    return footerView;
+}
+
+
+#pragma mark - iCarousel Delegate
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
+{
+    DDLogVerbose(@"%ld",self.xiaVM.userNumber);
+    return self.xiaVM.userNumber;
+}
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
+{
+    if (!view) {
+        view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW, 20)];
+        UIImageView *imageView = [UIImageView new];
+        [view addSubview:imageView];
+        imageView.tag = 100;
+        imageView.contentMode = 2;
+        imageView.clipsToBounds = YES;
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+    }
+    UIImageView *imageView = (UIImageView *)[view viewWithTag:100];
+    [imageView setImageWithURL:[self.xiaVM userPhotoURLForRow:index]];;
+    return view;
+}
+
+/*允许循环滚动*/
+//- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+//{
+//    if (option == iCarouselOptionWrap) {
+//        return YES;
+//    }
+//    return value;
+//}
+
+
 
 -(XiaChuFangViewModel *)xiaVM
 {
@@ -34,13 +134,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    //去掉滑动时的竖线
+    self.tableView.showsVerticalScrollIndicator = NO;
        [self.xiaVM getDataFromNetCompleteHandle:^(NSError *error) {
            [self.weekDateBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM weekDateURL]];
            [self.tableView reloadData];
        }];
    
-    
+    //添加尾部视图
+   self.tableView.tableFooterView = [self footerView];
     
 }
 
@@ -102,7 +204,7 @@ kRemoveCellSeparator
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if (section == 1) {
-        return 100;
+        return kWindowW/640*145;
     }
     else
     return 0;
@@ -110,22 +212,27 @@ kRemoveCellSeparator
 //添加第二个分区尾部按钮
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
+    UIView *footerView = [UIView new];
     UIView *view = [UIView new];
-     UIButton *btn = [UIButton buttonWithType:0];
-    [btn setTitle:@"全部菜谱分类" forState:(UIControlStateNormal)];
-    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
-    btn.layer.borderWidth = 1;
-    btn.layer.borderColor = [UIColor redColor].CGColor;
-    btn.layer.cornerRadius = 5;
-    [view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [footerView addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(0);
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
-        make.height.mas_equalTo(60);
+        make.height.mas_equalTo(kWindowW/580*90);
+    }];
+    view.layer.borderWidth = 1;
+    view.layer.borderColor = [UIColor redColor].CGColor;
+    view.layer.cornerRadius = 5;
+     UIButton *btn = [UIButton buttonWithType:0];
+    [btn setTitle:@"全部菜谱分类" forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+    [view addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
     }];
     if (section == 1) {
-        return view;
+        return footerView;
     }
     
     return nil;
