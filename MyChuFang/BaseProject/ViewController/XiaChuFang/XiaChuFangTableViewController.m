@@ -25,6 +25,7 @@
 @implementation XiaChuFangTableViewController
 {
     iCarousel *_ic;
+    UIView * _topView;
 }
 - (UIView *)footerView
 {
@@ -61,6 +62,7 @@
     }];
     
     UIView *topView = [UIView new];
+    _topView = topView;
     topView.backgroundColor = kRGBColor(225, 226, 214);
     [footerView addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,13 +79,14 @@
     [topView addSubview:_ic];
     [_ic mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(topLb.mas_bottom).mas_equalTo(15);
+        make.top.mas_equalTo(topLb.mas_bottom).mas_equalTo(10);
         make.bottom.mas_equalTo(0);
     }];
     _ic.delegate = self;
     _ic.dataSource = self;
-    _ic.type = 0;
+    _ic.type = 1;
     _ic.scrollSpeed = 1;
+    _ic.autoscroll = 0.5;
     return footerView;
 }
 
@@ -91,35 +94,38 @@
 #pragma mark - iCarousel Delegate
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    DDLogVerbose(@"%ld",self.xiaVM.userNumber);
     return self.xiaVM.userNumber;
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
     if (!view) {
-        view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW, 20)];
-        UIImageView *imageView = [UIImageView new];
-        [view addSubview:imageView];
-        imageView.tag = 100;
-        imageView.contentMode = 2;
-        imageView.clipsToBounds = YES;
-        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+        UIButton *btn = [UIButton buttonWithType:0];
+        [view addSubview:btn];
+        btn.tag = 100;
+        [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);
         }];
-    }
-    UIImageView *imageView = (UIImageView *)[view viewWithTag:100];
-    [imageView setImageWithURL:[self.xiaVM userPhotoURLForRow:index]];;
+     }
+    UIButton *btn = (UIButton *)[view viewWithTag:100];
+    btn.layer.cornerRadius = 30;
+    btn.layer.masksToBounds = YES;
+    [btn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM userPhotoURLForRow:index]];
     return view;
 }
 
 /*允许循环滚动*/
-//- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
-//{
-//    if (option == iCarouselOptionWrap) {
-//        return YES;
-//    }
-//    return value;
-//}
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
+{
+    if (option == iCarouselOptionWrap) {
+        return YES;
+    }
+    //修改缝隙
+    if (option == iCarouselOptionSpacing) {
+        return value * 1.5;
+    }
+    return value;
+}
 
 
 
