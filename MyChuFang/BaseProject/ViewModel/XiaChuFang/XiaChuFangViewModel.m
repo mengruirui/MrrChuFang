@@ -12,17 +12,18 @@
 
 -(NSInteger)listsNumber
 {
-     //DDLogVerbose(@"%ld",self.lists.count);
+     //DDLogVerbose(@"l%ld",self.lists.count);
     return self.lists.count;
 }
 -(NSInteger)recipeListNumber
 {
-   
+   //DDLogVerbose(@"r%ld",self.recipeLists.count);
     return self.recipeLists.count;
 }
 
 -(NSInteger)userNumber
 {
+   // DDLogVerbose(@"u%ld",self.users.count);
     return self.users.count;
 }
 

@@ -138,11 +138,12 @@
     self.tableView.showsVerticalScrollIndicator = NO;
        [self.xiaVM getDataFromNetCompleteHandle:^(NSError *error) {
            [self.weekDateBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.xiaVM weekDateURL]];
+           //添加尾部视图
+           self.tableView.tableFooterView = [self footerView];
            [self.tableView reloadData];
        }];
    
-    //添加尾部视图
-   self.tableView.tableFooterView = [self footerView];
+    
     
 }
 
