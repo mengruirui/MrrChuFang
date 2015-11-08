@@ -27,6 +27,11 @@
     return self.users.count;
 }
 
+-(NSInteger)eventNumber
+{
+    return self.events.count;
+}
+
 -(void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle
 {
     self.dataTask = [XiaChuFangNetManager getInitPageCompletionHandle:^(InitPageModel *model, NSError *error) {
@@ -110,6 +115,15 @@
 - (InitPageContentPopEventsEventsModel *)modelForRowInEvents:(NSInteger)row
 {
     return self.events[row];
+}
+
+-(NSString *)titleForRowInEvents:(NSInteger)row
+{
+    return [self modelForRowInEvents:row].name;
+}
+-(NSString *)numberForRowInEvents:(NSInteger)row
+{
+    return [NSString stringWithFormat:@"%ld作品34",[self modelForRowInEvents:row].n_dishes];
 }
 
 @end

@@ -13,6 +13,7 @@
 #import "SlotViewModel.h"
 #import "XiaChuFangURLViewController.h"
 
+
 @interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *faXianBtn;
@@ -34,6 +35,7 @@
     UILabel *_numberLb;
     UIImageView *_iconIV0;
     UIImageView *_iconIV1;
+    UIPageControl *_pageControl;
 }
 - (UIView *)footerView
 {
@@ -99,55 +101,44 @@
 }
 - (UIView *)eventPageView
 {
-    UIView *pageView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.pageView.bounds.size.width, self.pageView.bounds.size.height)];
-    UIView *leftView = [UIView new];
-    [pageView addSubview:leftView];
-    [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(pageView.bounds.size.width/2);
-        make.height.mas_equalTo(pageView.mas_height);
-        make.top.left.mas_equalTo(0);
-    }];
-     _titleLb = [UILabel new];
-    _titleLb.textAlignment = NSTextAlignmentCenter;
-    [leftView addSubview:_titleLb];
-    [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(12);
-        make.left.right.mas_equalTo(0);
-    }];
+    UIView *pageView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, self.pageView.bounds.size.height)];
     
-    _numberLb = [UILabel new];
-    _numberLb.backgroundColor = [UIColor lightGrayColor];
-    _numberLb.textAlignment = NSTextAlignmentCenter;
-    _numberLb.layer.cornerRadius = 10;
-    _numberLb.layer.masksToBounds = YES;
-    [leftView addSubview:_numberLb];
-    [_numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(70, 25));
-        make.top.mas_equalTo(_titleLb.mas_bottom).mas_equalTo(12);
+    
+    _pageControl = [UIPageControl new];
+    _pageControl.numberOfPages = self.xiaVM.eventNumber;
+    [pageView addSubview:_pageControl];
+    [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
+
+    
+     _pageIc = [iCarousel new];
+    _pageIc.delegate = self;
+    _pageIc.dataSource = self;
+    [pageView addSubview:_pageIc];
+    [_pageIc mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(pageView.mas_width);
+        make.top.left.mas_equalTo(0);
+        make.bottom.mas_equalTo(_pageControl.mas_top).mas_equalTo(-3);
     }];
     
-    UIView *rightView = [UIView new];
-    [pageView addSubview:rightView];
-    rightView.backgroundColor = [UIColor redColor];
-    [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(pageView.bounds.size.width/2);
-        make.height.mas_equalTo(pageView.mas_height);
-        make.top.mas_equalTo(0);
-        make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
-    }];
-    
+   
     return pageView;
 }
 
 #pragma mark - iCarousel Delegate
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
+    if (carousel == _pageIc) {
+      return  self.xiaVM.eventNumber;
+    }
     return self.xiaVM.userNumber;
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    if (!view) {
+    if (carousel == _ic) {
+        if (!view) {
         view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
         UIImageView *imageView = [UIImageView new];
         [view addSubview:imageView];
@@ -161,6 +152,63 @@
     imageView.layer.masksToBounds = YES;
     [imageView setImageWithURL:[self.xiaVM userPhotoURLForRow:index]];
     return view;
+    }
+    else
+    {
+        if (!view) {
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, _pageIc.bounds.size.height)];
+            UIView *leftView = [UIView new];
+            
+            [view addSubview:leftView];
+           
+            [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo((kWindowW-24)/2);
+                make.bottom.mas_equalTo(0);
+                make.top.left.mas_equalTo(0);
+            
+            }];
+            _titleLb = [UILabel new];
+            _titleLb.textAlignment = NSTextAlignmentCenter;
+            [leftView addSubview:_titleLb];
+            [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(12);
+                make.left.right.mas_equalTo(0);
+            }];
+            
+            _numberLb = [UILabel new];
+            _numberLb.backgroundColor = [UIColor lightGrayColor];
+            _numberLb.textAlignment = NSTextAlignmentCenter;
+            _numberLb.layer.cornerRadius = 10;
+            _numberLb.layer.masksToBounds = YES;
+            [leftView addSubview:_numberLb];
+            [_numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(70, 25));
+                make.top.mas_equalTo(_titleLb.mas_bottom).mas_equalTo(12);
+                make.centerX.mas_equalTo(0);
+            }];
+            
+            UIView *rightView = [UIView new];
+            [view addSubview:rightView];
+            [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.width.mas_equalTo((kWindowW-24)/2);
+                make.bottom.mas_equalTo(0);
+                make.top.right.mas_equalTo(0);
+                make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
+            }];
+            _iconIV0 = [UIImageView new];
+            [rightView addSubview:_iconIV0];
+            [_iconIV0 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.top.mas_equalTo(0);
+                make.width.mas_equalTo(60);
+                make.height.mas_equalTo(60);
+            }];
+            
+        }
+        [_iconIV0 setImage:[UIImage imageNamed:@"angle-mask"]];
+        
+      return view;
+    }
+   
 }
 
 /*允许循环滚动*/
@@ -179,6 +227,13 @@
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
     NSLog(@"%ld",index);
+}
+
+
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
+{
+    //NSLog(@"%ld",carousel.currentItemIndex);
+    _pageControl.currentPage = carousel.currentItemIndex;
 }
 
 
@@ -209,6 +264,10 @@
            //添加尾部视图
            self.tableView.tableFooterView = [self footerView];
            [self.tableView reloadData];
+           
+           
+          
+           [self.pageView addSubview:[self eventPageView]];
        }];
     
     [self.slotVm getDataFromNetCompleteHandle:^(NSError *error) {
@@ -224,7 +283,7 @@
     } forControlEvents:(UIControlEventTouchUpInside)];
     
     
-    [self.pageView addSubview:[self eventPageView]];
+  
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

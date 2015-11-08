@@ -18,6 +18,7 @@
 @property (nonatomic)NSInteger listsNumber;
 @property (nonatomic)NSInteger recipeListNumber;
 @property (nonatomic)NSInteger userNumber;
+@property (nonatomic) NSInteger eventNumber;
 
 - (NSURL *)weekDateURL;//每周
 //- (NSURL *)faXianURL;//发现
@@ -36,4 +37,8 @@
 
 - (NSString *)detailForRowInLists:(NSInteger)row;//榜单长标题
 - (NSString *)detailForRowInRecipeLists:(NSInteger)row;//流行菜单
+
+//滚动视图中标题
+- (NSString *)titleForRowInEvents:(NSInteger)row;
+- (NSString *)numberForRowInEvents:(NSInteger)row;
 @end
