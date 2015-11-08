@@ -117,13 +117,24 @@
     return self.events[row];
 }
 
+- (InitPageContentPopEventsEventsDishesModel *)modelForRowInDishes:(NSInteger)row;
+{
+    return [self modelForRowInEvents:row].dishes;
+}
 -(NSString *)titleForRowInEvents:(NSInteger)row
 {
     return [self modelForRowInEvents:row].name;
 }
 -(NSString *)numberForRowInEvents:(NSInteger)row
 {
-    return [NSString stringWithFormat:@"%ld作品34",[self modelForRowInEvents:row].n_dishes];
+    return [NSString stringWithFormat:@"%ld作品",[self modelForRowInEvents:row].n_dishes];
 }
-
+-(NSURL *)iconIV0ForRowInEvents:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modelForRowInDishes:row].dishes.firstObject.thumbnail_160];
+}
+-(NSURL *)iconIV1ForRowInEvents:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modelForRowInDishes:row].dishes[1].thumbnail_160];
+}
 @end

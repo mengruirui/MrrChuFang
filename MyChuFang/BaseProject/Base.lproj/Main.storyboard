@@ -14,7 +14,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="5vg-ax-hPa">
-                            <rect key="frame" x="0.0" y="64" width="320" height="400"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="搜索菜谱,食材" translatesAutoresizingMaskIntoConstraints="NO" id="VJ7-HG-QjE">
@@ -68,7 +68,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVx-2k-EK5">
-                                    <rect key="frame" x="12" y="310" width="296" height="90"/>
+                                    <rect key="frame" x="12" y="285" width="296" height="90"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="90" id="uyB-P6-orS"/>
@@ -97,7 +97,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="hfb-w7-14H" customClass="XiaChuFangCell">
-                                <rect key="frame" x="0.0" y="513.5" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="488.5" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfb-w7-14H" id="SrH-vc-jTy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>

@@ -10,6 +10,6 @@
 #import "XiaChuFangViewModel.h"
 
 @interface SlotViewModel : BaseViewModel
-- (NSURL *)slotPicUrl;
-- (NSURL *)slotDeatilURL;
+- (NSURL *)slotPicUrl;//活动图片
+- (NSURL *)slotDeatilURL;//详情地址
 @end

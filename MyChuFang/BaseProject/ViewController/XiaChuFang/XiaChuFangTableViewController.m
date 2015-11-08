@@ -36,6 +36,7 @@
     UIImageView *_iconIV0;
     UIImageView *_iconIV1;
     UIPageControl *_pageControl;
+    NSTimer *_timer;
 }
 - (UIView *)footerView
 {
@@ -101,11 +102,14 @@
 }
 - (UIView *)eventPageView
 {
+    [_timer invalidate];
     UIView *pageView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, self.pageView.bounds.size.height)];
-    
     
     _pageControl = [UIPageControl new];
     _pageControl.numberOfPages = self.xiaVM.eventNumber;
+    _pageControl.pageIndicatorTintColor = kRGBColor(214, 215, 207);
+    _pageControl.currentPageIndicatorTintColor = kRGBColor(244, 78, 63);
+    _pageControl.userInteractionEnabled = NO;
     [pageView addSubview:_pageControl];
     [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
@@ -116,6 +120,10 @@
      _pageIc = [iCarousel new];
     _pageIc.delegate = self;
     _pageIc.dataSource = self;
+    _pageIc.pagingEnabled = YES;
+    _pageIc.type = 0;
+    //_pageIc.autoscroll = 0.1;
+    _pageIc.scrollSpeed = 1;
     [pageView addSubview:_pageIc];
     [_pageIc mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(pageView.mas_width);
@@ -123,6 +131,11 @@
         make.bottom.mas_equalTo(_pageControl.mas_top).mas_equalTo(-3);
     }];
     
+    //启动定时器
+    _timer = [NSTimer bk_scheduledTimerWithTimeInterval:3 block:^(NSTimer *timer) {
+        
+        [_pageIc scrollToItemAtIndex:_pageIc.currentItemIndex +1 animated:YES];
+    } repeats:YES];
    
     return pageView;
 }
@@ -158,7 +171,7 @@
         if (!view) {
             view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, _pageIc.bounds.size.height)];
             UIView *leftView = [UIView new];
-            
+            leftView.backgroundColor = [UIColor whiteColor];
             [view addSubview:leftView];
            
             [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -169,6 +182,7 @@
             }];
             _titleLb = [UILabel new];
             _titleLb.textAlignment = NSTextAlignmentCenter;
+            _titleLb.font = [UIFont systemFontOfSize:14];
             [leftView addSubview:_titleLb];
             [_titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(12);
@@ -177,12 +191,14 @@
             
             _numberLb = [UILabel new];
             _numberLb.backgroundColor = [UIColor lightGrayColor];
+            _numberLb.textColor = [UIColor whiteColor];
+            _numberLb.font = [UIFont systemFontOfSize:12];
             _numberLb.textAlignment = NSTextAlignmentCenter;
             _numberLb.layer.cornerRadius = 10;
             _numberLb.layer.masksToBounds = YES;
             [leftView addSubview:_numberLb];
             [_numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(70, 25));
+                make.size.mas_equalTo(CGSizeMake(85, 25));
                 make.top.mas_equalTo(_titleLb.mas_bottom).mas_equalTo(12);
                 make.centerX.mas_equalTo(0);
             }];
@@ -196,16 +212,27 @@
                 make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
             }];
             _iconIV0 = [UIImageView new];
+            //_iconIV0.contentMode = UIViewContentModeScaleAspectFit;
             [rightView addSubview:_iconIV0];
             [_iconIV0 mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.left.top.mas_equalTo(0);
-                make.width.mas_equalTo(60);
-                make.height.mas_equalTo(60);
+                make.top.left.bottom.mas_equalTo(0);
+                make.width.mas_equalTo((kWindowW-24)/4);
             }];
-            
-        }
-        [_iconIV0 setImage:[UIImage imageNamed:@"angle-mask"]];
         
+            _iconIV1 = [UIImageView new];
+            //_iconIV1.contentMode = UIViewContentModeScaleAspectFit;
+            [rightView addSubview:_iconIV1];
+            [_iconIV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.bottom.mas_equalTo(0);
+                make.width.mas_equalTo((kWindowW-24)/4);
+                make.left.mas_equalTo(_iconIV0.mas_right).mas_equalTo(0);
+            }];
+
+        }
+        _titleLb.text = [self.xiaVM titleForRowInEvents:index];
+        _numberLb.text = [self.xiaVM numberForRowInEvents:index];
+        [_iconIV0 setImageWithURL:[self.xiaVM iconIV0ForRowInEvents:index]];
+        [_iconIV1 setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
       return view;
     }
    
@@ -233,7 +260,9 @@
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
     //NSLog(@"%ld",carousel.currentItemIndex);
+    if (carousel == _pageIc) {
     _pageControl.currentPage = carousel.currentItemIndex;
+    }
 }
 
 
