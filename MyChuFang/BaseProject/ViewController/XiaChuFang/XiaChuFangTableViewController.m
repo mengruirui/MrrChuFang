@@ -24,6 +24,8 @@
 
 @property (nonatomic,strong)XiaChuFangViewModel *xiaVM;
 @property (nonatomic,strong)SlotViewModel *slotVm;
+
+@property (nonatomic,strong)UIView *lastView;
 @end
 
 @implementation XiaChuFangTableViewController
@@ -31,13 +33,19 @@
     iCarousel *_ic;
     UIView * _topView;
     iCarousel *_pageIc;
-    UILabel *_titleLb;
     UILabel *_numberLb;
-    UIImageView *_iconIV0;
-    UIImageView *_iconIV1;
     UIPageControl *_pageControl;
     NSTimer *_timer;
 }
+
+-(UIView *)lastView
+{
+    if (!_lastView) {
+        _lastView = [UIView new];
+    }
+    return _lastView;
+}
+
 - (UIView *)footerView
 {
     UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, kWindowW/635*475)];
@@ -100,6 +108,7 @@
     _ic.autoscroll = 0.1;
     return footerView;
 }
+//添加头部滚动
 - (UIView *)eventPageView
 {
     [_timer invalidate];
@@ -143,11 +152,12 @@
 #pragma mark - iCarousel Delegate
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    if (carousel == _pageIc) {
-      return  self.xiaVM.eventNumber;
-    }
-    else{
-    return self.xiaVM.userNumber;
+    if (carousel == _ic) {
+        return self.xiaVM.userNumber;
+
+    }else
+    {
+        return  self.xiaVM.eventNumber;
     }
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
@@ -172,90 +182,110 @@
     {
         if (!view) {
             view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, _pageIc.bounds.size.height)];
-            UIImageView *imageView = [UIImageView new];
-            imageView.tag = 600;
-            [view addSubview:imageView];
-            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.mas_equalTo(0);
-            }];
-            UIView *leftView = [UIView new];
-            leftView.backgroundColor = [UIColor whiteColor];
-            [view addSubview:leftView];
-            
-            [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.width.mas_equalTo((kWindowW-24)/2);
-                make.bottom.mas_equalTo(0);
-                make.top.left.mas_equalTo(0);
                 
-            }];
-            UILabel *titleLb = [UILabel new];
-            titleLb.tag = 200;
-            titleLb.textAlignment = NSTextAlignmentCenter;
-            titleLb.font = [UIFont systemFontOfSize:14];
-            [leftView addSubview:titleLb];
-            [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(12);
-                make.left.right.mas_equalTo(0);
-            }];
+                UIView *leftView = [UIView new];
+                leftView.backgroundColor = [UIColor whiteColor];
+                [view addSubview:leftView];
+                
+                [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.width.mas_equalTo((kWindowW-24)/2);
+                    make.bottom.mas_equalTo(0);
+                    make.top.left.mas_equalTo(0);
+                    
+                }];
+                UILabel *titleLb = [UILabel new];
+                titleLb.tag = 200;
+                titleLb.textAlignment = NSTextAlignmentCenter;
+                titleLb.font = [UIFont systemFontOfSize:14];
+                [leftView addSubview:titleLb];
+                [titleLb mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(12);
+                    make.left.right.mas_equalTo(0);
+                }];
+                
+                UILabel *numberLb = [UILabel new];
+                numberLb.tag = 300;
+                numberLb.backgroundColor = [UIColor lightGrayColor];
+                numberLb.textColor = [UIColor whiteColor];
+                numberLb.font = [UIFont systemFontOfSize:12];
+                numberLb.textAlignment = NSTextAlignmentCenter;
+                numberLb.layer.cornerRadius = 10;
+                numberLb.layer.masksToBounds = YES;
+                [leftView addSubview:numberLb];
+                [numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.size.mas_equalTo(CGSizeMake(85, 25));
+                    make.top.mas_equalTo(titleLb.mas_bottom).mas_equalTo(12);
+                    make.centerX.mas_equalTo(0);
+                }];
+                
+                UIView *rightView = [UIView new];
+                [view addSubview:rightView];
+                [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.width.mas_equalTo((kWindowW-24)/2);
+                    make.bottom.mas_equalTo(0);
+                    make.top.right.mas_equalTo(0);
+                    make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
+                }];
+                
+                UIImageView *iconIV0 = [UIImageView new];
+                
+                iconIV0.tag = 400;
+                //_iconIV0.contentMode = UIViewContentModeScaleAspectFit;
+                [rightView addSubview:iconIV0];
+                [iconIV0 mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.left.bottom.mas_equalTo(0);
+                    make.width.mas_equalTo((kWindowW-24)/4);
+                }];
+                
+                
+                UIImageView *iconIV1 = [UIImageView new];
+                
+                //_iconIV1.contentMode = UIViewContentModeScaleAspectFit;
+                iconIV1.tag = 500;
+                [rightView addSubview:iconIV1];
+                [iconIV1 mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.top.bottom.mas_equalTo(0);
+                    make.width.mas_equalTo((kWindowW-24)/4);
+                    make.left.mas_equalTo(iconIV0.mas_right).mas_equalTo(0);
+                }];
             
-            UILabel *numberLb = [UILabel new];
-            numberLb.tag = 300;
-            numberLb.backgroundColor = [UIColor lightGrayColor];
-            numberLb.textColor = [UIColor whiteColor];
-            numberLb.font = [UIFont systemFontOfSize:12];
-            numberLb.textAlignment = NSTextAlignmentCenter;
-            numberLb.layer.cornerRadius = 10;
-            numberLb.layer.masksToBounds = YES;
-            [leftView addSubview:numberLb];
-            [numberLb mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.size.mas_equalTo(CGSizeMake(85, 25));
-                make.top.mas_equalTo(titleLb.mas_bottom).mas_equalTo(12);
-                make.centerX.mas_equalTo(0);
-            }];
-            
-            UIView *rightView = [UIView new];
-            [view addSubview:rightView];
-            [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.width.mas_equalTo((kWindowW-24)/2);
-                make.bottom.mas_equalTo(0);
-                make.top.right.mas_equalTo(0);
-                make.left.mas_equalTo(leftView.mas_right).mas_equalTo(0);
-            }];
-            UIImageView *iconIV0 = [UIImageView new];
-            iconIV0.tag = 400;
-            //_iconIV0.contentMode = UIViewContentModeScaleAspectFit;
-            [rightView addSubview:iconIV0];
-            [iconIV0 mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.left.bottom.mas_equalTo(0);
-                make.width.mas_equalTo((kWindowW-24)/4);
-            }];
-            
-            UIImageView *iconIV1 = [UIImageView new];
-            //_iconIV1.contentMode = UIViewContentModeScaleAspectFit;
-            iconIV1.tag = 500;
-            [rightView addSubview:iconIV1];
-            [iconIV1 mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.bottom.mas_equalTo(0);
-                make.width.mas_equalTo((kWindowW-24)/4);
-                make.left.mas_equalTo(iconIV0.mas_right).mas_equalTo(0);
-            }];
+            if (_pageIc.currentItemIndex == 3) {
+                [view addSubview:self.lastView];
+                [_lastView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.mas_equalTo(0);
+                }];
+                UIImageView *imageView = [UIImageView new];
+                imageView.tag = 1000;
+                [self.lastView addSubview:imageView];
+                [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.edges.mas_equalTo(0);
+                }];
+            }
             
         }
-        UILabel *titleLb = (UILabel *)[view viewWithTag:200];
-        titleLb.text = [self.xiaVM titleForRowInEvents:index];
-        UILabel *numberLb = (UILabel *)[view viewWithTag:300];
-        numberLb.text = [self.xiaVM numberForRowInEvents:index];
-        UIImageView *iconIV0 = (UIImageView *)[view viewWithTag:400];
-        [iconIV0 setImageWithURL:[self.xiaVM iconIV0ForRowInEvents:index]];
-        UIImageView *iconIV1 = (UIImageView *)[view viewWithTag:500];
-        [iconIV1 setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
+       
+            UILabel *titleLb = (UILabel *)[view viewWithTag:200];
+            titleLb.text = [self.xiaVM titleForRowInEvents:index];
+            UILabel *numberLb = (UILabel *)[view viewWithTag:300];
+            numberLb.text = [self.xiaVM numberForRowInEvents:index];
+            UIImageView *iconIV0 = (UIImageView *)[view viewWithTag:400];
+            [iconIV0 setImageWithURL:[self.xiaVM iconIV0ForRowInEvents:index]];
+            UIImageView *iconIV1 = (UIImageView *)[view viewWithTag:500];
+            [iconIV1 setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
         
-        if (index == 1) {
-            UIImageView *imageView = (UIImageView *)[view viewWithTag:600];
+        if (_pageIc.currentItemIndex == 3) {
+            DDLogVerbose(@"%ld",_pageIc.currentItemIndex);
+            UIImageView *imageView = (UIImageView *)[view viewWithTag:1000];
             [imageView setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
         }
         
+            
+    
+
+        
+
         return view;
+
     }
    
 }
@@ -333,7 +363,7 @@
         
     } forControlEvents:(UIControlEventTouchUpInside)];
     
-    
+    [self.faXianBtn setBackgroundImage:[UIImage imageNamed:@"begin"] forState:(UIControlStateNormal)];
   
 }
 - (void)didReceiveMemoryWarning {

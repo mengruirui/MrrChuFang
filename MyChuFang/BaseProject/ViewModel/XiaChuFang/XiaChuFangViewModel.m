@@ -121,6 +121,7 @@
 {
     return [self modelForRowInEvents:row].dishes;
 }
+//标题
 -(NSString *)titleForRowInEvents:(NSInteger)row
 {
     return [self modelForRowInEvents:row].name;
