@@ -20,7 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.bkImageView.image = [UIImage imageNamed:@""];
+    self.bkImageView.image = [UIImage imageNamed:@"bk"];
+    self.navigationController.navigationBar.hidden = YES;
 }
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
