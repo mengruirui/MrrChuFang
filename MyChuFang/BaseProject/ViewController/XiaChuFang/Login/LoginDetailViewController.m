@@ -23,9 +23,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.hidden = NO;
-    [self.weboBtn setBackgroundImage:[UIImage imageNamed:@"xinlang"] forState:(UIControlStateNormal)];
-    [self.qqBtn setBackgroundImage:[UIImage imageNamed:@"QQ"] forState:(UIControlStateNormal)];
-    [self.doubanBtn setBackgroundImage:[UIImage imageNamed:@"dou"] forState:(UIControlStateNormal)];
+    [self.weboBtn setBackgroundImage:[UIImage imageNamed:@"S_share_icon_1_s"] forState:(UIControlStateNormal)];
+    self.weboBtn.layer.cornerRadius = 25;
+    self.weboBtn.layer.masksToBounds = YES;
+    [self.qqBtn setBackgroundImage:[UIImage imageNamed:@"S_share_icon_24_s"] forState:(UIControlStateNormal)];
+    self.qqBtn.layer.cornerRadius = 25;
+    self.qqBtn.layer.masksToBounds = YES;
+    [self.doubanBtn setBackgroundImage:[UIImage imageNamed:@"S_share_icon_5_s"] forState:(UIControlStateNormal)];
+    self.doubanBtn.layer.cornerRadius = 25;
+    self.doubanBtn.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {
