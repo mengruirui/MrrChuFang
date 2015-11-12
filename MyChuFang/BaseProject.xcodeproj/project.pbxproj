@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */; };
+		1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */; };
+		1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */; };
+		1DADAAB81BF4F830006A2C20 /* WeekDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAB71BF4F830006A2C20 /* WeekDetailViewModel.m */; };
 		1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B6931BED0C7500B573DB /* InitPageModel.m */; };
 		1DB0B6981BED0CB100B573DB /* XiaChuFangNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B6971BED0CB100B573DB /* XiaChuFangNetManager.m */; };
 		1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B69B1BED0CC800B573DB /* XiaChuFangTableViewController.m */; };
@@ -70,7 +74,6 @@
 		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; };
 		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; };
 		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; };
-		8501947D1BF41F1100184032 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501947C1BF41F1100184032 /* WeekModel.m */; };
 		858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0B6B1BF354D300095CEE /* ReginstViewController.m */; };
 		85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D4826F1BF2265600E7D0AF /* LoginViewController.m */; };
 		85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D482721BF2269500E7D0AF /* LoginDetailViewController.m */; };
@@ -80,6 +83,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DADAAAC1BF4E87B006A2C20 /* WeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDetailModel.h; sourceTree = "<group>"; };
+		1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDetailModel.m; sourceTree = "<group>"; };
+		1DADAAAE1BF4E87B006A2C20 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
+		1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekModel.m; sourceTree = "<group>"; };
+		1DADAAB31BF4E8B3006A2C20 /* WeekViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekViewModel.h; sourceTree = "<group>"; };
+		1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekViewModel.m; sourceTree = "<group>"; };
+		1DADAAB61BF4F830006A2C20 /* WeekDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDetailViewModel.h; sourceTree = "<group>"; };
+		1DADAAB71BF4F830006A2C20 /* WeekDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDetailViewModel.m; sourceTree = "<group>"; };
 		1DB0B6921BED0C7500B573DB /* InitPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitPageModel.h; sourceTree = "<group>"; };
 		1DB0B6931BED0C7500B573DB /* InitPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitPageModel.m; sourceTree = "<group>"; };
 		1DB0B6961BED0CB100B573DB /* XiaChuFangNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaChuFangNetManager.h; sourceTree = "<group>"; };
@@ -184,8 +195,6 @@
 		3886C0C21BD74B430014E661 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4329DABFE5AD654FE71597C9 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8501947B1BF41F1100184032 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
-		8501947C1BF41F1100184032 /* WeekModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekModel.m; sourceTree = "<group>"; };
 		858C0B6A1BF354D300095CEE /* ReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReginstViewController.h; sourceTree = "<group>"; };
 		858C0B6B1BF354D300095CEE /* ReginstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReginstViewController.m; sourceTree = "<group>"; };
 		85D4826E1BF2265600E7D0AF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -228,15 +237,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DADAAAB1BF4E850006A2C20 /* Week */ = {
+			isa = PBXGroup;
+			children = (
+				1DADAAAC1BF4E87B006A2C20 /* WeekDetailModel.h */,
+				1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */,
+				1DADAAAE1BF4E87B006A2C20 /* WeekModel.h */,
+				1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */,
+			);
+			path = Week;
+			sourceTree = "<group>";
+		};
+		1DADAAB21BF4E89F006A2C20 /* Week */ = {
+			isa = PBXGroup;
+			children = (
+				1DADAAB31BF4E8B3006A2C20 /* WeekViewModel.h */,
+				1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */,
+				1DADAAB61BF4F830006A2C20 /* WeekDetailViewModel.h */,
+				1DADAAB71BF4F830006A2C20 /* WeekDetailViewModel.m */,
+			);
+			path = Week;
+			sourceTree = "<group>";
+		};
 		1DB0B6911BED0C7500B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				1DADAAAB1BF4E850006A2C20 /* Week */,
 				1DB0B6921BED0C7500B573DB /* InitPageModel.h */,
 				1DB0B6931BED0C7500B573DB /* InitPageModel.m */,
 				85EA1CCB1BEDD126003F3335 /* SlotModel.h */,
 				85EA1CCC1BEDD126003F3335 /* SlotModel.m */,
-				8501947B1BF41F1100184032 /* WeekModel.h */,
-				8501947C1BF41F1100184032 /* WeekModel.m */,
 			);
 			path = XiaChuFang;
 			sourceTree = "<group>";
@@ -264,6 +294,7 @@
 		1DB0B69D1BED0CEC00B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				1DADAAB21BF4E89F006A2C20 /* Week */,
 				1DB0B69E1BED0CEC00B573DB /* XiaChuFangViewModel.h */,
 				1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */,
 				85EA1CCE1BEDD499003F3335 /* SlotViewModel.h */,
@@ -766,15 +797,17 @@
 				1DB0B6981BED0CB100B573DB /* XiaChuFangNetManager.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
+				1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */,
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
 				85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
-				8501947D1BF41F1100184032 /* WeekModel.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
 				85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */,
+				1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
+				1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */,
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
@@ -784,6 +817,7 @@
 				1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */,
 				3885C8FB1BE8E96A009441EA /* README.md in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
+				1DADAAB81BF4F830006A2C20 /* WeekDetailViewModel.m in Sources */,
 				858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */,
 				1DB0B6A41BED0D1E00B573DB /* XiaChuFangCell.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
