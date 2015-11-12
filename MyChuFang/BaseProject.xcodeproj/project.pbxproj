@@ -70,6 +70,7 @@
 		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; };
 		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; };
 		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; };
+		8501947D1BF41F1100184032 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501947C1BF41F1100184032 /* WeekModel.m */; };
 		858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0B6B1BF354D300095CEE /* ReginstViewController.m */; };
 		85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D4826F1BF2265600E7D0AF /* LoginViewController.m */; };
 		85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D482721BF2269500E7D0AF /* LoginDetailViewController.m */; };
@@ -183,6 +184,8 @@
 		3886C0C21BD74B430014E661 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4329DABFE5AD654FE71597C9 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8501947B1BF41F1100184032 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
+		8501947C1BF41F1100184032 /* WeekModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekModel.m; sourceTree = "<group>"; };
 		858C0B6A1BF354D300095CEE /* ReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReginstViewController.h; sourceTree = "<group>"; };
 		858C0B6B1BF354D300095CEE /* ReginstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReginstViewController.m; sourceTree = "<group>"; };
 		85D4826E1BF2265600E7D0AF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				1DB0B6931BED0C7500B573DB /* InitPageModel.m */,
 				85EA1CCB1BEDD126003F3335 /* SlotModel.h */,
 				85EA1CCC1BEDD126003F3335 /* SlotModel.m */,
+				8501947B1BF41F1100184032 /* WeekModel.h */,
+				8501947C1BF41F1100184032 /* WeekModel.m */,
 			);
 			path = XiaChuFang;
 			sourceTree = "<group>";
@@ -766,6 +771,7 @@
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
 				85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
+				8501947D1BF41F1100184032 /* WeekModel.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
 				85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,

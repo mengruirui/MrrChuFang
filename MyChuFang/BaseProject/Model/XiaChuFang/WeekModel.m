@@ -11,3 +11,17 @@
 @implementation WeekModel
 
 @end
+@implementation WeekContentModel
+
++ (NSDictionary *)objectClassInArray{
+    return @{@"recipes" : [WeekContentRecipesModel class]};
+}
+
+@end
+
+
+@implementation WeekContentRecipesModel
+
+@end
+
+
