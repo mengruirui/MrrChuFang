@@ -28,7 +28,7 @@
     vc.navigationItem.leftBarButtonItems = @[spaceItem,menuItem];
 }
 /*向某个控制器上,添加返回按钮*/
-+(void)addBlackItemToVC:(UIViewController *)vc
++(void)addBackItemToVC:(UIViewController *)vc
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:@"btn_back_n"] forState:(UIControlStateNormal)];

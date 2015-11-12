@@ -12,6 +12,7 @@
 #import "iCarousel.h"
 #import "SlotViewModel.h"
 #import "XiaChuFangURLViewController.h"
+#import "LoginViewController.h"
 
 
 @interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
@@ -69,6 +70,13 @@
         make.right.mas_equalTo(-12);
         make.height.mas_equalTo(kWindowW/580*90);
     }];
+    //创建菜谱跳转
+    [btn bk_addEventHandler:^(id sender) {
+        LoginViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
+        [self presentViewController:navi animated:YES completion:nil];
+    } forControlEvents:(UIControlEventTouchUpInside)];
+    
     UILabel *label = [UILabel new];
     label.text = @"意见反馈";
     label.textColor = kRGBColor(105, 95, 90);

@@ -181,7 +181,7 @@
         <!--Login View Controller-->
         <scene sceneID="CJf-e8-eUx">
             <objects>
-                <viewController id="nNg-lS-FWG" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="nNg-lS-FWG" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vsz-9o-QTK"/>
                         <viewControllerLayoutGuide type="bottom" id="5A0-E6-z8P"/>

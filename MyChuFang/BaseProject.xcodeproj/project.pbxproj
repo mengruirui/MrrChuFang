@@ -248,6 +248,7 @@
 		1DB0B6991BED0CC800B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				850194771BF41C2100184032 /* Week */,
 				85D4826D1BF2265600E7D0AF /* Login */,
 				1DB0B69A1BED0CC800B573DB /* XiaChuFangTableViewController.h */,
 				1DB0B69B1BED0CC800B573DB /* XiaChuFangTableViewController.m */,
@@ -561,6 +562,13 @@
 				3886C0BA1BD74AE90014E661 /* BaseViewModel.m */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		850194771BF41C2100184032 /* Week */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Week;
 			sourceTree = "<group>";
 		};
 		85D4826D1BF2265600E7D0AF /* Login */ = {
