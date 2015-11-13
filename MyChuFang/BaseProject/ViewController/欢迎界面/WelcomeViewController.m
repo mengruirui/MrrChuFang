@@ -89,6 +89,7 @@
     imageView.imageView.image = [UIImage imageWithContentsOfFile:path];
     if (index == [self.imageNames indexOfObject:self.imageNames.lastObject]) {
         UIButton *btn = (UIButton *)[view viewWithTag:200];
+        [btn setTitleColor:kRGBColor(244, 78, 63) forState:(UIControlStateNormal)];
         [btn setTitle:@"进入My厨房" forState:(UIControlStateNormal)];
         FBShimmeringView *sv = [FBShimmeringView new];
         [view addSubview:sv];
@@ -98,6 +99,7 @@
             make.bottom.mas_equalTo(-20);
         }];
         sv.contentView = btn;
+        
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);
             sv.shimmering = YES;
