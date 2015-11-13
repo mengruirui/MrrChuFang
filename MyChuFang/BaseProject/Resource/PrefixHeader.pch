@@ -28,6 +28,8 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 
+#import "Factory.h"
+
 //用于存放全局宏定义 或者 静态字符串
 #import "Constants.h"
 

@@ -9,9 +9,12 @@
 #import "WelcomeViewController.h"
 #import "TRImageView.h"
 #import "iCarousel.h"
+#import "AppDelegate.h"
 @interface WelcomeViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property (nonatomic,strong)NSArray *imageNames;
 @property (nonatomic,strong)iCarousel *ic;
+@property (nonatomic,strong)UIPageControl *pageControl;
+
 @end
 
 @implementation WelcomeViewController
@@ -23,6 +26,22 @@
         _imageNames = [fileManager subpathsAtPath:path];
     }
     return _imageNames;
+}
+-(UIPageControl *)pageControl
+{
+    if (!_pageControl) {
+        _pageControl = [UIPageControl new];
+        _pageControl.numberOfPages = self.imageNames.count;
+        _pageControl.pageIndicatorTintColor = [UIColor redColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.userInteractionEnabled = NO;
+        [self.view addSubview:_pageControl];
+        [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(0);
+            make.bottom.mas_equalTo(-20);
+        }];
+    }
+    return _pageControl;
 }
 -(iCarousel *)ic
 {
@@ -79,7 +98,7 @@
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(120, 40));
             make.centerX.mas_equalTo(0);
-            make.bottom.mas_equalTo(-40);
+            make.bottom.mas_equalTo(-20);
         }];
     }
     TRImageView *imageView = (TRImageView *)[view viewWithTag:100];
@@ -96,29 +115,33 @@
         [sv mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(150, 80));
             make.centerX.mas_equalTo(0);
-            make.bottom.mas_equalTo(-20);
+            make.bottom.mas_equalTo(-30);
         }];
         sv.contentView = btn;
         
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(0);
-            sv.shimmering = YES;
+            
         }];
+        sv.shimmering = YES;
         [btn bk_addEventHandler:^(id sender) {
-            UIWindow *window = [UIWindow new];
-            window = [UIApplication sharedApplication].keyWindow;
-            window.rootViewController = kVCFromSb(@"MyChuFangTabBar", @"Main");
+           UIWindow * window = [UIApplication sharedApplication].keyWindow;
+            window.rootViewController = [AppDelegate new].sideMenu;
         } forControlEvents:(UIControlEventTouchUpInside)];
     }
     
     
     return view;
 }
-
+-(void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
+{
+    self.pageControl.currentPage = carousel.currentItemIndex;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.ic reloadData];
+    self.pageControl.hidden = NO;
     
 }
 

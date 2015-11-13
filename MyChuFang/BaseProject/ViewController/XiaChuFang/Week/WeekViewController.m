@@ -80,6 +80,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [Factory addBackItemToVC:self];
+    
     [self.tableView.mj_header beginRefreshing];
     
     self.ID = @"100434180";

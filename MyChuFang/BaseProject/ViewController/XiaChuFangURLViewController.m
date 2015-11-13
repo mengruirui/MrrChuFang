@@ -33,6 +33,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [Factory addBackItemToVC:self];
+    
     [self.view addSubview:self.webView];
     [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);

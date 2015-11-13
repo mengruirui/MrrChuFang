@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--My厨房-->
         <scene sceneID="qxG-xv-gie">
             <objects>
                 <tableViewController id="xVf-Rh-Rpj" customClass="XiaChuFangTableViewController" sceneMemberID="viewController">
@@ -99,10 +99,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="hfb-w7-14H" customClass="XiaChuFangCell">
-                                <rect key="frame" x="0.0" y="489" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="488.5" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfb-w7-14H" id="SrH-vc-jTy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="INP-WN-ghf">
@@ -154,7 +154,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="4a5-Dt-zMo"/>
-                    <navigationItem key="navigationItem" id="yXt-i2-TIx"/>
+                    <navigationItem key="navigationItem" title="My厨房" id="yXt-i2-TIx"/>
                     <connections>
                         <outlet property="activityBtn" destination="GVx-2k-EK5" id="BdG-dp-83H"/>
                         <outlet property="faXianBtn" destination="dJp-Df-zOd" id="dsC-bc-TiM"/>
@@ -592,7 +592,7 @@
             </objects>
             <point key="canvasLocation" x="764" y="-340"/>
         </scene>
-        <!--View Controller-->
+        <!--集市-->
         <scene sceneID="t4c-P1-D19">
             <objects>
                 <viewController id="efP-ef-lZa" sceneMemberID="viewController">
@@ -606,7 +606,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BVv-oG-dGN"/>
+                    <navigationItem key="navigationItem" title="集市" id="BVv-oG-dGN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cae-f3-yL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -631,7 +631,7 @@
             </objects>
             <point key="canvasLocation" x="2077" y="-333"/>
         </scene>
-        <!--View Controller-->
+        <!--社区-->
         <scene sceneID="s7r-aZ-uW9">
             <objects>
                 <viewController id="jZS-b0-LdT" sceneMemberID="viewController">
@@ -645,7 +645,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hrW-CJ-jXv"/>
+                    <navigationItem key="navigationItem" title="社区" id="hrW-CJ-jXv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MT-vR-oiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

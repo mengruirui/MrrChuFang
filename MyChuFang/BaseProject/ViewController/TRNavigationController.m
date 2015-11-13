@@ -30,7 +30,7 @@
         [bar setBackgroundImage:[UIImage imageNamed:@"navibg"] forBarMetrics:UIBarMetricsDefault];
 
         // 3.设置左右按钮的文字颜色
-        //[bar setTintColor:[UIColor whiteColor]];
+        [bar setTintColor:[UIColor whiteColor]];
         
         // 4.设置标题文字的垂直位置
         [bar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];

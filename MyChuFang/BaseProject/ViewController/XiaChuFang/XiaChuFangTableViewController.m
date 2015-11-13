@@ -345,6 +345,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [Factory addMenuItemToVC:self];
+    
+    //改变状态栏颜色 先在info.plist中添加View controller-based status bar appearance设置为 NO
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    
     //去掉滑动时的竖线
     self.tableView.showsVerticalScrollIndicator = NO;
        [self.xiaVM getDataFromNetCompleteHandle:^(NSError *error) {
