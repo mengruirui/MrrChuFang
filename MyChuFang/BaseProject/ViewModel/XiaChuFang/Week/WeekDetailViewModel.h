@@ -10,17 +10,20 @@
 #import "XiaChuFangNetManager.h"
 
 @interface WeekDetailViewModel : BaseViewModel
-- (instancetype)initWithId:(NSString *)ID;
+
+-(instancetype)initWithId:(NSString *)ID;
 @property (nonatomic,strong) NSString *ID;
 
 //图片
-- (NSURL *)iconURLForRow:(NSInteger)row;
+- (NSURL *)iconURLForRow;
 //标题
-- (NSString *)nameForRow:(NSInteger)row;
+- (NSString *)nameForRow;
 //作者
-- (NSString *)authorForRow:(NSInteger)row;
+- (NSString *)authorForRow;
 //评分
-- (NSString *)scoreForRow:(NSInteger)row;
+- (NSString *)scoreForRow;
 //做过人数
-- (NSString *)cookedForRow:(NSInteger)row;
+- (NSString *)cookedForRow;
+//作者图片
+- (NSURL *)photoURLForRow;
 @end

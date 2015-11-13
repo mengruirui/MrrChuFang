@@ -40,7 +40,7 @@
     }];
 
 }
-//?id=100434180&=&api_key=0f9f79be1dac5f003e7de6f876b17c00&origin=iphone&version=4.4.0
+
 +(id)getWeekDetailWithId:(NSString *)ID completionHandle:(void (^)(id, NSError *))completionHandle
 {
     NSDictionary *params = @{@"id":ID,@"api_sign":@"7b08ca51bee9dd0205c62db15c2f2ee4",kApikey,kOrigin,kVersion};

@@ -25,48 +25,52 @@
 }
 -(void)getDataFromNetCompleteHandle:(CompletionHandle)completionHandle
 {
-    [XiaChuFangNetManager getWeekDetailWithId:self.ID completionHandle:^(WeekDetailContentModel *model, NSError *error) {
+    [XiaChuFangNetManager getWeekDetailWithId:self.ID completionHandle:^(WeekDetailModel *model, NSError *error) {
         if (!error) {
-            self.dataArr = [model.recipes copy];
+            self.dataArr = [model.content.recipes copy];
             completionHandle(error);
         }
     }];
 }
-- (WeekDetailContentRecipesModel *)modelForRowInRecipes:(NSInteger)row
+- (WeekDetailContentRecipesModel *)modelForRowInRecipes
 {
-    return self.dataArr[row];
+    return self.dataArr.firstObject;
 }
-- (WeekDetailContentRecipesInstructionAuthorModel *)modelForRowInAuthor:(NSInteger)row
+- (WeekDetailContentRecipesInstructionAuthorModel *)modelForRowInAuthor
 {
-    return [self modelForRowInRecipes:row].author;
+    return [self modelForRowInRecipes].author;
 }
-- (WeekDetailContentRecipesInstructionStatsModel *)modelForRowInStats:(NSInteger)row
+- (WeekDetailContentRecipesInstructionStatsModel *)modelForRowInStats
 {
-    return [self modelForRowInRecipes:row].stats;
+    return [self modelForRowInRecipes].stats;
 }
 //图片
-- (NSURL *)iconURLForRow:(NSInteger)row
+- (NSURL *)iconURLForRow
 {
-    return [NSURL URLWithString:[self modelForRowInRecipes:row].thumb];
+    return [NSURL URLWithString:[self modelForRowInRecipes].thumb];
 }
 //标题
-- (NSString *)nameForRow:(NSInteger)row
+- (NSString *)nameForRow
 {
-    return [self modelForRowInRecipes:row].name;
+    return [self modelForRowInRecipes].name;
 }
 //作者
-- (NSString *)authorForRow:(NSInteger)row
+- (NSString *)authorForRow
 {
-    return [self modelForRowInAuthor:row].name;
+    return [self modelForRowInAuthor].name;
 }
 //评分
-- (NSString *)scoreForRow:(NSInteger)row
+- (NSString *)scoreForRow
 {
-    return [self modelForRowInRecipes:row].score;
+    return [ NSString stringWithFormat:@"%@ 评分",[self modelForRowInRecipes].score];
 }
 //做过人数
-- (NSString *)cookedForRow:(NSInteger)row
+- (NSString *)cookedForRow
 {
-    return [self modelForRowInStats:row].n_cooked;
+    return  [NSString stringWithFormat:@"%@ 做过",[self modelForRowInStats].n_cooked];
+}
+-(NSURL *)photoURLForRow
+{
+    return [NSURL URLWithString:[self modelForRowInAuthor].photo];
 }
 @end

@@ -74,6 +74,14 @@
 		3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BA1BD74AE90014E661 /* BaseViewModel.m */; };
 		3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0BD1BD74AFE0014E661 /* BaseNetManager.m */; };
 		3886C0C11BD74B090014E661 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886C0C01BD74B090014E661 /* BaseModel.m */; };
+		85118F461BF5687700C3783D /* WeekViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F451BF5687700C3783D /* WeekViewController.m */; };
+		85118F491BF5689B00C3783D /* WeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F481BF5689B00C3783D /* WeekCell.m */; };
+		85118F4C1BF5696100C3783D /* TRImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F4B1BF5696100C3783D /* TRImageView.m */; };
+		85118F921BF5D31E00C3783D /* TRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F8F1BF5D31E00C3783D /* TRNavigationController.m */; };
+		85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F911BF5D31E00C3783D /* TRTabBarController.m */; };
+		85118F971BF5E2BA00C3783D /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F961BF5E2BA00C3783D /* WelcomeViewController.m */; };
+		85118FA41BF60AD800C3783D /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118FA31BF60AD800C3783D /* LeftViewController.m */; };
+		85118FA61BF615B500C3783D /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85118FA51BF615B500C3783D /* images.bundle */; };
 		858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0B6B1BF354D300095CEE /* ReginstViewController.m */; };
 		85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D4826F1BF2265600E7D0AF /* LoginViewController.m */; };
 		85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D482721BF2269500E7D0AF /* LoginDetailViewController.m */; };
@@ -195,6 +203,21 @@
 		3886C0C21BD74B430014E661 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		4329DABFE5AD654FE71597C9 /* Pods-BaseProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.debug.xcconfig"; sourceTree = "<group>"; };
 		5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaseProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85118F441BF5687700C3783D /* WeekViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekViewController.h; sourceTree = "<group>"; };
+		85118F451BF5687700C3783D /* WeekViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekViewController.m; sourceTree = "<group>"; };
+		85118F471BF5689B00C3783D /* WeekCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekCell.h; sourceTree = "<group>"; };
+		85118F481BF5689B00C3783D /* WeekCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekCell.m; sourceTree = "<group>"; };
+		85118F4A1BF5696100C3783D /* TRImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRImageView.h; sourceTree = "<group>"; };
+		85118F4B1BF5696100C3783D /* TRImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRImageView.m; sourceTree = "<group>"; };
+		85118F8E1BF5D31E00C3783D /* TRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRNavigationController.h; sourceTree = "<group>"; };
+		85118F8F1BF5D31E00C3783D /* TRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRNavigationController.m; sourceTree = "<group>"; };
+		85118F901BF5D31E00C3783D /* TRTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRTabBarController.h; sourceTree = "<group>"; };
+		85118F911BF5D31E00C3783D /* TRTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRTabBarController.m; sourceTree = "<group>"; };
+		85118F951BF5E2BA00C3783D /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		85118F961BF5E2BA00C3783D /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		85118FA21BF60AD800C3783D /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		85118FA31BF60AD800C3783D /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		85118FA51BF615B500C3783D /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		858C0B6A1BF354D300095CEE /* ReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReginstViewController.h; sourceTree = "<group>"; };
 		858C0B6B1BF354D300095CEE /* ReginstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReginstViewController.m; sourceTree = "<group>"; };
 		85D4826E1BF2265600E7D0AF /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -308,6 +331,8 @@
 			children = (
 				1DB0B6A21BED0D1E00B573DB /* XiaChuFangCell.h */,
 				1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */,
+				85118F471BF5689B00C3783D /* WeekCell.h */,
+				85118F481BF5689B00C3783D /* WeekCell.m */,
 			);
 			path = XiaChuFang;
 			sourceTree = "<group>";
@@ -543,6 +568,7 @@
 		3886C0B21BD74A4A0014E661 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				85118FA51BF615B500C3783D /* images.bundle */,
 				3886C0A21BD748830014E661 /* Assets.xcassets */,
 				3886C0AD1BD749A00014E661 /* LaunchScreen.xib */,
 				3886C09F1BD748830014E661 /* Main.storyboard */,
@@ -575,6 +601,8 @@
 		3886C0B51BD74A4A0014E661 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				85118F4A1BF5696100C3783D /* TRImageView.h */,
+				85118F4B1BF5696100C3783D /* TRImageView.m */,
 				1DB0B6A11BED0D1E00B573DB /* XiaChuFang */,
 			);
 			path = View;
@@ -583,9 +611,13 @@
 		3886C0B61BD74A4A0014E661 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				85118FA11BF608EB00C3783D /* TR */,
+				85118F941BF5E29000C3783D /* 欢迎界面 */,
 				1DB0B6991BED0CC800B573DB /* XiaChuFang */,
 				3835CFB51BD90E150024CA48 /* XiaChuFangURLViewController.h */,
 				3835CFB61BD90E150024CA48 /* XiaChuFangURLViewController.m */,
+				85118FA21BF60AD800C3783D /* LeftViewController.h */,
+				85118FA31BF60AD800C3783D /* LeftViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -603,8 +635,30 @@
 		850194771BF41C2100184032 /* Week */ = {
 			isa = PBXGroup;
 			children = (
+				85118F441BF5687700C3783D /* WeekViewController.h */,
+				85118F451BF5687700C3783D /* WeekViewController.m */,
 			);
 			path = Week;
+			sourceTree = "<group>";
+		};
+		85118F941BF5E29000C3783D /* 欢迎界面 */ = {
+			isa = PBXGroup;
+			children = (
+				85118F951BF5E2BA00C3783D /* WelcomeViewController.h */,
+				85118F961BF5E2BA00C3783D /* WelcomeViewController.m */,
+			);
+			path = "欢迎界面";
+			sourceTree = "<group>";
+		};
+		85118FA11BF608EB00C3783D /* TR */ = {
+			isa = PBXGroup;
+			children = (
+				85118F8E1BF5D31E00C3783D /* TRNavigationController.h */,
+				85118F8F1BF5D31E00C3783D /* TRNavigationController.m */,
+				85118F901BF5D31E00C3783D /* TRTabBarController.h */,
+				85118F911BF5D31E00C3783D /* TRTabBarController.m */,
+			);
+			name = TR;
 			sourceTree = "<group>";
 		};
 		85D4826D1BF2265600E7D0AF /* Login */ = {
@@ -721,6 +775,7 @@
 				3885C8EA1BE8E8FB009441EA /* ios-social-sdk-shake.html in Resources */,
 				3885C8E41BE8E8FB009441EA /* iOS-social-releasenote.html in Resources */,
 				3885C8DA1BE8E8FB009441EA /* UMSLoginViewController.xib in Resources */,
+				85118FA61BF615B500C3783D /* images.bundle in Resources */,
 				3885C8E31BE8E8FB009441EA /* iOS-social-analytics-releasenote.html in Resources */,
 				3885C8D71BE8E8FB009441EA /* UMSCommentInputControlleriPad.xib in Resources */,
 				3885C8D91BE8E8FB009441EA /* UMShareEditViewControlleriPad.xib in Resources */,
@@ -797,21 +852,28 @@
 				1DB0B6981BED0CB100B573DB /* XiaChuFangNetManager.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
 				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
+				85118F491BF5689B00C3783D /* WeekCell.m in Sources */,
+				85118F971BF5E2BA00C3783D /* WelcomeViewController.m in Sources */,
 				1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */,
+				85118FA41BF60AD800C3783D /* LeftViewController.m in Sources */,
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
 				85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
+				85118F4C1BF5696100C3783D /* TRImageView.m in Sources */,
 				85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */,
+				85118F921BF5D31E00C3783D /* TRNavigationController.m in Sources */,
 				1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
+				85118F461BF5687700C3783D /* WeekViewController.m in Sources */,
 				1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */,
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
+				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
 				1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */,
 				1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */,
 				1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */,

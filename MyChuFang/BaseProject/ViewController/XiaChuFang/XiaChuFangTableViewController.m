@@ -13,7 +13,7 @@
 #import "SlotViewModel.h"
 #import "XiaChuFangURLViewController.h"
 #import "LoginViewController.h"
-
+#import "Week/WeekViewController.h"
 
 @interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -372,7 +372,16 @@
     } forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.faXianBtn setBackgroundImage:[UIImage imageNamed:@"begin"] forState:(UIControlStateNormal)];
-  
+    
+    //每周
+    [self.weekDateBtn bk_addEventHandler:^(id sender) {
+        WeekViewController *vc = [WeekViewController new];
+        //UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc] ;
+        [self.navigationController pushViewController:vc animated:YES];
+    } forControlEvents:(UIControlEventTouchUpInside)];
+    self.tabBarController.tabBar.translucent = NO;
+
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

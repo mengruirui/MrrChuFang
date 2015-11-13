@@ -13,8 +13,8 @@
 +(void)addMenuItemToVC:(UIViewController *)vc
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBackgroundImage:[UIImage imageNamed:@"zone_post_red"] forState:(UIControlStateNormal)];
-    [btn setBackgroundImage:[UIImage imageNamed:@"zone_post_n"] forState:(UIControlStateHighlighted)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"Icon_Navbar_Info"] forState:(UIControlStateNormal)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"Icon_Navbar_Info"] forState:(UIControlStateHighlighted)];
     btn.frame = CGRectMake(0, 0, 30, 30);
     [btn bk_addEventHandler:^(id sender) {
         [vc.sideMenuViewController presentLeftMenuViewController];
@@ -31,8 +31,8 @@
 +(void)addBackItemToVC:(UIViewController *)vc
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:[UIImage imageNamed:@"btn_back_n"] forState:(UIControlStateNormal)];
-    [btn setImage:[UIImage imageNamed:@"btn_back_h"] forState:(UIControlStateHighlighted)];
+    [btn setImage:[UIImage imageNamed:@"Icon_Web_Back"] forState:(UIControlStateNormal)];
+    [btn setImage:[UIImage imageNamed:@"Icon_Web_Back_Disable"] forState:(UIControlStateHighlighted)];
     btn.frame = CGRectMake(0, 0, 45, 44);
     [btn bk_addEventHandler:^(id sender) {
         [vc.navigationController popViewControllerAnimated:YES];

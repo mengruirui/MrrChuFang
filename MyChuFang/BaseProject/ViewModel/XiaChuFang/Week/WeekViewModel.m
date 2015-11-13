@@ -44,4 +44,8 @@
 {
     return [self modelForRow:row].reason;
 }
+-(NSInteger)rowNumber
+{
+    return self.dataArr.count;
+}
 @end
