@@ -11,6 +11,9 @@
 #import "XiaChuFangNetManager.h"
 #import "LeftViewController.h"
 #import "WelcomeViewController.h"
+#import "TRTabBarController.h"
+#import "TRNavigationController.h"
+#import "MyChuFangTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -47,17 +50,17 @@
     if (runVersion == nil || ![runVersion isEqualToString:currentVersion]) {
         //没运行过 或者 版本号不一致,则显示欢迎页
         self.window.rootViewController = [WelcomeViewController new];
-        [self.window makeKeyAndVisible];
         //保存新的版本号,防止下次运行再显示欢迎页
         [[NSUserDefaults standardUserDefaults]setValue:currentVersion forKey:key];
     }else
     {
         self.window.rootViewController = self.sideMenu;
-        [self.window makeKeyAndVisible];
     }
 
+    //改变状态栏颜色 先在info.plist中添加View controller-based status bar appearance设置为 NO
     
-    
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    //[[UIApplication sharedApplication]setStatusBarHidden:YES];
     
    
     return YES;
@@ -67,18 +70,22 @@
 {
     if (!_window) {
         _window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        [_window makeKeyAndVisible];
     }
     return _window;
 }
 -(RESideMenu *)sideMenu
 {
     if (!_sideMenu) {
-        _sideMenu = [[RESideMenu alloc]initWithContentViewController:kVCFromSb(@"MyChuFangTabBar", @"Main") leftMenuViewController:[LeftViewController new] rightMenuViewController:nil];
-        _sideMenu.backgroundImage = [UIImage imageNamed:@"bkImage"];
+        _sideMenu = [[RESideMenu alloc]initWithContentViewController:[MyChuFangTabBarController standardInstance]leftMenuViewController:[LeftViewController new] rightMenuViewController:nil];
+        
+        _sideMenu.backgroundImage = [UIImage imageNamed:@"open2_750p"];
         //不显示菜单
         _sideMenu.menuPrefersStatusBarHidden = YES;
         //不允许菜单栏到了边缘还可以继续缩小
         _sideMenu.bouncesHorizontally = NO;
+        //_sideMenu.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
+        
     }
     return _sideMenu;
 }

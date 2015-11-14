@@ -347,9 +347,7 @@
     
     [Factory addMenuItemToVC:self];
     
-    //改变状态栏颜色 先在info.plist中添加View controller-based status bar appearance设置为 NO
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     
     //去掉滑动时的竖线
@@ -373,6 +371,8 @@
     }];
     [self.activityBtn bk_addEventHandler:^(id sender) {
         XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWIthURL:[self.slotVm slotDeatilURL]];
+        vc.title = @"活动";
+        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
         
@@ -383,7 +383,8 @@
     //每周
     [self.weekDateBtn bk_addEventHandler:^(id sender) {
         WeekViewController *vc = [WeekViewController new];
-        //UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc] ;
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.title = @"每周详情";
         [self.navigationController pushViewController:vc animated:YES];
     } forControlEvents:(UIControlEventTouchUpInside)];
     self.tabBarController.tabBar.translucent = NO;
