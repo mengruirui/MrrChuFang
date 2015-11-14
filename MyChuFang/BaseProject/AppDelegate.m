@@ -24,7 +24,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
-    
+    [XiaChuFangNetManager getCommunityCompletionHandle:^(id model, NSError *error) {
+        DDLogVerbose(@".....");
+    }];
     
     /*
      需求:用户首次打开项目,显示欢迎界面.以后则直接显示主页面

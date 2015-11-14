@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1BA59B1BF779AA008C9D5F /* BazaarViewDeatilController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA59A1BF779AA008C9D5F /* BazaarViewDeatilController.m */; };
+		1D1BA59F1BF77D96008C9D5F /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA59E1BF77D96008C9D5F /* CommunityViewController.m */; };
+		1D1BA5A31BF78066008C9D5F /* CommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA5A21BF78066008C9D5F /* CommunityModel.m */; };
+		1D1BA5A71BF79D24008C9D5F /* CommunityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA5A61BF79D24008C9D5F /* CommunityViewModel.m */; };
 		1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */; };
 		1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */; };
 		1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */; };
@@ -93,6 +97,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1BA5991BF779AA008C9D5F /* BazaarViewDeatilController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarViewDeatilController.h; sourceTree = "<group>"; };
+		1D1BA59A1BF779AA008C9D5F /* BazaarViewDeatilController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarViewDeatilController.m; sourceTree = "<group>"; };
+		1D1BA59D1BF77D96008C9D5F /* CommunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityViewController.h; sourceTree = "<group>"; };
+		1D1BA59E1BF77D96008C9D5F /* CommunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityViewController.m; sourceTree = "<group>"; };
+		1D1BA5A11BF78066008C9D5F /* CommunityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommunityModel.h; path = BaseProject/ViewController/XiaChuFang/Community/CommunityModel.h; sourceTree = SOURCE_ROOT; };
+		1D1BA5A21BF78066008C9D5F /* CommunityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunityModel.m; path = BaseProject/ViewController/XiaChuFang/Community/CommunityModel.m; sourceTree = SOURCE_ROOT; };
+		1D1BA5A51BF79D24008C9D5F /* CommunityViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityViewModel.h; sourceTree = "<group>"; };
+		1D1BA5A61BF79D24008C9D5F /* CommunityViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityViewModel.m; sourceTree = "<group>"; };
 		1DADAAAC1BF4E87B006A2C20 /* WeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDetailModel.h; sourceTree = "<group>"; };
 		1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDetailModel.m; sourceTree = "<group>"; };
 		1DADAAAE1BF4E87B006A2C20 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
@@ -266,6 +278,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1BA59C1BF77D7E008C9D5F /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				1D1BA59D1BF77D96008C9D5F /* CommunityViewController.h */,
+				1D1BA59E1BF77D96008C9D5F /* CommunityViewController.m */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		1D1BA5A01BF78022008C9D5F /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				1D1BA5A11BF78066008C9D5F /* CommunityModel.h */,
+				1D1BA5A21BF78066008C9D5F /* CommunityModel.m */,
+			);
+			name = Community;
+			path = Week/Community;
+			sourceTree = "<group>";
+		};
+		1D1BA5A41BF79D04008C9D5F /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				1D1BA5A51BF79D24008C9D5F /* CommunityViewModel.h */,
+				1D1BA5A61BF79D24008C9D5F /* CommunityViewModel.m */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
 		1DADAAAB1BF4E850006A2C20 /* Week */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +331,7 @@
 		1DB0B6911BED0C7500B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BA5A01BF78022008C9D5F /* Community */,
 				1DADAAAB1BF4E850006A2C20 /* Week */,
 				1DB0B6921BED0C7500B573DB /* InitPageModel.h */,
 				1DB0B6931BED0C7500B573DB /* InitPageModel.m */,
@@ -312,6 +353,7 @@
 		1DB0B6991BED0CC800B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BA59C1BF77D7E008C9D5F /* Community */,
 				85248B241BF6EA57008B5682 /* bazaar */,
 				850194771BF41C2100184032 /* Week */,
 				85D4826D1BF2265600E7D0AF /* Login */,
@@ -326,6 +368,7 @@
 		1DB0B69D1BED0CEC00B573DB /* XiaChuFang */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BA5A41BF79D04008C9D5F /* Community */,
 				1DADAAB21BF4E89F006A2C20 /* Week */,
 				1DB0B69E1BED0CEC00B573DB /* XiaChuFangViewModel.h */,
 				1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */,
@@ -675,6 +718,8 @@
 			children = (
 				85248B251BF6EA8E008B5682 /* BazaarViewController.h */,
 				85248B261BF6EA8E008B5682 /* BazaarViewController.m */,
+				1D1BA5991BF779AA008C9D5F /* BazaarViewDeatilController.h */,
+				1D1BA59A1BF779AA008C9D5F /* BazaarViewDeatilController.m */,
 			);
 			path = bazaar;
 			sourceTree = "<group>";
@@ -866,6 +911,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1BA5A31BF78066008C9D5F /* CommunityModel.m in Sources */,
 				3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */,
 				1DB0B6981BED0CB100B573DB /* XiaChuFangNetManager.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
@@ -877,6 +923,7 @@
 				85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */,
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
 				85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */,
+				1D1BA5A71BF79D24008C9D5F /* CommunityViewModel.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
 				85118F4C1BF5696100C3783D /* TRImageView.m in Sources */,
@@ -889,6 +936,7 @@
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
+				1D1BA59B1BF779AA008C9D5F /* BazaarViewDeatilController.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
 				1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */,
@@ -897,6 +945,7 @@
 				1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */,
 				3885C8FB1BE8E96A009441EA /* README.md in Sources */,
 				85248B271BF6EA8E008B5682 /* BazaarViewController.m in Sources */,
+				1D1BA59F1BF77D96008C9D5F /* CommunityViewController.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
 				1DADAAB81BF4F830006A2C20 /* WeekDetailViewModel.m in Sources */,
 				858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */,

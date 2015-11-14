@@ -370,7 +370,7 @@
         [self.tableView reloadData];
     }];
     [self.activityBtn bk_addEventHandler:^(id sender) {
-        XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWIthURL:[self.slotVm slotDeatilURL]];
+        XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWithURL:[self.slotVm slotDeatilURL]];
         vc.title = @"活动";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];

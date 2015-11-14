@@ -11,6 +11,7 @@
 #import "SlotModel.h"
 #import "WeekModel.h"
 #import "WeekDetailModel.h"
+#import "CommunityModel.h"
 @interface XiaChuFangNetManager : BaseNetManager
 //下厨房页面
 + (id)getInitPageCompletionHandle:(void(^)(id model,NSError *error))completionHandle;
@@ -21,5 +22,5 @@
 
 + (id)getWeekDetailWithId:(NSString *)ID kCompletionHandle;
 
-
++ (id)getCommunityCompletionHandle:(void(^)(id model,NSError *error))completionHandle;
 @end

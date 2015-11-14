@@ -11,6 +11,7 @@
 #define kSlotPath @"http://api.xiachufang.com/v2/ad/show.json"
 #define kWeekPath @"http://api.xiachufang.com/v2/recipes/popular_v2.json"
 #define kWeekDetailPath @"http://api.xiachufang.com/v2/recipes/lookup.json"
+#define kCommunityPath @"http://api.xiachufang.com/v2/social/init_page.json"
 #define kVersion @"version":@"4.4.0"
 #define kApikey @"api_key":@"0f9f79be1dac5f003e7de6f876b17c00"
 #define kOrigin @"origin":@"iphone"
@@ -46,6 +47,14 @@
     NSDictionary *params = @{@"id":ID,@"api_sign":@"7b08ca51bee9dd0205c62db15c2f2ee4",kApikey,kOrigin,kVersion};
     return [self GET:kWeekDetailPath parameters:params completionHandler:^(id responseObj, NSError *error) {
         completionHandle([WeekDetailModel objectWithKeyValues:responseObj],error);
+    }];
+}
+//?version=4.4.0&=&latitude=&api_key=0f9f79be1dac5f003e7de6f876b17c00&origin=iphone&longitude=
++(id)getCommunityCompletionHandle:(void (^)(id, NSError *))completionHandle
+{
+    NSDictionary *params = @{kVersion,@"api_sign":@"cacb3fecfc6fc51671c06153b27cb897",kOrigin,kApikey,@"latitude":@"",@"longitude":@""};
+    return [self GET:kCommunityPath parameters:params completionHandler:^(id responseObj, NSError *error) {
+        completionHandle([CommunityModel objectWithKeyValues:responseObj],error);
     }];
 }
 @end

@@ -24,7 +24,7 @@
     }
     return _webView;
 }
-- (id)initWIthURL:(NSURL *)url
+- (id)initWithURL:(NSURL *)url
 {
     if (self = [super init]) {
         self.url = url;
