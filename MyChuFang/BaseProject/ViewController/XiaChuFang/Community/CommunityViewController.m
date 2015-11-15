@@ -7,17 +7,96 @@
 //
 
 #import "CommunityViewController.h"
+#import "CommunityCell.h"
+#import "CommunityPicCell.h"
+#import "CommunityViewModel.h"
 
-@interface CommunityViewController ()
-
+@interface CommunityViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic,strong) CommunityViewModel *communityVM;
+@property (nonatomic,strong) UITableView *tableView;
 @end
 
 @implementation CommunityViewController
 
+-(CommunityViewModel *)communityVM
+{
+    if (!_communityVM) {
+        _communityVM = [CommunityViewModel new];
+    }
+    return _communityVM;
+}
+-(UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:(UITableViewStylePlain)];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [UIView new];
+        [self.view addSubview:_tableView];
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(0);
+        }];
+        [_tableView registerClass:[CommunityCell class] forCellReuseIdentifier:@"Cell"];
+        [_tableView registerClass:[CommunityPicCell class] forCellReuseIdentifier:@"PicCell"];
+       
+           [self.communityVM getDataFromNetCompleteHandle:^(NSError *error) {
+               if (error) {
+                   [self showErrorMsg:error];
+               }else
+               {
+                   [_tableView reloadData];
+               }
+        }];
+    }
+    return _tableView;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.tableView reloadData];
 }
+
+#pragma mark - UITableView
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CommunityCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (indexPath.row == 0) {
+        cell.descLb.text = [self.communityVM descForRow];
+        cell.titleLb.text = [self.communityVM titleForRow];
+        cell.iconIV.imageView.image = [UIImage imageNamed:@"shequ"];
+        return cell;
+    }else if (indexPath.row == 1)
+    {
+        cell.descLb.text = @"身边的厨友会";
+        cell.titleLb.text = @"周边";
+        cell.iconIV.imageView.image = [UIImage imageNamed:@"zhoubian"];
+        return cell;
+    }else
+    {
+        CommunityPicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PicCell"];
+        [cell.iconIV.imageView setImageWithURL:[self.communityVM reformationPicURL] placeholderImage:[UIImage imageNamed:@""]];
+        return cell;
+    }
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

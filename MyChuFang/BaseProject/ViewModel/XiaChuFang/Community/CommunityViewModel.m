@@ -14,22 +14,23 @@
 {
     [XiaChuFangNetManager getCommunityCompletionHandle:^(CommunityModel *model, NSError *error) {
         if (!error) {
-            [self.dataArr addObject:model.content];
+            [self.dataArr addObjectsFromArray:model.content.forums];
             self.communityModel = model.content.reformation;
+            completionHandle(error);
         }
     }];
 }
--(CommunityContentForumsModel *)modelForRow:(NSInteger)row
+-(CommunityContentForumsModel *)modelForRow
 {
-    return self.dataArr[row];
+    return self.dataArr.firstObject;
 }
--(NSString *)titleForRow:(NSInteger)row
+-(NSString *)titleForRow
 {
-    return [self modelForRow:row].name;
+    return [self modelForRow].name;
 }
--(NSString *)descForRow:(NSInteger)row
+-(NSString *)descForRow
 {
-    return [self modelForRow:row].desc;
+    return [self modelForRow].desc;
 }
 -(NSURL *)reformationURL
 {

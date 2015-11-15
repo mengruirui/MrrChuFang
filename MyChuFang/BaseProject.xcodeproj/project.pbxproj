@@ -11,6 +11,8 @@
 		1D1BA59F1BF77D96008C9D5F /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA59E1BF77D96008C9D5F /* CommunityViewController.m */; };
 		1D1BA5A31BF78066008C9D5F /* CommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA5A21BF78066008C9D5F /* CommunityModel.m */; };
 		1D1BA5A71BF79D24008C9D5F /* CommunityViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BA5A61BF79D24008C9D5F /* CommunityViewModel.m */; };
+		1D40E2C51BF8811C00643064 /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2C41BF8811C00643064 /* CommunityCell.m */; };
+		1D40E2C81BF8815000643064 /* CommunityPicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2C71BF8815000643064 /* CommunityPicCell.m */; };
 		1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */; };
 		1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */; };
 		1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */; };
@@ -105,6 +107,10 @@
 		1D1BA5A21BF78066008C9D5F /* CommunityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommunityModel.m; path = BaseProject/ViewController/XiaChuFang/Community/CommunityModel.m; sourceTree = SOURCE_ROOT; };
 		1D1BA5A51BF79D24008C9D5F /* CommunityViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityViewModel.h; sourceTree = "<group>"; };
 		1D1BA5A61BF79D24008C9D5F /* CommunityViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityViewModel.m; sourceTree = "<group>"; };
+		1D40E2C31BF8811C00643064 /* CommunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCell.h; sourceTree = "<group>"; };
+		1D40E2C41BF8811C00643064 /* CommunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCell.m; sourceTree = "<group>"; };
+		1D40E2C61BF8815000643064 /* CommunityPicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityPicCell.h; sourceTree = "<group>"; };
+		1D40E2C71BF8815000643064 /* CommunityPicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityPicCell.m; sourceTree = "<group>"; };
 		1DADAAAC1BF4E87B006A2C20 /* WeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDetailModel.h; sourceTree = "<group>"; };
 		1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDetailModel.m; sourceTree = "<group>"; };
 		1DADAAAE1BF4E87B006A2C20 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
@@ -385,6 +391,10 @@
 				1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */,
 				85118F471BF5689B00C3783D /* WeekCell.h */,
 				85118F481BF5689B00C3783D /* WeekCell.m */,
+				1D40E2C31BF8811C00643064 /* CommunityCell.h */,
+				1D40E2C41BF8811C00643064 /* CommunityCell.m */,
+				1D40E2C61BF8815000643064 /* CommunityPicCell.h */,
+				1D40E2C71BF8815000643064 /* CommunityPicCell.m */,
 			);
 			path = XiaChuFang;
 			sourceTree = "<group>";
@@ -919,6 +929,7 @@
 				85118F491BF5689B00C3783D /* WeekCell.m in Sources */,
 				85118F971BF5E2BA00C3783D /* WelcomeViewController.m in Sources */,
 				1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */,
+				1D40E2C51BF8811C00643064 /* CommunityCell.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */,
 				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
@@ -932,6 +943,7 @@
 				1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
 				85118F461BF5687700C3783D /* WeekViewController.m in Sources */,
+				1D40E2C81BF8815000643064 /* CommunityPicCell.m in Sources */,
 				1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */,
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,

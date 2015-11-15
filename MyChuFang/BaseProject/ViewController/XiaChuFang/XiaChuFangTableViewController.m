@@ -257,18 +257,18 @@
                     make.left.mas_equalTo(iconIV0.mas_right).mas_equalTo(0);
                 }];
             
-            if (_pageIc.currentItemIndex == 3) {
-                [view addSubview:self.lastView];
-                [_lastView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.edges.mas_equalTo(0);
-                }];
-                UIImageView *imageView = [UIImageView new];
-                imageView.tag = 1000;
-                [self.lastView addSubview:imageView];
-                [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.edges.mas_equalTo(0);
-                }];
-            }
+//            if (index  == [self.xiaVM.events indexOfObject:self.xiaVM.events.lastObject]) {
+//                [view addSubview:self.lastView];
+//                [_lastView mas_makeConstraints:^(MASConstraintMaker *make) {
+//                    make.edges.mas_equalTo(0);
+//                }];
+//                UIImageView *imageView = [UIImageView new];
+//                imageView.tag = 1000;
+//                [self.lastView addSubview:imageView];
+//                [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//                    make.edges.mas_equalTo(0);
+//                }];
+ //           }
             
         }
        
@@ -281,11 +281,11 @@
             UIImageView *iconIV1 = (UIImageView *)[view viewWithTag:500];
             [iconIV1 setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
         
-        if (_pageIc.currentItemIndex == 3) {
-            DDLogVerbose(@"%ld",_pageIc.currentItemIndex);
-            UIImageView *imageView = (UIImageView *)[view viewWithTag:1000];
-            [imageView setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
-        }
+//        if (index  == [self.xiaVM.events indexOfObject:self.xiaVM.events.lastObject]) {
+//            //DDLogVerbose(@"%ld",_pageIc.currentItemIndex);
+//            UIImageView *imageView = (UIImageView *)[view viewWithTag:1000];
+//            [imageView setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
+//        }
         
             
     

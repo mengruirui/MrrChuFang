@@ -12,7 +12,7 @@
 @interface CommunityViewModel : BaseViewModel
 - (NSURL *)reformationPicURL;
 - (NSURL *)reformationURL;
-- (NSString *)titleForRow:(NSInteger)row;
-- (NSString *)descForRow:(NSInteger)row;
+- (NSString *)titleForRow;
+- (NSString *)descForRow;
 @property (nonatomic,strong)CommunityContentReformationModel *communityModel;
 @end
