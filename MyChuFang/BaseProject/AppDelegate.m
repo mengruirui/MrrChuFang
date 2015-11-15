@@ -14,6 +14,7 @@
 #import "TRTabBarController.h"
 #import "TRNavigationController.h"
 #import "MyChuFangTabBarController.h"
+#import "VideosNetManager.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,9 @@
     [XiaChuFangNetManager getCommunityCompletionHandle:^(id model, NSError *error) {
         DDLogVerbose(@".....");
     }];
-    
+    [VideosNetManager getVideosCompletionHandle:^(id model, NSError *error) {
+        DDLogVerbose(@"....");
+    }];
     /*
      需求:用户首次打开项目,显示欢迎界面.以后则直接显示主页面
      2.如果用户升级程序后,首次打开,则显示欢迎界面,以后显示主页面
