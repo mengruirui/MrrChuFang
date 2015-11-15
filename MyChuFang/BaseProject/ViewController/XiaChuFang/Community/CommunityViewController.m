@@ -10,6 +10,7 @@
 #import "CommunityCell.h"
 #import "CommunityPicCell.h"
 #import "CommunityViewModel.h"
+#import "MyHomeViewController.h"
 
 @interface CommunityViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) CommunityViewModel *communityVM;
@@ -89,6 +90,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 2) {
+        MyHomeViewController *vc = [[MyHomeViewController alloc]initWithURL:[self.communityVM reformationURL]];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

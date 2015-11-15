@@ -15,6 +15,7 @@
 		1D40E2C81BF8815000643064 /* CommunityPicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2C71BF8815000643064 /* CommunityPicCell.m */; };
 		1D40E2CF1BF8C0BE00643064 /* VideosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2CE1BF8C0BE00643064 /* VideosModel.m */; };
 		1D40E2D31BF8C36300643064 /* VideosNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2D21BF8C36300643064 /* VideosNetManager.m */; };
+		1D40E2D71BF8D23700643064 /* MyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E2D61BF8D23700643064 /* MyHomeViewController.m */; };
 		1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */; };
 		1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAAF1BF4E87B006A2C20 /* WeekModel.m */; };
 		1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DADAAB41BF4E8B3006A2C20 /* WeekViewModel.m */; };
@@ -117,6 +118,8 @@
 		1D40E2CE1BF8C0BE00643064 /* VideosModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosModel.m; sourceTree = "<group>"; };
 		1D40E2D11BF8C36300643064 /* VideosNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosNetManager.h; sourceTree = "<group>"; };
 		1D40E2D21BF8C36300643064 /* VideosNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosNetManager.m; sourceTree = "<group>"; };
+		1D40E2D51BF8D23700643064 /* MyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHomeViewController.h; sourceTree = "<group>"; };
+		1D40E2D61BF8D23700643064 /* MyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHomeViewController.m; sourceTree = "<group>"; };
 		1DADAAAC1BF4E87B006A2C20 /* WeekDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekDetailModel.h; sourceTree = "<group>"; };
 		1DADAAAD1BF4E87B006A2C20 /* WeekDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekDetailModel.m; sourceTree = "<group>"; };
 		1DADAAAE1BF4E87B006A2C20 /* WeekModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekModel.h; sourceTree = "<group>"; };
@@ -295,6 +298,8 @@
 			children = (
 				1D1BA59D1BF77D96008C9D5F /* CommunityViewController.h */,
 				1D1BA59E1BF77D96008C9D5F /* CommunityViewController.m */,
+				1D40E2D51BF8D23700643064 /* MyHomeViewController.h */,
+				1D40E2D61BF8D23700643064 /* MyHomeViewController.m */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -978,6 +983,7 @@
 				1D1BA59B1BF779AA008C9D5F /* BazaarViewDeatilController.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
+				1D40E2D71BF8D23700643064 /* MyHomeViewController.m in Sources */,
 				1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */,
 				1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */,
 				85248B2D1BF723C1008B5682 /* LeftViewController.m in Sources */,

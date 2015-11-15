@@ -15,7 +15,7 @@
 @end
 @implementation LeftViewController
 - (NSArray *)itemNames{
-    return @[@"常用菜谱", @"菜谱视频", @"听听音乐", @"个人设置"];
+    return @[@"食谱", @"小贴士", @"听听音乐", @"个人设置"];
 }
 - (UITableView *)tableView{
     if (!_tableView) {
