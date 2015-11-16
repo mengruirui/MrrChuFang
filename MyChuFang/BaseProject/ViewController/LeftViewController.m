@@ -8,6 +8,7 @@
 
 #import "LeftViewController.h"
 #import <NSString+Icons.h>
+#import "VideosViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;
@@ -55,7 +56,7 @@ kRemoveCellSeparator
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
-            //[self.sideMenuViewController setContentViewController:[TuWanViewController standardTuWanNavi] animated:YES];
+            [self.sideMenuViewController setContentViewController:[VideosViewController standardVideos] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:

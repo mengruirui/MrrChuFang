@@ -13,6 +13,10 @@
 @property (nonatomic)NSInteger rowNumber;
 -(NSURL *)recipeImageURLForRow:(NSInteger)row;
 -(NSString *)titleForRow:(NSInteger)row;
-- (NSString *)packagesTitle;
-
+- (NSString *)packagesTitleForRow:(NSInteger)row;
+-(BOOL)isVideoForRow:(NSInteger)row;
+@property (nonatomic,strong) NSArray *packages;
+@property (nonatomic,strong) NSArray *howToVideos;
+@property (nonatomic,strong) NSArray *recipes;
+@property (nonatomic,strong) NSArray *kitchenEssentials;
 @end

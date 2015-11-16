@@ -15,7 +15,7 @@
 +(id)getVideosCompletionHandle:(void (^)(id, NSError *))completionHandle
 {
     return  [self GET:kVideosPath parameters:nil completionHandler:^(id responseObj, NSError *error) {
-        completionHandle([VideosModel objectWithKeyValues:responseObj],error);
+        completionHandle([VideosModel mj_objectWithKeyValues:responseObj],error);
     }];
 }
 @end

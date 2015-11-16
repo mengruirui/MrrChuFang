@@ -25,6 +25,7 @@
 		1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B69B1BED0CC800B573DB /* XiaChuFangTableViewController.m */; };
 		1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */; };
 		1DB0B6A41BED0D1E00B573DB /* XiaChuFangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */; };
+		1DB1D1261BFA437C0072B756 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1D1251BFA437C0072B756 /* VideosViewController.m */; };
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
@@ -139,6 +140,8 @@
 		1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaChuFangViewModel.m; sourceTree = "<group>"; };
 		1DB0B6A21BED0D1E00B573DB /* XiaChuFangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaChuFangCell.h; sourceTree = "<group>"; };
 		1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaChuFangCell.m; sourceTree = "<group>"; };
+		1DB1D1241BFA437C0072B756 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
+		1DB1D1251BFA437C0072B756 /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -431,6 +434,15 @@
 			path = XiaChuFang;
 			sourceTree = "<group>";
 		};
+		1DB1D1231BFA43220072B756 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				1DB1D1241BFA437C0072B756 /* VideosViewController.h */,
+				1DB1D1251BFA437C0072B756 /* VideosViewController.m */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
 		3804CE481BD758F10046C8C8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,6 +722,7 @@
 				85118FA11BF608EB00C3783D /* TR */,
 				85118F941BF5E29000C3783D /* 欢迎界面 */,
 				1DB0B6991BED0CC800B573DB /* XiaChuFang */,
+				1DB1D1231BFA43220072B756 /* Videos */,
 				3835CFB51BD90E150024CA48 /* XiaChuFangURLViewController.h */,
 				3835CFB61BD90E150024CA48 /* XiaChuFangURLViewController.m */,
 				85248B2B1BF723C1008B5682 /* LeftViewController.h */,
@@ -983,6 +996,7 @@
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
 				85118F4C1BF5696100C3783D /* TRImageView.m in Sources */,
 				85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */,
+				1DB1D1261BFA437C0072B756 /* VideosViewController.m in Sources */,
 				85118F921BF5D31E00C3783D /* TRNavigationController.m in Sources */,
 				1DADAAB11BF4E87B006A2C20 /* WeekModel.m in Sources */,
 				3885C8981BE8E88D009441EA /* iCarousel.m in Sources */,
@@ -1142,6 +1156,61 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AsyncDisplayKit\"",
+					"-l\"BlocksKit\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"DACircularProgress\"",
+					"-l\"FMDB\"",
+					"-l\"FlatUIKit\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MLTransition\"",
+					"-l\"MWPhotoBrowser\"",
+					"-l\"Masonry\"",
+					"-l\"RESideMenu\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"SWTableViewCell\"",
+					"-l\"Shimmer\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-l\"WMPageController\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Photos\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1167,6 +1236,61 @@
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_4.2.5",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/Wechat",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AsyncDisplayKit\"",
+					"-l\"BlocksKit\"",
+					"-l\"CocoaAsyncSocket\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"DACircularProgress\"",
+					"-l\"FMDB\"",
+					"-l\"FlatUIKit\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"MLTransition\"",
+					"-l\"MWPhotoBrowser\"",
+					"-l\"Masonry\"",
+					"-l\"RESideMenu\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"SWTableViewCell\"",
+					"-l\"Shimmer\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-l\"WMPageController\"",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Photos\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tarena.BaseProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
