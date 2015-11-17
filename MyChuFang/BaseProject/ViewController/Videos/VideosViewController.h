@@ -10,4 +10,5 @@
 
 @interface VideosViewController : UIViewController
 + (UINavigationController *)standardVideos;
+
 @end

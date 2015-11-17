@@ -28,6 +28,10 @@
 {
     return self.recipes[row];
 }
+- (VideosDataHowtovideosModel *)modelForRowInHowtovideos:(NSInteger)row
+{
+    return self.howToVideos[row];
+}
 -(NSURL *)recipeImageURLForRow:(NSInteger)row
 {
     return [NSURL URLWithString:[self modeForRowInRecipes:row].recipeImage];
@@ -53,5 +57,13 @@
         }
     }
     return title;
+}
+-(NSURL *)tipsImageURLForRow:(NSInteger)row
+{
+    return  [NSURL URLWithString:[self modelForRowInHowtovideos:row].previewImage];
+}
+-(NSString *)tipsTitleForRow:(NSInteger)row
+{
+    return [self modelForRowInHowtovideos:row].title;
 }
 @end

@@ -15,6 +15,9 @@
 -(NSString *)titleForRow:(NSInteger)row;
 - (NSString *)packagesTitleForRow:(NSInteger)row;
 -(BOOL)isVideoForRow:(NSInteger)row;
+-(NSURL *)tipsImageURLForRow:(NSInteger)row;
+-(NSString *)tipsTitleForRow:(NSInteger)row;
+- (NSString *)tipsDescForRow:(NSInteger)row;
 @property (nonatomic,strong) NSArray *packages;
 @property (nonatomic,strong) NSArray *howToVideos;
 @property (nonatomic,strong) NSArray *recipes;

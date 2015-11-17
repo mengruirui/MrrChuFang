@@ -80,9 +80,14 @@
         return cell;
     }else
     {
+        if ([self.communityVM reformationURL]) {
+            return nil;
+        }else
+        {
         CommunityPicCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PicCell"];
         [cell.iconIV.imageView setImageWithURL:[self.communityVM reformationPicURL] placeholderImage:[UIImage imageNamed:@""]];
         return cell;
+        }
     }
     
 }
