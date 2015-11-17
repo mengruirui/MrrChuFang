@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TipsViewController : UIViewController
-
++ (UINavigationController *)standardTips;
 @end

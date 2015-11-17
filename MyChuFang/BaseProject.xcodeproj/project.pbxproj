@@ -26,6 +26,11 @@
 		1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */; };
 		1DB0B6A41BED0D1E00B573DB /* XiaChuFangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */; };
 		1DB1D1261BFA437C0072B756 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1D1251BFA437C0072B756 /* VideosViewController.m */; };
+		1DD5A9D51BFB8EA800AE18DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */; };
+		1DD5A9D71BFB90B700AE18DC /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5A9D61BFB90B700AE18DC /* AVKit.framework */; };
+		1DD5A9DC1BFB9DA400AE18DC /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9D91BFB9DA400AE18DC /* PSCollectionView.m */; };
+		1DD5A9DD1BFB9DA400AE18DC /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9DB1BFB9DA400AE18DC /* PSCollectionViewCell.m */; };
+		1DD5A9E01BFBA89000AE18DC /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */; };
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
@@ -65,8 +70,6 @@
 		3885C8EE1BE8E8FB009441EA /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = 3885C8D21BE8E8FB009441EA /* markdown.css */; };
 		3885C8F71BE8E96A009441EA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3885C8F01BE8E96A009441EA /* .gitignore */; };
 		3885C8F81BE8E96A009441EA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3885C8F11BE8E96A009441EA /* LICENSE */; };
-		3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3885C8F31BE8E96A009441EA /* PSCollectionView.m */; };
-		3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3885C8F51BE8E96A009441EA /* PSCollectionViewCell.m */; };
 		3885C8FB1BE8E96A009441EA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3885C8F61BE8E96A009441EA /* README.md */; };
 		3885C8FD1BE8EA26009441EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3885C8FC1BE8EA26009441EA /* SystemConfiguration.framework */; };
 		3885C8FF1BE8EA46009441EA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3885C8FE1BE8EA46009441EA /* Security.framework */; };
@@ -144,6 +147,14 @@
 		1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaChuFangCell.m; sourceTree = "<group>"; };
 		1DB1D1241BFA437C0072B756 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
 		1DB1D1251BFA437C0072B756 /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
+		1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1DD5A9D61BFB90B700AE18DC /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		1DD5A9D81BFB9DA400AE18DC /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
+		1DD5A9D91BFB9DA400AE18DC /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
+		1DD5A9DA1BFB9DA400AE18DC /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
+		1DD5A9DB1BFB9DA400AE18DC /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
+		1DD5A9DE1BFBA89000AE18DC /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
+		1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -207,10 +218,6 @@
 		3885C8D21BE8E8FB009441EA /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
 		3885C8F01BE8E96A009441EA /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		3885C8F11BE8E96A009441EA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		3885C8F21BE8E96A009441EA /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
-		3885C8F31BE8E96A009441EA /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionView.m; sourceTree = "<group>"; };
-		3885C8F41BE8E96A009441EA /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionViewCell.h; sourceTree = "<group>"; };
-		3885C8F51BE8E96A009441EA /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
 		3885C8F61BE8E96A009441EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3885C8FC1BE8EA26009441EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3885C8FE1BE8EA46009441EA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -283,6 +290,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD5A9D71BFB90B700AE18DC /* AVKit.framework in Frameworks */,
+				1DD5A9D51BFB8EA800AE18DC /* AVFoundation.framework in Frameworks */,
 				3885C90B1BE8EA70009441EA /* libz.tbd in Frameworks */,
 				3885C9091BE8EA6A009441EA /* libstdc++.tbd in Frameworks */,
 				3885C9071BE8EA62009441EA /* CoreTelephony.framework in Frameworks */,
@@ -447,6 +456,8 @@
 				1DB1D1251BFA437C0072B756 /* VideosViewController.m */,
 				85C898311BFB53B10061D5CD /* TipsViewController.h */,
 				85C898321BFB53B10061D5CD /* TipsViewController.m */,
+				1DD5A9DE1BFBA89000AE18DC /* VideoPlayViewController.h */,
+				1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -594,12 +605,12 @@
 		3885C8EF1BE8E96A009441EA /* PSCollectionView-master */ = {
 			isa = PBXGroup;
 			children = (
+				1DD5A9D81BFB9DA400AE18DC /* PSCollectionView.h */,
+				1DD5A9D91BFB9DA400AE18DC /* PSCollectionView.m */,
+				1DD5A9DA1BFB9DA400AE18DC /* PSCollectionViewCell.h */,
+				1DD5A9DB1BFB9DA400AE18DC /* PSCollectionViewCell.m */,
 				3885C8F01BE8E96A009441EA /* .gitignore */,
 				3885C8F11BE8E96A009441EA /* LICENSE */,
-				3885C8F21BE8E96A009441EA /* PSCollectionView.h */,
-				3885C8F31BE8E96A009441EA /* PSCollectionView.m */,
-				3885C8F41BE8E96A009441EA /* PSCollectionViewCell.h */,
-				3885C8F51BE8E96A009441EA /* PSCollectionViewCell.m */,
 				3885C8F61BE8E96A009441EA /* README.md */,
 			);
 			path = "PSCollectionView-master";
@@ -834,6 +845,8 @@
 		FA3445AEA3874C1D4FE61EAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DD5A9D61BFB90B700AE18DC /* AVKit.framework */,
+				1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */,
 				3885C90A1BE8EA70009441EA /* libz.tbd */,
 				3885C9081BE8EA6A009441EA /* libstdc++.tbd */,
 				3885C9061BE8EA62009441EA /* CoreTelephony.framework */,
@@ -1000,19 +1013,19 @@
 				3886C0BE1BD74AFE0014E661 /* BaseNetManager.m in Sources */,
 				1DB0B6981BED0CB100B573DB /* XiaChuFangNetManager.m in Sources */,
 				3804CE541BD758F10046C8C8 /* NSString+QRCode.m in Sources */,
-				3885C8FA1BE8E96A009441EA /* PSCollectionViewCell.m in Sources */,
+				1DD5A9E01BFBA89000AE18DC /* VideoPlayViewController.m in Sources */,
 				85118F491BF5689B00C3783D /* WeekCell.m in Sources */,
 				85118F971BF5E2BA00C3783D /* WelcomeViewController.m in Sources */,
 				1DADAAB01BF4E87B006A2C20 /* WeekDetailModel.m in Sources */,
 				1D40E2C51BF8811C00643064 /* CommunityCell.m in Sources */,
 				3804CE531BD758F10046C8C8 /* NSString+PJR.m in Sources */,
 				85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */,
-				3885C8F91BE8E96A009441EA /* PSCollectionView.m in Sources */,
 				85D482701BF2265600E7D0AF /* LoginViewController.m in Sources */,
 				85C8963E1BFAF1D80061D5CD /* VideosCell.m in Sources */,
 				1D1BA5A71BF79D24008C9D5F /* CommunityViewModel.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
+				1DD5A9DC1BFB9DA400AE18DC /* PSCollectionView.m in Sources */,
 				85118F4C1BF5696100C3783D /* TRImageView.m in Sources */,
 				85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */,
 				1DB1D1261BFA437C0072B756 /* VideosViewController.m in Sources */,
@@ -1022,6 +1035,7 @@
 				85118F461BF5687700C3783D /* WeekViewController.m in Sources */,
 				1D40E2C81BF8815000643064 /* CommunityPicCell.m in Sources */,
 				1DADAAB51BF4E8B3006A2C20 /* WeekViewModel.m in Sources */,
+				1DD5A9DD1BFB9DA400AE18DC /* PSCollectionViewCell.m in Sources */,
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,

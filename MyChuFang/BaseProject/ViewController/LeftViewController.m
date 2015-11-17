@@ -10,6 +10,7 @@
 #import <NSString+Icons.h>
 #import "VideosViewController.h"
 #import "MyChuFangTabBarController.h"
+#import "TipsViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;
@@ -61,7 +62,7 @@ kRemoveCellSeparator
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 1:
-            //[self.sideMenuViewController setContentViewController:[MyChuFangTabBarController standardInstance] animated:YES];
+            [self.sideMenuViewController setContentViewController:[TipsViewController standardTips] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
         case 2:
