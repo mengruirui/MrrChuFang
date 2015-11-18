@@ -45,6 +45,7 @@
     communityNavi.title = @"社区";
     communityNavi.tabBarItem.image = [[UIImage imageNamed:@"Tabbar_Recommend"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     communityNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"Tabbar_Recommend_Selected"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    //状态栏白色
     [self preferredStatusBarStyle];
  }
 

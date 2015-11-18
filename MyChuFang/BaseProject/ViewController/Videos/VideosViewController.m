@@ -13,10 +13,12 @@
 #import "PSCollectionViewCell.h"
 #import "TRImageView.h"
 #import "VideosCell.h"
+#import "VideosDeatilVideoViewController.h"
 
 @interface VideosViewController ()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,strong) VideosViewModel *videosVM;
 @property (nonatomic,strong) PSCollectionView *collectionView;
+
 @end
 
 @implementation VideosViewController
@@ -54,7 +56,7 @@
                 //AF的回调 是在主线程中
                 [_collectionView reloadData];
                 if (error) {
-                    [self showErrorMsg:error.description];
+                    [self showErrorMsg:error.localizedDescription];
                 }
                 [_collectionView.mj_header endRefreshing];
             }];
@@ -91,8 +93,9 @@
 {
     PSCollectionViewCell *cell = [collectionView dequeueReusableViewForClass:nil];
     if (!cell) {
+
             cell = [[PSCollectionViewCell alloc]initWithFrame:CGRectZero];
-        cell.backgroundColor = [UIColor whiteColor];
+            cell.backgroundColor = [UIColor whiteColor];
             cell.layer.cornerRadius = 5;
             UIImageView *imageView = [UIImageView new];
             imageView.contentMode = 2;
@@ -131,12 +134,13 @@
             TRImageView *videoIV = (TRImageView *)[cell viewWithTag:400];
             videoIV.imageView.image = [UIImage imageNamed:@"Icon_Video_Play"];
         }
-    
     return cell;
 }
 -(void)collectionView:(PSCollectionView *)collectionView didSelectCell:(PSCollectionViewCell *)cell atIndex:(NSInteger)index
 {
-    DDLogVerbose(@"....");
+    VideosDeatilVideoViewController *vc = [[VideosDeatilVideoViewController alloc]initWithWebURL:[self.videosVM htmlForRow:index] videoURL:[self.videosVM videoURLForRow:index] videoImageURL:[self.videosVM recipeImageURLForRow:index] btn1URL:[self.videosVM link1URLForRowInVideo:index] btn2URL:[self.videosVM link2URLForRowInVideo:index ]btn1Pic:[self.videosVM previewImage1URLForRow:index] btn2Pic:[self.videosVM previewImage2URLForRow:index] name:[self.videosVM titleForRow:index] btn1Title:[self.videosVM title1ForRowInVideo:index] btn2Title:[self.videosVM title2ForRowInVideo:index]];
+    [self.navigationController pushViewController:vc animated:YES];
+    DDLogVerbose(@"%@",[self.videosVM title1ForRowInVideo:index]);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -78,4 +78,57 @@
 {
     return [NSURL URLWithString:[self modelForRowInHowtovideos:row].link];
 }
+
+//有视频的地址
+- (NSURL *)videoURLForRow:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modeForRowInRecipes:row].videoLink];
+}
+//webView 请求地址
+- (NSURL *)htmlForRow:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modeForRowInRecipes:row].recipeShortUrl];
+}
+- (NSArray *)howToVideosForRow:(NSInteger)row
+{
+    return [self modeForRowInRecipes:row].howToVideos;
+}
+- (NSURL *)previewImage1URLForRow:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.firstObject;
+    return [NSURL URLWithString:model.previewImage];
+}
+- (NSURL *)previewImage2URLForRow:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.lastObject;
+    return [NSURL URLWithString:model.previewImage];
+}
+//详情页视频标题
+- (NSString *)title1ForRowInVideo:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.firstObject;
+    return model.title;
+}
+- (NSString *)title2ForRowInVideo:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.lastObject;
+    return model.title;
+}
+//详情页视频地址
+- (NSURL *)link1URLForRowInVideo:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.firstObject;
+    return [NSURL URLWithString:model.link];
+}
+- (NSURL *)link2URLForRowInVideo:(NSInteger)row
+{
+    NSArray *arr = [self howToVideosForRow:row];
+    VideosDataRecipesHowtovideosModel *model = arr.lastObject;
+    return [NSURL URLWithString:model.link];
+}
 @end

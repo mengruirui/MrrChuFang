@@ -97,6 +97,7 @@
 		85248B271BF6EA8E008B5682 /* BazaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B261BF6EA8E008B5682 /* BazaarViewController.m */; };
 		85248B2A1BF7031C008B5682 /* MyChuFangTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B291BF7031C008B5682 /* MyChuFangTabBarController.m */; };
 		85248B2D1BF723C1008B5682 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B2C1BF723C1008B5682 /* LeftViewController.m */; };
+		853752891BFC62EC00CED5FE /* VideosDeatilVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 853752881BFC62EC00CED5FE /* VideosDeatilVideoViewController.m */; };
 		8578416B1BFA160D007761C3 /* VideosViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578416A1BFA160D007761C3 /* VideosViewModel.m */; };
 		858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0B6B1BF354D300095CEE /* ReginstViewController.m */; };
 		85C8963E1BFAF1D80061D5CD /* VideosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8963D1BFAF1D80061D5CD /* VideosCell.m */; };
@@ -264,6 +265,8 @@
 		85248B291BF7031C008B5682 /* MyChuFangTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyChuFangTabBarController.m; sourceTree = "<group>"; };
 		85248B2B1BF723C1008B5682 /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		85248B2C1BF723C1008B5682 /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		853752871BFC62EC00CED5FE /* VideosDeatilVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosDeatilVideoViewController.h; sourceTree = "<group>"; };
+		853752881BFC62EC00CED5FE /* VideosDeatilVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosDeatilVideoViewController.m; sourceTree = "<group>"; };
 		857841691BFA160D007761C3 /* VideosViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewModel.h; sourceTree = "<group>"; };
 		8578416A1BFA160D007761C3 /* VideosViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewModel.m; sourceTree = "<group>"; };
 		858C0B6A1BF354D300095CEE /* ReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReginstViewController.h; sourceTree = "<group>"; };
@@ -458,6 +461,8 @@
 				85C898321BFB53B10061D5CD /* TipsViewController.m */,
 				1DD5A9DE1BFBA89000AE18DC /* VideoPlayViewController.h */,
 				1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */,
+				853752871BFC62EC00CED5FE /* VideosDeatilVideoViewController.h */,
+				853752881BFC62EC00CED5FE /* VideosDeatilVideoViewController.m */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -1040,6 +1045,7 @@
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
 				1D40E2CF1BF8C0BE00643064 /* VideosModel.m in Sources */,
+				853752891BFC62EC00CED5FE /* VideosDeatilVideoViewController.m in Sources */,
 				1D1BA59B1BF779AA008C9D5F /* BazaarViewDeatilController.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
