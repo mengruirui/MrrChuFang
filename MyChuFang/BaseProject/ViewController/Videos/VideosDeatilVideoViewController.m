@@ -43,10 +43,11 @@
         _videoBtn0.layer.masksToBounds = YES;
         [self.view addSubview:_videoBtn0];
         [_videoBtn0 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(25);
+            make.top.mas_equalTo(10);
             make.left.mas_equalTo(12);
             make.right.mas_equalTo(-12);
-            make.height.mas_equalTo(kWindowW * 410/584);
+            //make.height.mas_equalTo(kWindowW * 410/584);
+            make.height.mas_equalTo(100);
         }];
         UIImageView *imageView = [UIImageView new];
         [_videoBtn0 addSubview:imageView];
@@ -63,6 +64,7 @@
 {
     if (!_titleLb0) {
         _titleLb0 = [UILabel new];
+        _titleLb0.font = [UIFont systemFontOfSize:14];
         [self.view addSubview:_titleLb0];
         [_titleLb0 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(self.videoBtn0);
@@ -80,16 +82,17 @@
         _videoBtn1.layer.masksToBounds = YES;
         [self.view addSubview:_videoBtn1];
         [_videoBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.titleLb0.mas_bottom).mas_equalTo(40);
+            make.top.mas_equalTo(self.titleLb0.mas_bottom).mas_equalTo(20);
             make.leftMargin.mas_equalTo(self.videoBtn0);
             make.right.mas_equalTo(self.videoBtn2.mas_left).mas_equalTo(-10);
-            make.height.mas_equalTo(kWindowW * 194/275);
+            //make.height.mas_equalTo(kWindowW * 194/275);
+            make.height.mas_equalTo(50);
         }];
         UIImageView *imageView = [UIImageView new];
         [_videoBtn1 addSubview:imageView];
         imageView.image = [UIImage imageNamed:@"Icon_Video_Play"];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.size.mas_equalTo(CGSizeMake(20, 20));
             make.right.mas_equalTo(-3);
             make.bottom.mas_equalTo(-3);
         }];
@@ -102,6 +105,7 @@
 {
     if (!_titleLb1) {
         _titleLb1 = [UILabel new];
+        _titleLb1.font = [UIFont systemFontOfSize:12];
         [self.view addSubview:_titleLb1];
         [_titleLb1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(self.videoBtn1);
@@ -129,7 +133,7 @@
         [_videoBtn2 addSubview:imageView];
         imageView.image = [UIImage imageNamed:@"Icon_Video_Play"];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(35, 35));
+            make.size.mas_equalTo(CGSizeMake(20, 20));
             make.right.mas_equalTo(-3);
             make.bottom.mas_equalTo(-3);
         }];
@@ -142,7 +146,6 @@
     if (!_titleLb2) {
         _titleLb2 = [UILabel new];
         _titleLb2.font = [UIFont systemFontOfSize:12];
-        _titleLb2.textColor = [UIColor redColor];
         [self.view addSubview:_titleLb2];
         [_titleLb2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leftMargin.mas_equalTo(self.videoBtn2);
