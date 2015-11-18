@@ -1,79 +1,40 @@
 //
-//  VideosDeatilVideoViewController.m
+//  VideoDetailPicViewController.m
 //  BaseProject
 //
-//  Created by tarena on 15/11/18.
+//  Created by 孟瑞瑞 on 15/11/18.
 //  Copyright © 2015年 Tarena. All rights reserved.
 //
 
-#import "VideosDeatilVideoViewController.h"
+#import "VideoDetailPicViewController.h"
 #import "VideoPlayViewController.h"
 
-@interface VideosDeatilVideoViewController ()<UIWebViewDelegate>
+@interface VideoDetailPicViewController ()<UIWebViewDelegate>
+
 @property (nonatomic,strong)UIWebView *webView;
-@property (nonatomic,strong)UIButton *videoBtn0;
+
 @property (nonatomic,strong)UIButton *videoBtn1;
 @property (nonatomic,strong)UIButton *videoBtn2;
-@property (nonatomic,strong)UILabel *titleLb0;
 @property (nonatomic,strong)UILabel *titleLb1;
 @property (nonatomic,strong)UILabel *titleLb2;
+
 @end
 
-@implementation VideosDeatilVideoViewController
--(instancetype)initWithWebURL:(NSURL *)url videoURL:(NSURL *)videoURL videoImageURL:(NSURL *)picURL btn1URL:(NSURL *)btn1URL btn2URL:(NSURL *)btn2URL btn1Pic:(NSURL *)pic1URL btn2Pic:(NSURL *)pic2URL name:(NSString *)name btn1Title:(NSString *)title1 btn2Title:(NSString *)title2
+@implementation VideoDetailPicViewController
+
+-(instancetype)initWithWebURL:(NSURL *)url btn1URL:(NSURL *)btn1URL btn2URL:(NSURL *)btn2URL btn1Pic:(NSURL *)pic1URL btn2Pic:(NSURL *)pic2URL btn1Title:(NSString *)title1 btn2Title:(NSString *)title2
 {
     if (self = [super init]) {
         _url = url;
-        _videoURL = videoURL;
-        _picURL = picURL;
         _btn1URL = btn1URL;
         _btn2URL = btn2URL;
         _pic1URL = pic1URL;
         _pic2URL = pic2URL;
-        _name = name;
         _title1 = title1;
         _title2 = title2;
     }
     return self;
-}
--(UIButton *)videoBtn0
-{
-    if (!_videoBtn0) {
-        _videoBtn0 = [UIButton buttonWithType:0];
-        _videoBtn0.layer.cornerRadius = 5;
-        _videoBtn0.layer.masksToBounds = YES;
-        [self.view addSubview:_videoBtn0];
-        [_videoBtn0 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(10);
-            make.left.mas_equalTo(12);
-            make.right.mas_equalTo(-12);
-            //make.height.mas_equalTo(kWindowW * 410/584);
-            make.height.mas_equalTo(100);
-        }];
-        UIImageView *imageView = [UIImageView new];
-        [_videoBtn0 addSubview:imageView];
-        imageView.image = [UIImage imageNamed:@"Icon_Video_Play"];
-        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(35, 35));
-            make.right.mas_equalTo(-3);
-            make.bottom.mas_equalTo(-3);
-        }];
-    }
-    return _videoBtn0;
-}
--(UILabel *)titleLb0
-{
-    if (!_titleLb0) {
-        _titleLb0 = [UILabel new];
-        _titleLb0.font = [UIFont systemFontOfSize:14];
-        [self.view addSubview:_titleLb0];
-        [_titleLb0 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leftMargin.mas_equalTo(self.videoBtn0);
-            make.top.mas_equalTo(self.videoBtn0.mas_bottom).mas_equalTo(5);
-            make.rightMargin.mas_equalTo(self.videoBtn0);
-        }];
-    }
-    return _titleLb0;
+
 }
 -(UIButton *)videoBtn1
 {
@@ -83,8 +44,8 @@
         _videoBtn1.layer.masksToBounds = YES;
         [self.view addSubview:_videoBtn1];
         [_videoBtn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.titleLb0.mas_bottom).mas_equalTo(20);
-            make.leftMargin.mas_equalTo(self.videoBtn0);
+            make.top.mas_equalTo(20);
+            make.left.mas_equalTo(12);
             make.right.mas_equalTo(self.videoBtn2.mas_left).mas_equalTo(-10);
             //make.height.mas_equalTo(kWindowW * 194/275);
             make.height.mas_equalTo(50);
@@ -97,7 +58,7 @@
             make.right.mas_equalTo(-3);
             make.bottom.mas_equalTo(-3);
         }];
-
+        
     }
     return _videoBtn1;
 }
@@ -127,7 +88,7 @@
         [self.view addSubview:_videoBtn2];
         [_videoBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.topMargin.mas_equalTo(self.videoBtn1);
-            make.rightMargin.mas_equalTo(self.videoBtn0);
+            make.right.mas_equalTo(-12);
             make.size.mas_equalTo(self.videoBtn1);
         }];
         UIImageView *imageView = [UIImageView new];
@@ -138,7 +99,7 @@
             make.right.mas_equalTo(-3);
             make.bottom.mas_equalTo(-3);
         }];
-
+        
     }
     return _videoBtn2;
 }
@@ -179,18 +140,12 @@
     self.title = @"制作详情";
     self.view.backgroundColor = kRGBColor(224, 224, 224);
     self.webView.hidden = NO;
-    [self.videoBtn0 setBackgroundImageForState:(UIControlStateNormal) withURL:self.picURL];
     [self.videoBtn1 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic1URL];
     [self.videoBtn2 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic2URL];
     
-    self.titleLb0.text = self.name;
     self.titleLb1.text = self.title1;
     self.titleLb2.text = self.title2;
     
-    [self.videoBtn0 bk_addEventHandler:^(id sender) {
-        VideoPlayViewController *vc = [[VideoPlayViewController alloc]initWithURL:self.videoURL name:self.name];
-        [self.navigationController pushViewController:vc animated:YES];
-    } forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.videoBtn1 bk_addEventHandler:^(id sender) {
         VideoPlayViewController *vc = [[VideoPlayViewController alloc]initWithURL:self.btn1URL name:self.title1];

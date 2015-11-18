@@ -14,6 +14,7 @@
 #import "TRImageView.h"
 #import "VideosCell.h"
 #import "VideosDeatilVideoViewController.h"
+#import "VideoDetailPicViewController.h"
 
 @interface VideosViewController ()<PSCollectionViewDelegate,PSCollectionViewDataSource,UIScrollViewDelegate>
 @property (nonatomic,strong) VideosViewModel *videosVM;
@@ -138,9 +139,16 @@
 }
 -(void)collectionView:(PSCollectionView *)collectionView didSelectCell:(PSCollectionViewCell *)cell atIndex:(NSInteger)index
 {
-    VideosDeatilVideoViewController *vc = [[VideosDeatilVideoViewController alloc]initWithWebURL:[self.videosVM htmlForRow:index] videoURL:[self.videosVM videoURLForRow:index] videoImageURL:[self.videosVM recipeImageURLForRow:index] btn1URL:[self.videosVM link1URLForRowInVideo:index] btn2URL:[self.videosVM link2URLForRowInVideo:index ]btn1Pic:[self.videosVM previewImage1URLForRow:index] btn2Pic:[self.videosVM previewImage2URLForRow:index] name:[self.videosVM titleForRow:index] btn1Title:[self.videosVM title1ForRowInVideo:index] btn2Title:[self.videosVM title2ForRowInVideo:index]];
-    [self.navigationController pushViewController:vc animated:YES];
-    DDLogVerbose(@"%@",[self.videosVM title1ForRowInVideo:index]);
+    if ([self.videosVM isVideoForRow:index]) {
+        VideosDeatilVideoViewController *vc = [[VideosDeatilVideoViewController alloc]initWithWebURL:[self.videosVM htmlForRow:index] videoURL:[self.videosVM videoURLForRow:index] videoImageURL:[self.videosVM recipeImageURLForRow:index] btn1URL:[self.videosVM link1URLForRowInVideo:index] btn2URL:[self.videosVM link2URLForRowInVideo:index ]btn1Pic:[self.videosVM previewImage1URLForRow:index] btn2Pic:[self.videosVM previewImage2URLForRow:index] name:[self.videosVM titleForRow:index] btn1Title:[self.videosVM title1ForRowInVideo:index] btn2Title:[self.videosVM title2ForRowInVideo:index]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else
+    {
+        VideoDetailPicViewController *vc = [[VideoDetailPicViewController alloc]initWithWebURL:[self.videosVM htmlForRow:index]  btn1URL:[self.videosVM link1URLForRowInVideo:index] btn2URL:[self.videosVM link2URLForRowInVideo:index ]btn1Pic:[self.videosVM previewImage1URLForRow:index] btn2Pic:[self.videosVM previewImage2URLForRow:index] btn1Title:[self.videosVM title1ForRowInVideo:index] btn2Title:[self.videosVM title2ForRowInVideo:index]];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+   // DDLogVerbose(@"%@",[self.videosVM title1ForRowInVideo:index]);
 }
 
 - (void)didReceiveMemoryWarning {

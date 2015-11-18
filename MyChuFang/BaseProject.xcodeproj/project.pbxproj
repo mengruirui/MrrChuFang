@@ -31,6 +31,7 @@
 		1DD5A9DC1BFB9DA400AE18DC /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9D91BFB9DA400AE18DC /* PSCollectionView.m */; };
 		1DD5A9DD1BFB9DA400AE18DC /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9DB1BFB9DA400AE18DC /* PSCollectionViewCell.m */; };
 		1DD5A9E01BFBA89000AE18DC /* VideoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */; };
+		1DD931F61BFCD216000590F4 /* VideoDetailPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD931F51BFCD216000590F4 /* VideoDetailPicViewController.m */; };
 		1FACF87C97D68F953ECE365C /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAAD623A23724C816F8DC02 /* libPods-BaseProject.a */; };
 		3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */; };
 		3804CE521BD758F10046C8C8 /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3804CE4C1BD758F10046C8C8 /* NSObject+Common.m */; };
@@ -156,6 +157,8 @@
 		1DD5A9DB1BFB9DA400AE18DC /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCollectionViewCell.m; sourceTree = "<group>"; };
 		1DD5A9DE1BFBA89000AE18DC /* VideoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayViewController.h; sourceTree = "<group>"; };
 		1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayViewController.m; sourceTree = "<group>"; };
+		1DD931F41BFCD216000590F4 /* VideoDetailPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailPicViewController.h; sourceTree = "<group>"; };
+		1DD931F51BFCD216000590F4 /* VideoDetailPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailPicViewController.m; sourceTree = "<group>"; };
 		3804CE491BD758F10046C8C8 /* AppDelegate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Category.h"; sourceTree = "<group>"; };
 		3804CE4A1BD758F10046C8C8 /* AppDelegate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Category.m"; sourceTree = "<group>"; };
 		3804CE4B1BD758F10046C8C8 /* NSObject+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
@@ -463,6 +466,8 @@
 				1DD5A9DF1BFBA89000AE18DC /* VideoPlayViewController.m */,
 				853752871BFC62EC00CED5FE /* VideosDeatilVideoViewController.h */,
 				853752881BFC62EC00CED5FE /* VideosDeatilVideoViewController.m */,
+				1DD931F41BFCD216000590F4 /* VideoDetailPicViewController.h */,
+				1DD931F51BFCD216000590F4 /* VideoDetailPicViewController.m */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -1058,6 +1063,7 @@
 				1DB0B69C1BED0CC800B573DB /* XiaChuFangTableViewController.m in Sources */,
 				3885C8FB1BE8E96A009441EA /* README.md in Sources */,
 				85248B271BF6EA8E008B5682 /* BazaarViewController.m in Sources */,
+				1DD931F61BFCD216000590F4 /* VideoDetailPicViewController.m in Sources */,
 				1D40E2D31BF8C36300643064 /* VideosNetManager.m in Sources */,
 				1D1BA59F1BF77D96008C9D5F /* CommunityViewController.m in Sources */,
 				3886C0C11BD74B090014E661 /* BaseModel.m in Sources */,
