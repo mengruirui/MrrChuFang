@@ -12,6 +12,9 @@
 @interface VideosViewModel : BaseViewModel
 @property (nonatomic)NSInteger rowNumber;
 @property (nonatomic) NSInteger tipsRowNumber;
+@property (nonatomic)NSInteger necessitiesNumber1;
+@property (nonatomic)NSInteger necessitiesNumber2;
+
 -(NSURL *)recipeImageURLForRow:(NSInteger)row;
 -(NSString *)titleForRow:(NSInteger)row;
 - (NSString *)packagesTitleForRow:(NSInteger)row;
@@ -38,4 +41,14 @@
 //详情页视频地址
 - (NSURL *)link1URLForRowInVideo:(NSInteger)row;
 - (NSURL *)link2URLForRowInVideo:(NSInteger)row;
+
+/**
+ *  必需品
+ */
+- (NSURL *)ingredientsImageURLForRow:(NSInteger)row;
+- (NSString *)ingredientsTitleForRow:(NSInteger)row;
+-(NSString *)ingredientsDescForRow:(NSInteger)row;
+- (NSURL *)utensilsImageURLForRow:(NSInteger)row;
+- (NSString *)utensilsTitleForRow:(NSInteger)row;
+-(NSString *)utensilsDescForRow:(NSInteger)row;
 @end

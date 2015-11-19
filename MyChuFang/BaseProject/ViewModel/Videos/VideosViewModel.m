@@ -131,4 +131,75 @@
     VideosDataRecipesHowtovideosModel *model = arr.lastObject;
     return [NSURL URLWithString:model.link];
 }
+/**
+ *  必需品
+ */
+- (VideosDataKitchenessentialsModel *)modelForRowInIngredients:(NSInteger)row
+{
+    return [self ingredients][row];
+}
+- (VideosDataKitchenessentialsModel *)modelForRowInUtensils:(NSInteger)row
+{
+    return [self utensils][row];
+}
+
+- (NSURL *)ingredientsImageURLForRow:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modelForRowInIngredients:row].image];
+}
+- (NSString *)ingredientsTitleForRow:(NSInteger)row
+{
+    return [self modelForRowInIngredients:row].title;
+}
+-(NSString *)ingredientsDescForRow:(NSInteger)row
+{
+    return [self modelForRowInIngredients:row].desc;
+}
+
+
+- (NSURL *)utensilsImageURLForRow:(NSInteger)row
+{
+    return [NSURL URLWithString:[self modelForRowInUtensils:row].image];
+}
+- (NSString *)utensilsTitleForRow:(NSInteger)row
+{
+    return [self modelForRowInUtensils:row].title;
+}
+-(NSString *)utensilsDescForRow:(NSInteger)row
+{
+    return [self modelForRowInUtensils:row].desc;
+}
+
+
+- (NSArray *)ingredients
+{
+    NSMutableArray *arr = [NSMutableArray new];
+    for (VideosDataKitchenessentialsModel *model in self.kitchenEssentials) {
+        if ([model.type isEqualToString:@"ingredients"]) {
+            [arr addObject:model];
+        }
+    }
+    return [arr copy];
+
+}
+- (NSArray *)utensils
+{
+    NSMutableArray *arr = [NSMutableArray new];
+    for (VideosDataKitchenessentialsModel *model in self.kitchenEssentials) {
+        if ([model.type isEqualToString:@"utensils"]) {
+            [arr addObject:model];
+        }
+    }
+    return [arr copy];
+
+}
+-(NSInteger)necessitiesNumber1
+{
+    return [self ingredients].count;
+}
+-(NSInteger)necessitiesNumber2
+{
+    return [self utensils].count;
+}
+
 @end

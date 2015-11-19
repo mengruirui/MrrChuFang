@@ -57,7 +57,7 @@
                 //AF的回调 是在主线程中
                 [_collectionView reloadData];
                 if (error) {
-                    [self showErrorMsg:error.description];
+                    [self showErrorMsg:error.localizedDescription];
                 }
                 [_collectionView.mj_header endRefreshing];
             }];

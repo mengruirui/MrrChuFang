@@ -11,6 +11,7 @@
 #import "VideosViewController.h"
 #import "MyChuFangTabBarController.h"
 #import "TipsViewController.h"
+#import "NecessitiesViewController.h"
 
 @interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property(nonatomic,strong) UITableView *tableView;
@@ -18,7 +19,7 @@
 @end
 @implementation LeftViewController
 - (NSArray *)itemNames{
-    return @[@"食谱", @"小贴士", @"厨房资讯", @"个人设置"];
+    return @[@"食谱", @"小贴士", @"厨房资讯", @"必需品"];
 }
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -69,6 +70,11 @@ kRemoveCellSeparator
              [self.sideMenuViewController setContentViewController:[MyChuFangTabBarController standardInstance] animated:YES];
             [self.sideMenuViewController hideMenuViewController];
             break;
+        case 3:
+            [self.sideMenuViewController setContentViewController:[NecessitiesViewController standardNecessities] animated:YES];
+            [self.sideMenuViewController hideMenuViewController];
+            break;
+
         default:
             break;
     }
