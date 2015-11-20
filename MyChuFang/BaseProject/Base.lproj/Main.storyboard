@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
-        <!--My厨房-->
+        <!--叽咕厨房-->
         <scene sceneID="qxG-xv-gie">
             <objects>
                 <tableViewController storyboardIdentifier="kitchenVC" id="xVf-Rh-Rpj" customClass="XiaChuFangTableViewController" sceneMemberID="viewController">
@@ -153,7 +153,7 @@
                             <outlet property="delegate" destination="xVf-Rh-Rpj" id="UJL-6A-wHR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My厨房" id="yXt-i2-TIx"/>
+                    <navigationItem key="navigationItem" title="叽咕厨房" id="yXt-i2-TIx"/>
                     <connections>
                         <outlet property="activityBtn" destination="GVx-2k-EK5" id="BdG-dp-83H"/>
                         <outlet property="faXianBtn" destination="dJp-Df-zOd" id="dsC-bc-TiM"/>

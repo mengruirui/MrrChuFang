@@ -15,7 +15,7 @@
 #import "LoginViewController.h"
 #import "Week/WeekViewController.h"
 
-@interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource>
+@interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *faXianBtn;
 @property (weak, nonatomic) IBOutlet UIView *pageView;
@@ -359,9 +359,13 @@
         [self.navigationController pushViewController:vc animated:YES];
     } forControlEvents:(UIControlEventTouchUpInside)];
     self.tabBarController.tabBar.translucent = NO;
+    
+    //向搜索列表中注册 cell
+    [self.searchDisplayController.searchResultsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"searchCell"];
 
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
