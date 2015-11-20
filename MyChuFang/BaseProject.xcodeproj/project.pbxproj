@@ -111,6 +111,10 @@
 		85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA1CCC1BEDD126003F3335 /* SlotModel.m */; };
 		85EA1CD01BEDD499003F3335 /* SlotViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA1CCF1BEDD499003F3335 /* SlotViewModel.m */; };
 		85EA1CD31BEDDD96003F3335 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA1CD21BEDDD96003F3335 /* Factory.m */; };
+		85FAD6B61BFF49780059D23E /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FAD6B51BFF49780059D23E /* UIColor+Extension.m */; };
+		85FAD6B91BFF49D40059D23E /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FAD6B81BFF49D40059D23E /* UIImage+Extension.m */; };
+		85FAD6BC1BFF49DC0059D23E /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FAD6BB1BFF49DC0059D23E /* UIView+Extension.m */; };
+		85FAD6BE1BFF54F60059D23E /* bannerImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85FAD6BD1BFF54F60059D23E /* bannerImage.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -297,6 +301,13 @@
 		85EA1CCF1BEDD499003F3335 /* SlotViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlotViewModel.m; sourceTree = "<group>"; };
 		85EA1CD11BEDDD96003F3335 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
 		85EA1CD21BEDDD96003F3335 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
+		85FAD6B41BFF49780059D23E /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		85FAD6B51BFF49780059D23E /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		85FAD6B71BFF49D40059D23E /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		85FAD6B81BFF49D40059D23E /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		85FAD6BA1BFF49DC0059D23E /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		85FAD6BB1BFF49DC0059D23E /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		85FAD6BD1BFF54F60059D23E /* bannerImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = bannerImage.bundle; sourceTree = "<group>"; };
 		DD4F0750B5DAAA87BA236B31 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -496,6 +507,12 @@
 				3804CE4E1BD758F10046C8C8 /* NSString+PJR.m */,
 				3804CE4F1BD758F10046C8C8 /* NSString+QRCode.h */,
 				3804CE501BD758F10046C8C8 /* NSString+QRCode.m */,
+				85FAD6B41BFF49780059D23E /* UIColor+Extension.h */,
+				85FAD6B51BFF49780059D23E /* UIColor+Extension.m */,
+				85FAD6B71BFF49D40059D23E /* UIImage+Extension.h */,
+				85FAD6B81BFF49D40059D23E /* UIImage+Extension.m */,
+				85FAD6BA1BFF49DC0059D23E /* UIView+Extension.h */,
+				85FAD6BB1BFF49DC0059D23E /* UIView+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -719,6 +736,7 @@
 			isa = PBXGroup;
 			children = (
 				85118FA51BF615B500C3783D /* images.bundle */,
+				85FAD6BD1BFF54F60059D23E /* bannerImage.bundle */,
 				3886C0A21BD748830014E661 /* Assets.xcassets */,
 				3886C0AD1BD749A00014E661 /* LaunchScreen.xib */,
 				3886C09F1BD748830014E661 /* Main.storyboard */,
@@ -975,6 +993,7 @@
 				3885C8DC1BE8E8FB009441EA /* UMSShareListController.xib in Resources */,
 				3885C8DD1BE8E8FB009441EA /* UMSocialSDKResourcesNew.bundle in Resources */,
 				3885C8ED1BE8E8FB009441EA /* ios-social-sdk-socialbar.html in Resources */,
+				85FAD6BE1BFF54F60059D23E /* bannerImage.bundle in Resources */,
 				3885C8E81BE8E8FB009441EA /* ios-social-sdk-login-detail.html in Resources */,
 				3885C8E71BE8E8FB009441EA /* ios-social-sdk-like.html in Resources */,
 			);
@@ -1065,6 +1084,7 @@
 				1DD5A9DD1BFB9DA400AE18DC /* PSCollectionViewCell.m in Sources */,
 				3835CFB71BD90E150024CA48 /* XiaChuFangURLViewController.m in Sources */,
 				85EA1CCD1BEDD126003F3335 /* SlotModel.m in Sources */,
+				85FAD6BC1BFF49DC0059D23E /* UIView+Extension.m in Sources */,
 				3804CE511BD758F10046C8C8 /* AppDelegate+Category.m in Sources */,
 				1D40E2CF1BF8C0BE00643064 /* VideosModel.m in Sources */,
 				853752891BFC62EC00CED5FE /* VideosDeatilVideoViewController.m in Sources */,
@@ -1072,6 +1092,7 @@
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
 				1D40E2D71BF8D23700643064 /* MyHomeViewController.m in Sources */,
+				85FAD6B61BFF49780059D23E /* UIColor+Extension.m in Sources */,
 				856798CE1BFDB4CF00CCCB3F /* NecessitiesDeatilViewController.m in Sources */,
 				1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */,
 				1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */,
@@ -1088,6 +1109,7 @@
 				1DADAAB81BF4F830006A2C20 /* WeekDetailViewModel.m in Sources */,
 				858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */,
 				859915E01BFD56E500D809EE /* NecessitiesViewController.m in Sources */,
+				85FAD6B91BFF49D40059D23E /* UIImage+Extension.m in Sources */,
 				1DB0B6A41BED0D1E00B573DB /* XiaChuFangCell.m in Sources */,
 				3886C0981BD748830014E661 /* main.m in Sources */,
 				85248B2A1BF7031C008B5682 /* MyChuFangTabBarController.m in Sources */,

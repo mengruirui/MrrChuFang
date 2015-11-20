@@ -15,7 +15,7 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setBackgroundImage:[UIImage imageNamed:@"list1"] forState:(UIControlStateNormal)];
     [btn setBackgroundImage:[UIImage imageNamed:@"list2"] forState:(UIControlStateHighlighted)];
-    btn.frame = CGRectMake(0, 0, 30, 30);
+    btn.frame = CGRectMake(0, 0, 16, 16);
     [btn bk_addEventHandler:^(id sender) {
         [vc.sideMenuViewController presentLeftMenuViewController];
     } forControlEvents:UIControlEventTouchUpInside];

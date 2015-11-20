@@ -85,8 +85,6 @@
 }
 - (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
-   
-    
     return 300.0;
 }
 
@@ -127,7 +125,7 @@
     
         }
         UIImageView *iv = (UIImageView *)[cell viewWithTag:200];
-        [iv setImageWithURL:[self.videosVM recipeImageURLForRow:index] placeholderImage:[UIImage imageNamed:@"load"]];
+        [iv setImageWithURL:[self.videosVM recipeImageURLForRow:index] placeholderImage:[UIImage imageNamed:@"loading2"]];
         UILabel *titleLb = (UILabel *)[cell viewWithTag:300];
         titleLb.numberOfLines = 0;
         titleLb.text = [self.videosVM titleForRow:index];

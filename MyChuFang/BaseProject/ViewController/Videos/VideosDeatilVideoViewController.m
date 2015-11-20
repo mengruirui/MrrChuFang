@@ -179,9 +179,9 @@
     self.title = @"制作详情";
     self.view.backgroundColor = kRGBColor(224, 224, 224);
     self.webView.hidden = NO;
-    [self.videoBtn0 setBackgroundImageForState:(UIControlStateNormal) withURL:self.picURL];
-    [self.videoBtn1 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic1URL];
-    [self.videoBtn2 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic2URL];
+    [self.videoBtn0 setBackgroundImageForState:(UIControlStateNormal) withURL:self.picURL  placeholderImage:[UIImage imageNamed:@"loading1"]];
+    [self.videoBtn1 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic1URL  placeholderImage:[UIImage imageNamed:@"loading1"]];
+    [self.videoBtn2 setBackgroundImageForState:(UIControlStateNormal) withURL:self.pic2URL placeholderImage:[UIImage imageNamed:@"loading1"]];
     
     self.titleLb0.text = self.name;
     self.titleLb1.text = self.title1;

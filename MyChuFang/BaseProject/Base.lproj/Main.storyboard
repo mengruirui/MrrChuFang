@@ -62,18 +62,19 @@
                                         <segue destination="vmq-Oc-MSY" kind="modal" id="5bm-7y-xTo"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVx-2k-EK5">
-                                    <rect key="frame" x="12" y="285" width="296" height="90"/>
-                                    <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="uyB-P6-orS"/>
-                                    </constraints>
-                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-V3-rk2">
                                     <rect key="frame" x="12" y="171" width="296" height="120"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="vBs-r4-Sbq"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLA-MO-KZe" userLabel="活动 View">
+                                    <rect key="frame" x="12" y="285" width="296" height="90"/>
+                                    <animations/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="90" id="3Fp-tr-XLh"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -82,17 +83,17 @@
                                 <constraint firstItem="VJ7-HG-QjE" firstAttribute="top" secondItem="5vg-ax-hPa" secondAttribute="top" constant="10" id="0es-BN-IQE"/>
                                 <constraint firstAttribute="trailing" secondItem="VJ7-HG-QjE" secondAttribute="trailing" constant="12" id="241-vA-kVx"/>
                                 <constraint firstItem="VJ7-HG-QjE" firstAttribute="leading" secondItem="5vg-ax-hPa" secondAttribute="leading" constant="12" id="3rD-56-cOo"/>
-                                <constraint firstAttribute="bottom" secondItem="GVx-2k-EK5" secondAttribute="bottom" id="4aB-RK-Y31"/>
+                                <constraint firstItem="ZLA-MO-KZe" firstAttribute="leading" secondItem="ajZ-V3-rk2" secondAttribute="leading" id="B0t-Xm-qQv"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="top" secondItem="jdF-24-S2p" secondAttribute="top" id="CFu-41-cA0"/>
                                 <constraint firstItem="jdF-24-S2p" firstAttribute="top" secondItem="VJ7-HG-QjE" secondAttribute="bottom" constant="10" id="Dr2-Ez-72O"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="height" secondItem="jdF-24-S2p" secondAttribute="height" id="FfV-hh-Gc4"/>
                                 <constraint firstItem="ajZ-V3-rk2" firstAttribute="top" secondItem="dJp-Df-zOd" secondAttribute="bottom" constant="7" id="IJy-zd-cXd"/>
+                                <constraint firstAttribute="bottom" secondItem="ZLA-MO-KZe" secondAttribute="bottom" id="JZk-2g-QlC"/>
                                 <constraint firstItem="ajZ-V3-rk2" firstAttribute="leading" secondItem="5vg-ax-hPa" secondAttribute="leading" constant="12" id="MfR-cT-d5R"/>
                                 <constraint firstItem="jdF-24-S2p" firstAttribute="leading" secondItem="VJ7-HG-QjE" secondAttribute="leading" id="NKA-Sd-5iN"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="trailing" secondItem="VJ7-HG-QjE" secondAttribute="trailing" id="Ob1-mM-Rjl"/>
+                                <constraint firstItem="ZLA-MO-KZe" firstAttribute="width" secondItem="ajZ-V3-rk2" secondAttribute="width" id="Vfn-wM-YGv"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="leading" secondItem="jdF-24-S2p" secondAttribute="trailing" constant="16" id="azV-4c-ATQ"/>
-                                <constraint firstItem="GVx-2k-EK5" firstAttribute="width" secondItem="ajZ-V3-rk2" secondAttribute="width" id="cOr-5f-lMQ"/>
-                                <constraint firstItem="GVx-2k-EK5" firstAttribute="leading" secondItem="5vg-ax-hPa" secondAttribute="leading" constant="12" id="mh3-RX-yRe"/>
                                 <constraint firstAttribute="trailing" secondItem="ajZ-V3-rk2" secondAttribute="trailing" constant="12" id="n7m-ja-bby"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="width" secondItem="jdF-24-S2p" secondAttribute="width" id="oHx-zk-KMr"/>
                             </constraints>
@@ -155,7 +156,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="厨艺大师" id="yXt-i2-TIx"/>
                     <connections>
-                        <outlet property="activityBtn" destination="GVx-2k-EK5" id="BdG-dp-83H"/>
+                        <outlet property="activityView" destination="ZLA-MO-KZe" id="Mt6-J2-4rU"/>
                         <outlet property="faXianBtn" destination="dJp-Df-zOd" id="dsC-bc-TiM"/>
                         <outlet property="pageView" destination="ajZ-V3-rk2" id="Rcn-hK-7Ef"/>
                         <outlet property="searchBar" destination="VJ7-HG-QjE" id="uFj-wV-Cjh"/>

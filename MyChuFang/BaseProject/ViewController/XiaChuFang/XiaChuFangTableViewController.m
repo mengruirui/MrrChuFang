@@ -14,6 +14,8 @@
 #import "XiaChuFangURLViewController.h"
 #import "LoginViewController.h"
 #import "Week/WeekViewController.h"
+#import "UIColor+Extension.h"
+#import "TRImageView.h"
 
 @interface XiaChuFangTableViewController ()<iCarouselDelegate,iCarouselDataSource,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -22,11 +24,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *activityBtn;
 @property (weak, nonatomic) IBOutlet UIButton *weekDateBtn;
 @property (weak, nonatomic) IBOutlet UILabel *weekDateLb;
+@property (weak, nonatomic) IBOutlet UIView *activityView;
 
 @property (nonatomic,strong)XiaChuFangViewModel *xiaVM;
 @property (nonatomic,strong)SlotViewModel *slotVm;
 
-@property (nonatomic,strong)UIView *lastView;
+@property (nonatomic,strong)NSArray *bannerImages;
+
 @end
 
 @implementation XiaChuFangTableViewController
@@ -37,14 +41,27 @@
     UILabel *_numberLb;
     UIPageControl *_pageControl;
     NSTimer *_timer;
+    iCarousel *_activityIc;
+}
+-(NSArray *)bannerImages
+{
+    if (!_bannerImages) {
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"bannerImage" ofType:@"bundle"];
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        _bannerImages = [fileManager subpathsAtPath:path];
+    }
+    return _bannerImages;
 }
 
--(UIView *)lastView
+- (UIView *)acView
 {
-    if (!_lastView) {
-        _lastView = [UIView new];
-    }
-    return _lastView;
+    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 90)];
+    _activityIc = [iCarousel new];
+    [acView addSubview:_activityIc];
+    [_activityIc mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+    return acView;
 }
 
 - (UIView *)footerView
@@ -62,7 +79,7 @@
     UIButton *btn = [UIButton buttonWithType:0];
     [btn setTitle:@"+创建菜谱" forState:(UIControlStateNormal)];
     [btn setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-    btn.backgroundColor = kRGBColor(244, 78, 63);
+    btn.backgroundColor = [UIColor colorWithHex:0xe8912a andAlpha:1.0];
     btn.layer.cornerRadius = 5;
     [bottomView addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,7 +114,7 @@
         make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
     }];
     UILabel *topLb = [UILabel new];
-    topLb.text = @"叽咕厨房的厨友们";
+    topLb.text = @"厨房大师的厨友们";
     [topView addSubview:topLb];
     [topLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.mas_equalTo(12);
@@ -162,9 +179,13 @@
     if (carousel == _ic) {
         return self.xiaVM.userNumber;
 
-    }else
+    }else if(carousel == _pageIc)
     {
         return  self.xiaVM.eventNumber;
+    }
+    else
+    {
+        return self.bannerImages.count;
     }
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
@@ -185,7 +206,7 @@
         [imageView setImageWithURL:[self.xiaVM userPhotoURLForRow:index]];
         return view;
     }
-    else
+    else if (carousel == _pageIc)
     {
         if (!view) {
             view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, _pageIc.bounds.size.height)];
@@ -267,6 +288,24 @@
             return view;
 
     }
+    else
+    {
+        if (!view) {
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW, 90)];
+            TRImageView *imageView = [TRImageView new];
+            imageView.tag = 100;
+            [view addSubview:imageView];
+            [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(0);
+            }];
+        }
+        TRImageView *imageView = (TRImageView *)[view viewWithTag:100];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"bannerImage" ofType:@"bundle"];
+        path = [path stringByAppendingPathComponent:self.bannerImages[index]];
+        imageView.imageView.image = [UIImage imageWithContentsOfFile:path];
+        return view;
+
+    }
    
 }
 
@@ -334,6 +373,10 @@
           
            [self.pageView addSubview:[self eventPageView]];
        }];
+    
+    
+    [self.activityView addSubview:[self acView]];
+    
     
     [self.slotVm getDataFromNetCompleteHandle:^(NSError *error) {
         //活动
@@ -442,11 +485,11 @@ kRemoveCellSeparator
         make.height.mas_equalTo(kWindowW/580*90);
     }];
     view.layer.borderWidth = 1;
-    view.layer.borderColor = [UIColor redColor].CGColor;
+    view.layer.borderColor = [UIColor colorWithHex:0xe8912a andAlpha:1.0].CGColor;
     view.layer.cornerRadius = 5;
      UIButton *btn = [UIButton buttonWithType:0];
     [btn setTitle:@"全部菜谱分类" forState:(UIControlStateNormal)];
-    [btn setTitleColor:[UIColor redColor] forState:(UIControlStateNormal)];
+    [btn setTitleColor:[UIColor colorWithHex:0xe8912a andAlpha:1.0] forState:(UIControlStateNormal)];
     [view addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);

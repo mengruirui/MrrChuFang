@@ -123,7 +123,7 @@
     }
     UIImageView *iv = (UIImageView *)[cell viewWithTag:200];
     iv.contentMode = UIViewContentModeScaleAspectFit;
-    [iv setImageWithURL:[self.videosVM tipsImageURLForRow:index] placeholderImage:[UIImage imageNamed:@"load"]];
+    [iv setImageWithURL:[self.videosVM tipsImageURLForRow:index] placeholderImage:[UIImage imageNamed:@"loading2"]];
     UILabel *titleLb = (UILabel *)[cell viewWithTag:300];
     titleLb.numberOfLines = 0;
     titleLb.text = [self.videosVM tipsTitleForRow:index];
