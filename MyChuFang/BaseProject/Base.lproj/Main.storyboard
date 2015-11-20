@@ -14,11 +14,11 @@
                         <animations/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="5vg-ax-hPa">
-                            <rect key="frame" x="0.0" y="64" width="320" height="375"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="475"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="搜索菜谱,食材" translatesAutoresizingMaskIntoConstraints="NO" id="VJ7-HG-QjE">
-                                    <rect key="frame" x="12" y="10" width="296" height="44"/>
+                                    <rect key="frame" x="12" y="10" width="296" height="68"/>
                                     <animations/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
@@ -26,7 +26,7 @@
                                     </connections>
                                 </searchBar>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdF-24-S2p">
-                                    <rect key="frame" x="12" y="64" width="140" height="100"/>
+                                    <rect key="frame" x="12" y="88" width="140" height="100"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38K-89-BcQ">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="100"/>
@@ -55,7 +55,7 @@
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-Df-zOd">
-                                    <rect key="frame" x="168" y="64" width="140" height="100"/>
+                                    <rect key="frame" x="168" y="88" width="140" height="100"/>
                                     <animations/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
@@ -63,18 +63,18 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajZ-V3-rk2">
-                                    <rect key="frame" x="12" y="171" width="296" height="120"/>
+                                    <rect key="frame" x="12" y="195" width="296" height="120"/>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="120" id="vBs-r4-Sbq"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLA-MO-KZe" userLabel="活动 View">
-                                    <rect key="frame" x="12" y="285" width="296" height="90"/>
+                                    <rect key="frame" x="12" y="325" width="296" height="150"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="90" id="3Fp-tr-XLh"/>
+                                        <constraint firstAttribute="height" constant="150" id="3Fp-tr-XLh"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -96,11 +96,12 @@
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="leading" secondItem="jdF-24-S2p" secondAttribute="trailing" constant="16" id="azV-4c-ATQ"/>
                                 <constraint firstAttribute="trailing" secondItem="ajZ-V3-rk2" secondAttribute="trailing" constant="12" id="n7m-ja-bby"/>
                                 <constraint firstItem="dJp-Df-zOd" firstAttribute="width" secondItem="jdF-24-S2p" secondAttribute="width" id="oHx-zk-KMr"/>
+                                <constraint firstItem="ZLA-MO-KZe" firstAttribute="top" secondItem="ajZ-V3-rk2" secondAttribute="bottom" constant="10" id="oMG-gc-HkN"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="hfb-w7-14H" customClass="XiaChuFangCell">
-                                <rect key="frame" x="0.0" y="489" width="320" height="70"/>
+                                <rect key="frame" x="0.0" y="589" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hfb-w7-14H" id="SrH-vc-jTy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>

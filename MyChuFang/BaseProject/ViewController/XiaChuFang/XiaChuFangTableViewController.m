@@ -55,8 +55,11 @@
 
 - (UIView *)acView
 {
-    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 90)];
+    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), 200)];
     _activityIc = [iCarousel new];
+    _activityIc.delegate = self;
+    _activityIc.dataSource = self;
+    _activityIc.pagingEnabled = YES;
     [acView addSubview:_activityIc];
     [_activityIc mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -291,7 +294,7 @@
     else
     {
         if (!view) {
-            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW, 90)];
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), 200)];
             TRImageView *imageView = [TRImageView new];
             imageView.tag = 100;
             [view addSubview:imageView];
@@ -376,21 +379,21 @@
     
     
     [self.activityView addSubview:[self acView]];
-    
+    DDLogVerbose(@"%ld",self.bannerImages.count);
     
     [self.slotVm getDataFromNetCompleteHandle:^(NSError *error) {
         //活动
         [self.activityBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.slotVm slotPicUrl]];
         [self.tableView reloadData];
     }];
-    [self.activityBtn bk_addEventHandler:^(id sender) {
+    /*[self.activityBtn bk_addEventHandler:^(id sender) {
         XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWithURL:[self.slotVm slotDeatilURL]];
         vc.title = @"活动";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
         
-    } forControlEvents:(UIControlEventTouchUpInside)];
+    } forControlEvents:(UIControlEventTouchUpInside)];*/
     
     [self.faXianBtn setBackgroundImage:[UIImage imageNamed:@"begin"] forState:(UIControlStateNormal)];
     
