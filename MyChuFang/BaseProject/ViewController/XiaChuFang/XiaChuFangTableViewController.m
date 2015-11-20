@@ -55,7 +55,7 @@
 
 - (UIView *)acView
 {
-    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), 200)];
+    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), self.activityView.bounds.size.height)];
     _activityIc = [iCarousel new];
     _activityIc.delegate = self;
     _activityIc.dataSource = self;
@@ -294,7 +294,7 @@
     else
     {
         if (!view) {
-            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), 200)];
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), self.activityView.bounds.size.height)];
             TRImageView *imageView = [TRImageView new];
             imageView.tag = 100;
             [view addSubview:imageView];
