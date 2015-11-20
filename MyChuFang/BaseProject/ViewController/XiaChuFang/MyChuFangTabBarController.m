@@ -36,15 +36,15 @@
     TRNavigationController *bazaarNavi=[[TRNavigationController alloc] initWithRootViewController:kVCFromSb(@"bazaarVC", @"Main")];
     TRNavigationController *communityNavi=[[TRNavigationController alloc] initWithRootViewController:kVCFromSb(@"communityVC", @"Main")];
     self.viewControllers=@[kitchenNavi,bazaarNavi,communityNavi];
-    kitchenNavi.title = @"叽咕厨房";
-    kitchenNavi.tabBarItem.image = [[UIImage imageNamed:@"Tabbar_Community"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    kitchenNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"Tabbar_Community_Selected"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    kitchenNavi.title = @"厨艺大师";
+    kitchenNavi.tabBarItem.image = [[UIImage imageNamed:@"index2"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    kitchenNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"index1"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     bazaarNavi.title = @"集市";
-    bazaarNavi.tabBarItem.image = [[UIImage imageNamed:@"Tabbar_Recipes"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
-    bazaarNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"Tabbar_Recipes_Selected"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    bazaarNavi.tabBarItem.image = [[UIImage imageNamed:@"market2"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    bazaarNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"market1"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     communityNavi.title = @"社区";
-    communityNavi.tabBarItem.image = [[UIImage imageNamed:@"Tabbar_Recommend"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
-    communityNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"Tabbar_Recommend_Selected"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    communityNavi.tabBarItem.image = [[UIImage imageNamed:@"home2"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    communityNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"home1"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     //状态栏白色
     [self preferredStatusBarStyle];
  }

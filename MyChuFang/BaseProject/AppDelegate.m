@@ -84,7 +84,7 @@
     if (!_sideMenu) {
         _sideMenu = [[RESideMenu alloc]initWithContentViewController:[MyChuFangTabBarController standardInstance]leftMenuViewController:[LeftViewController new] rightMenuViewController:nil];
         
-        _sideMenu.backgroundImage = [UIImage imageNamed:@"open2_750p"];
+        _sideMenu.backgroundImage = [UIImage imageNamed:@"changed"];
         //不显示菜单
         _sideMenu.menuPrefersStatusBarHidden = YES;
         //不允许菜单栏到了边缘还可以继续缩小

@@ -19,7 +19,7 @@
 @end
 @implementation LeftViewController
 - (NSArray *)itemNames{
-    return @[@"食谱", @"小贴士", @"厨房资讯", @"必需品"];
+    return @[@"食谱", @"贴士", @"资讯", @"用料"];
 }
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -47,11 +47,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
    // cell.accessoryType = 1;
-    cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Icon_Web_Forward"]];
+    cell.accessoryView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"turnon"]];
     cell.textLabel.text = self.itemNames[indexPath.row];
     cell.backgroundColor=[UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor =  kRGBColor(254, 123, 0);
+    if (indexPath.row == 0) {
+        cell.imageView.image = [UIImage imageNamed:@"food1"];
+    }else if (indexPath.row == 1)
+    {
+        cell.imageView.image = [UIImage imageNamed:@"ti1"];
+    }else if (indexPath.row == 2)
+    {
+        cell.imageView.image = [UIImage imageNamed:@"news1"];
+    }else
+    {
+        cell.imageView.image = [UIImage imageNamed:@"things1"];
+    }
     return cell;
 }
 kRemoveCellSeparator

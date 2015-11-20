@@ -98,7 +98,7 @@
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(120, 40));
             make.centerX.mas_equalTo(0);
-            make.bottom.mas_equalTo(-20);
+            make.bottom.mas_equalTo(-50);
         }];
     }
     TRImageView *imageView = (TRImageView *)[view viewWithTag:100];
@@ -109,13 +109,14 @@
     if (index == [self.imageNames indexOfObject:self.imageNames.lastObject]) {
         UIButton *btn = (UIButton *)[view viewWithTag:200];
         [btn setTitleColor:kRGBColor(244, 78, 63) forState:(UIControlStateNormal)];
-        [btn setTitle:@"进入叽咕厨房" forState:(UIControlStateNormal)];
+        [btn setTitle:@"进入厨艺大师" forState:(UIControlStateNormal)];
+        btn.titleLabel.font = [UIFont systemFontOfSize:14];
         FBShimmeringView *sv = [FBShimmeringView new];
         [view addSubview:sv];
         [sv mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(150, 80));
             make.centerX.mas_equalTo(0);
-            make.bottom.mas_equalTo(-30);
+            make.bottom.mas_equalTo(-60);
         }];
         sv.contentView = btn;
         
@@ -141,7 +142,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.ic reloadData];
-    self.pageControl.hidden = NO;
+    self.pageControl.hidden = YES;
     
 }
 

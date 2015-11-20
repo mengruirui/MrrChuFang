@@ -13,8 +13,8 @@
 +(void)addMenuItemToVC:(UIViewController *)vc
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setBackgroundImage:[UIImage imageNamed:@"Icon_Navbar_Info"] forState:(UIControlStateNormal)];
-    [btn setBackgroundImage:[UIImage imageNamed:@"Icon_Navbar_Info"] forState:(UIControlStateHighlighted)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"list1"] forState:(UIControlStateNormal)];
+    [btn setBackgroundImage:[UIImage imageNamed:@"list2"] forState:(UIControlStateHighlighted)];
     btn.frame = CGRectMake(0, 0, 30, 30);
     [btn bk_addEventHandler:^(id sender) {
         [vc.sideMenuViewController presentLeftMenuViewController];

@@ -319,7 +319,7 @@
     [Factory addMenuItemToVC:self];
     
     
-    self.title = @"叽咕厨房";
+    self.title = @"厨艺大师";
     
     //去掉滑动时的竖线
     self.tableView.showsVerticalScrollIndicator = NO;

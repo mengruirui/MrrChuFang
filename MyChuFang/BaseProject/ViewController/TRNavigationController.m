@@ -30,7 +30,7 @@
         [bar setBackgroundImage:[UIImage imageNamed:@"navibg"] forBarMetrics:UIBarMetricsDefault];
 
         // 3.设置左右按钮的文字颜色
-        [bar setTintColor:kRGBColor(254, 123, 0)];
+        //[bar setTintColor:kRGBColor(254, 123, 0)];
         
         // 4.设置标题文字的垂直位置
         [bar setTitleVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
@@ -41,7 +41,7 @@
         // 6.设置标题栏文字的样式
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
         attributes[NSFontAttributeName] = [UIFont boldSystemFontOfSize:18];
-        attributes[NSForegroundColorAttributeName] = kRGBColor(254, 123, 0);
+        //attributes[NSForegroundColorAttributeName] = kRGBColor(254, 123, 0);
         [bar setTitleTextAttributes:attributes];
         
     }
