@@ -97,7 +97,7 @@
         make.bottom.mas_equalTo(bottomView.mas_top).mas_equalTo(0);
     }];
     UILabel *topLb = [UILabel new];
-    topLb.text = @"下厨房的厨友们";
+    topLb.text = @"叽咕厨房的厨友们";
     [topView addSubview:topLb];
     [topLb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.mas_equalTo(12);
@@ -133,13 +133,12 @@
         make.bottom.mas_equalTo(0);
     }];
 
-    
+    //滚动视图属性
      _pageIc = [iCarousel new];
     _pageIc.delegate = self;
     _pageIc.dataSource = self;
     _pageIc.pagingEnabled = YES;
     _pageIc.type = 0;
-    //_pageIc.autoscroll = 0.1;
     _pageIc.scrollSpeed = 1;
     [pageView addSubview:_pageIc];
     [_pageIc mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -238,17 +237,15 @@
                 UIImageView *iconIV0 = [UIImageView new];
                 
                 iconIV0.tag = 400;
-                //_iconIV0.contentMode = UIViewContentModeScaleAspectFit;
+            
                 [rightView addSubview:iconIV0];
                 [iconIV0 mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.left.bottom.mas_equalTo(0);
                     make.width.mas_equalTo((kWindowW-24)/4);
                 }];
-                
-                
+            
                 UIImageView *iconIV1 = [UIImageView new];
-                
-                //_iconIV1.contentMode = UIViewContentModeScaleAspectFit;
+            
                 iconIV1.tag = 500;
                 [rightView addSubview:iconIV1];
                 [iconIV1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -256,20 +253,7 @@
                     make.width.mas_equalTo((kWindowW-24)/4);
                     make.left.mas_equalTo(iconIV0.mas_right).mas_equalTo(0);
                 }];
-            
-//            if (index  == [self.xiaVM.events indexOfObject:self.xiaVM.events.lastObject]) {
-//                [view addSubview:self.lastView];
-//                [_lastView mas_makeConstraints:^(MASConstraintMaker *make) {
-//                    make.edges.mas_equalTo(0);
-//                }];
-//                UIImageView *imageView = [UIImageView new];
-//                imageView.tag = 1000;
-//                [self.lastView addSubview:imageView];
-//                [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//                    make.edges.mas_equalTo(0);
-//                }];
- //           }
-            
+           
         }
        
             UILabel *titleLb = (UILabel *)[view viewWithTag:200];
@@ -280,19 +264,7 @@
             [iconIV0 setImageWithURL:[self.xiaVM iconIV0ForRowInEvents:index]];
             UIImageView *iconIV1 = (UIImageView *)[view viewWithTag:500];
             [iconIV1 setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
-        
-//        if (index  == [self.xiaVM.events indexOfObject:self.xiaVM.events.lastObject]) {
-//            //DDLogVerbose(@"%ld",_pageIc.currentItemIndex);
-//            UIImageView *imageView = (UIImageView *)[view viewWithTag:1000];
-//            [imageView setImageWithURL:[self.xiaVM iconIV1ForRowInEvents:index]];
-//        }
-        
-            
-    
-
-        
-
-        return view;
+            return view;
 
     }
    
@@ -319,7 +291,6 @@
 
 - (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
 {
-    //NSLog(@"%ld",carousel.currentItemIndex);
     if (carousel == _pageIc) {
     _pageControl.currentPage = carousel.currentItemIndex;
     }
@@ -348,7 +319,7 @@
     [Factory addMenuItemToVC:self];
     
     
-    
+    self.title = @"叽咕厨房";
     
     //去掉滑动时的竖线
     self.tableView.showsVerticalScrollIndicator = NO;

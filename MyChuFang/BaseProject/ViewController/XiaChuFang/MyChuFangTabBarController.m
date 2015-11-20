@@ -36,7 +36,7 @@
     TRNavigationController *bazaarNavi=[[TRNavigationController alloc] initWithRootViewController:kVCFromSb(@"bazaarVC", @"Main")];
     TRNavigationController *communityNavi=[[TRNavigationController alloc] initWithRootViewController:kVCFromSb(@"communityVC", @"Main")];
     self.viewControllers=@[kitchenNavi,bazaarNavi,communityNavi];
-    kitchenNavi.title = @"My厨房";
+    kitchenNavi.title = @"叽咕厨房";
     kitchenNavi.tabBarItem.image = [[UIImage imageNamed:@"Tabbar_Community"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     kitchenNavi.tabBarItem.selectedImage = [[UIImage imageNamed:@"Tabbar_Community_Selected"]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     bazaarNavi.title = @"集市";

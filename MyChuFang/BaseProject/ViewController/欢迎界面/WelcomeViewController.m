@@ -109,7 +109,7 @@
     if (index == [self.imageNames indexOfObject:self.imageNames.lastObject]) {
         UIButton *btn = (UIButton *)[view viewWithTag:200];
         [btn setTitleColor:kRGBColor(244, 78, 63) forState:(UIControlStateNormal)];
-        [btn setTitle:@"进入My厨房" forState:(UIControlStateNormal)];
+        [btn setTitle:@"进入叽咕厨房" forState:(UIControlStateNormal)];
         FBShimmeringView *sv = [FBShimmeringView new];
         [view addSubview:sv];
         [sv mas_makeConstraints:^(MASConstraintMaker *make) {
