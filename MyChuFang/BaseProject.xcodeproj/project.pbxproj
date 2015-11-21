@@ -95,6 +95,13 @@
 		85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F911BF5D31E00C3783D /* TRTabBarController.m */; };
 		85118F971BF5E2BA00C3783D /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85118F961BF5E2BA00C3783D /* WelcomeViewController.m */; };
 		85118FA61BF615B500C3783D /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 85118FA51BF615B500C3783D /* images.bundle */; };
+		8517F5E71C003FC700C13A12 /* PhoneReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8517F5E61C003FC700C13A12 /* PhoneReginstViewController.m */; };
+		8517F5EC1C0060EC00C13A12 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8517F5EB1C0060EC00C13A12 /* JavaScriptCore.framework */; };
+		8517F5EE1C0060F800C13A12 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8517F5ED1C0060F800C13A12 /* MessageUI.framework */; };
+		8517F5F01C00612C00C13A12 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8517F5EF1C00612C00C13A12 /* libicucore.tbd */; };
+		8517F5F71C0061AD00C13A12 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8517F5F21C0061AD00C13A12 /* SMS_SDKLocalizable.strings */; };
+		8517F5F81C0061AD00C13A12 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8517F5F41C0061AD00C13A12 /* MOBFoundation.framework */; };
+		8517F5F91C0061AE00C13A12 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8517F5F51C0061AD00C13A12 /* SMS_SDK.framework */; };
 		85248B271BF6EA8E008B5682 /* BazaarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B261BF6EA8E008B5682 /* BazaarViewController.m */; };
 		85248B2A1BF7031C008B5682 /* MyChuFangTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B291BF7031C008B5682 /* MyChuFangTabBarController.m */; };
 		85248B2D1BF723C1008B5682 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85248B2C1BF723C1008B5682 /* LeftViewController.m */; };
@@ -269,6 +276,15 @@
 		85118F951BF5E2BA00C3783D /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		85118F961BF5E2BA00C3783D /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		85118FA51BF615B500C3783D /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
+		8517F5E51C003FC700C13A12 /* PhoneReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneReginstViewController.h; sourceTree = "<group>"; };
+		8517F5E61C003FC700C13A12 /* PhoneReginstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneReginstViewController.m; sourceTree = "<group>"; };
+		8517F5EB1C0060EC00C13A12 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		8517F5ED1C0060F800C13A12 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8517F5EF1C00612C00C13A12 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		8517F5F31C0061AD00C13A12 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		8517F5F41C0061AD00C13A12 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		8517F5F51C0061AD00C13A12 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		8517F5F61C0061AD00C13A12 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
 		85248B251BF6EA8E008B5682 /* BazaarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BazaarViewController.h; sourceTree = "<group>"; };
 		85248B261BF6EA8E008B5682 /* BazaarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BazaarViewController.m; sourceTree = "<group>"; };
 		85248B281BF7031C008B5682 /* MyChuFangTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyChuFangTabBarController.h; sourceTree = "<group>"; };
@@ -316,15 +332,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DD5A9D71BFB90B700AE18DC /* AVKit.framework in Frameworks */,
-				1DD5A9D51BFB8EA800AE18DC /* AVFoundation.framework in Frameworks */,
+				8517F5F01C00612C00C13A12 /* libicucore.tbd in Frameworks */,
 				3885C90B1BE8EA70009441EA /* libz.tbd in Frameworks */,
 				3885C9091BE8EA6A009441EA /* libstdc++.tbd in Frameworks */,
+				8517F5F91C0061AE00C13A12 /* SMS_SDK.framework in Frameworks */,
+				8517F5EE1C0060F800C13A12 /* MessageUI.framework in Frameworks */,
+				8517F5EC1C0060EC00C13A12 /* JavaScriptCore.framework in Frameworks */,
+				1DD5A9D71BFB90B700AE18DC /* AVKit.framework in Frameworks */,
+				1DD5A9D51BFB8EA800AE18DC /* AVFoundation.framework in Frameworks */,
 				3885C9071BE8EA62009441EA /* CoreTelephony.framework in Frameworks */,
 				3885C9051BE8EA5C009441EA /* libsqlite3.tbd in Frameworks */,
 				3885C9031BE8EA54009441EA /* CoreGraphics.framework in Frameworks */,
 				3885C9011BE8EA4E009441EA /* libiconv.tbd in Frameworks */,
 				3885C8FF1BE8EA46009441EA /* Security.framework in Frameworks */,
+				8517F5F81C0061AD00C13A12 /* MOBFoundation.framework in Frameworks */,
 				3885C8FD1BE8EA26009441EA /* SystemConfiguration.framework in Frameworks */,
 				3885C8DE1BE8E8FB009441EA /* libSocialQQ.a in Frameworks */,
 				3885C8DF1BE8E8FB009441EA /* TencentOpenAPI.framework in Frameworks */,
@@ -758,6 +779,7 @@
 		3886C0B41BD74A4A0014E661 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8517F5F11C0061AD00C13A12 /* SMS_SDK */,
 				3885C8EF1BE8E96A009441EA /* PSCollectionView-master */,
 				3885C89E1BE8E8FB009441EA /* umeng_ios_social_sdk_4.2-2.5_arm64_custom */,
 				3885C8991BE8E8E8009441EA /* UMAnalytics_Sdk_3.6.4 */,
@@ -832,6 +854,16 @@
 			name = TR;
 			sourceTree = "<group>";
 		};
+		8517F5F11C0061AD00C13A12 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8517F5F21C0061AD00C13A12 /* SMS_SDKLocalizable.strings */,
+				8517F5F41C0061AD00C13A12 /* MOBFoundation.framework */,
+				8517F5F51C0061AD00C13A12 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
 		85248B241BF6EA57008B5682 /* bazaar */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,6 +904,8 @@
 				85D482721BF2269500E7D0AF /* LoginDetailViewController.m */,
 				858C0B6A1BF354D300095CEE /* ReginstViewController.h */,
 				858C0B6B1BF354D300095CEE /* ReginstViewController.m */,
+				8517F5E51C003FC700C13A12 /* PhoneReginstViewController.h */,
+				8517F5E61C003FC700C13A12 /* PhoneReginstViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -888,6 +922,9 @@
 		FA3445AEA3874C1D4FE61EAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8517F5EF1C00612C00C13A12 /* libicucore.tbd */,
+				8517F5ED1C0060F800C13A12 /* MessageUI.framework */,
+				8517F5EB1C0060EC00C13A12 /* JavaScriptCore.framework */,
 				1DD5A9D61BFB90B700AE18DC /* AVKit.framework */,
 				1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */,
 				3885C90A1BE8EA70009441EA /* libz.tbd */,
@@ -966,6 +1003,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8517F5F71C0061AD00C13A12 /* SMS_SDKLocalizable.strings in Resources */,
 				3885C8E91BE8E8FB009441EA /* ios-social-sdk-login-quick.html in Resources */,
 				3885C8D81BE8E8FB009441EA /* UMShareEditViewController.xib in Resources */,
 				3885C8D61BE8E8FB009441EA /* UMSCommentInputController.xib in Resources */,
@@ -1089,6 +1127,7 @@
 				1D40E2CF1BF8C0BE00643064 /* VideosModel.m in Sources */,
 				853752891BFC62EC00CED5FE /* VideosDeatilVideoViewController.m in Sources */,
 				1D1BA59B1BF779AA008C9D5F /* BazaarViewDeatilController.m in Sources */,
+				8517F5E71C003FC700C13A12 /* PhoneReginstViewController.m in Sources */,
 				3886C0BB1BD74AE90014E661 /* BaseViewModel.m in Sources */,
 				85118F931BF5D31E00C3783D /* TRTabBarController.m in Sources */,
 				1D40E2D71BF8D23700643064 /* MyHomeViewController.m in Sources */,
@@ -1137,6 +1176,15 @@
 			);
 			name = Main.storyboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		8517F5F21C0061AD00C13A12 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8517F5F31C0061AD00C13A12 /* en */,
+				8517F5F61C0061AD00C13A12 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1232,6 +1280,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/BaseProject/Vendor/SMS_SDK",
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;
@@ -1314,6 +1363,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaseProject/Vendor/umeng_ios_social_sdk_4.2-2.5_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/BaseProject/Vendor/SMS_SDK",
 				);
 				GCC_PREFIX_HEADER = BaseProject/Resource/PrefixHeader.pch;
 				INFOPLIST_FILE = BaseProject/Info.plist;

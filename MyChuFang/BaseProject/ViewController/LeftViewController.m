@@ -96,11 +96,7 @@ kRemoveCellSeparator
     // Do any additional setup after loading the view.
 //必须触发一下tableView的懒加载才可以
     [self.tableView reloadData];
-    [self prefersStatusBarHidden];
-}
--(BOOL)prefersStatusBarHidden
-{
-    return YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {

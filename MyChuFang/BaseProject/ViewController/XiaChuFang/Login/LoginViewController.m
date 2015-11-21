@@ -19,8 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.bkImageView.image = [UIImage imageNamed:@"bk"];
+    
+    self.bkImageView.image = [UIImage imageNamed:@"index"];
+    self.loginBtn.layer.cornerRadius = 2;
+    self.loginBtn.layer.masksToBounds = YES;
+    self.registBtn.layer.cornerRadius = 2;
+    self.registBtn.layer.masksToBounds = YES;
+   
+}
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
 }
 - (IBAction)back:(id)sender {

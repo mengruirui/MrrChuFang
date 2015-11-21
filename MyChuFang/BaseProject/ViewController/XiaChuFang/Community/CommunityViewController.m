@@ -57,6 +57,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.tableView reloadData];
+    self.tableView.separatorColor = [UIColor clearColor];
 }
 
 #pragma mark - UITableView

@@ -15,7 +15,9 @@
 #import "TRNavigationController.h"
 #import "MyChuFangTabBarController.h"
 #import "VideosNetManager.h"
-
+#import <SMS_SDK/SMSSDK.h>
+#define AppKey @"c8912bf6e38a"
+#define AppSecret @"4b2f13eb00438769f4259f94b28dec9a"
 @interface AppDelegate ()
 
 @end
@@ -25,13 +27,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self initializeWithApplication:application];
-    [XiaChuFangNetManager getCommunityCompletionHandle:^(id model, NSError *error) {
-        DDLogVerbose(@".....");
-    }];
-    [VideosNetManager getVideosCompletionHandle:^(id model, NSError *error) {
-        DDLogVerbose(@"....");
-    }];
-    /*
+    //短信验证
+    //申请 shareSdk 授权
+    [SMSSDK registerApp:AppKey withSecret:AppSecret];
+    
+        /*
      需求:用户首次打开项目,显示欢迎界面.以后则直接显示主页面
      2.如果用户升级程序后,首次打开,则显示欢迎界面,以后显示主页面
      解决方案:

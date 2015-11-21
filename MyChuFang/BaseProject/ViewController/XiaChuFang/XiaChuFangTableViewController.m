@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *faXianBtn;
 @property (weak, nonatomic) IBOutlet UIView *pageView;
-@property (weak, nonatomic) IBOutlet UIButton *activityBtn;
 @property (weak, nonatomic) IBOutlet UIButton *weekDateBtn;
 @property (weak, nonatomic) IBOutlet UILabel *weekDateLb;
 @property (weak, nonatomic) IBOutlet UIView *activityView;
@@ -55,11 +54,13 @@
 
 - (UIView *)acView
 {
-    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), self.activityView.bounds.size.height)];
+    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _activityView.bounds.size.width, self.activityView.bounds.size.height)];
     _activityIc = [iCarousel new];
     _activityIc.delegate = self;
     _activityIc.dataSource = self;
     _activityIc.pagingEnabled = YES;
+    _activityIc.type = 3;
+    _activityIc.autoscroll = 0.1;
     [acView addSubview:_activityIc];
     [_activityIc mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -192,7 +193,7 @@
     }
 }
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
-{
+{//底部滚动视图
     if (carousel == _ic) {
         if (!view) {
             view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
@@ -210,7 +211,7 @@
         return view;
     }
     else if (carousel == _pageIc)
-    {
+    {//头部滚动视图
         if (!view) {
             view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, _pageIc.bounds.size.height)];
                 
@@ -292,9 +293,9 @@
 
     }
     else
-    {
+    {//头部活动滚动视图
         if (!view) {
-            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, (kWindowW-24), self.activityView.bounds.size.height)];
+            view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _activityView.bounds.size.width, self.activityView.bounds.size.height)];
             TRImageView *imageView = [TRImageView new];
             imageView.tag = 100;
             [view addSubview:imageView];
@@ -303,6 +304,7 @@
             }];
         }
         TRImageView *imageView = (TRImageView *)[view viewWithTag:100];
+        imageView.imageView.contentMode = UIViewContentModeScaleAspectFit;
         NSString *path = [[NSBundle mainBundle]pathForResource:@"bannerImage" ofType:@"bundle"];
         path = [path stringByAppendingPathComponent:self.bannerImages[index]];
         imageView.imageView.image = [UIImage imageWithContentsOfFile:path];
@@ -315,14 +317,28 @@
 /*允许循环滚动*/
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value
 {
-    if (option == iCarouselOptionWrap) {
-        return YES;
+    if (carousel == _ic) {
+        if (option == iCarouselOptionWrap) {
+            return YES;
+        }
+        //修改缝隙
+        if (option == iCarouselOptionSpacing) {
+            return value * 1.5;
+        }
+        return value;
+    }else
+    {
+        if (option == iCarouselOptionWrap) {
+            return YES;
+        }
+        //修改缝隙
+        if (option == iCarouselOptionSpacing) {
+            return value * 1.1;
+        }
+        return value;
+
     }
-    //修改缝隙
-    if (option == iCarouselOptionSpacing) {
-        return value * 1.5;
-    }
-    return value;
+    
 }
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
@@ -372,29 +388,12 @@
            self.tableView.tableFooterView = [self footerView];
            [self.tableView reloadData];
            
-           
-          
            [self.pageView addSubview:[self eventPageView]];
        }];
     
     
     [self.activityView addSubview:[self acView]];
-    DDLogVerbose(@"%ld",self.bannerImages.count);
-    
-    [self.slotVm getDataFromNetCompleteHandle:^(NSError *error) {
-        //活动
-        [self.activityBtn setBackgroundImageForState:(UIControlStateNormal) withURL:[self.slotVm slotPicUrl]];
-        [self.tableView reloadData];
-    }];
-    /*[self.activityBtn bk_addEventHandler:^(id sender) {
-        XiaChuFangURLViewController *vc = [[XiaChuFangURLViewController alloc]initWithURL:[self.slotVm slotDeatilURL]];
-        vc.title = @"活动";
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
         
-        
-    } forControlEvents:(UIControlEventTouchUpInside)];*/
-    
     [self.faXianBtn setBackgroundImage:[UIImage imageNamed:@"begin"] forState:(UIControlStateNormal)];
     
     //每周

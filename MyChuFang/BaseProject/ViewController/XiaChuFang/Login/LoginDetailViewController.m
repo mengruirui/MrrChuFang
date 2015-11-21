@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *weboBtn;
 @property (weak, nonatomic) IBOutlet UIButton *qqBtn;
 @property (weak, nonatomic) IBOutlet UIButton *doubanBtn;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -23,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.hidden = NO;
+    self.loginBtn.layer.cornerRadius = 5;
+    self.loginBtn.layer.masksToBounds = YES;
     [self.weboBtn setBackgroundImage:[UIImage imageNamed:@"S_share_icon_1_s"] forState:(UIControlStateNormal)];
     self.weboBtn.layer.cornerRadius = 25;
     self.weboBtn.layer.masksToBounds = YES;
@@ -32,7 +35,10 @@
     [self.doubanBtn setBackgroundImage:[UIImage imageNamed:@"S_share_icon_5_s"] forState:(UIControlStateNormal)];
     self.doubanBtn.layer.cornerRadius = 25;
     self.doubanBtn.layer.masksToBounds = YES;
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

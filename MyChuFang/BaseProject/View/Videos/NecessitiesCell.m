@@ -43,6 +43,7 @@
 {
     if (self =[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.separatorInset = UIEdgeInsetsMake(0, 10, 0, 0);
+        
     }
     return self;
 }
