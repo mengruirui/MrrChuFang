@@ -26,6 +26,7 @@
 		1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B69F1BED0CEC00B573DB /* XiaChuFangViewModel.m */; };
 		1DB0B6A41BED0D1E00B573DB /* XiaChuFangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */; };
 		1DB1D1261BFA437C0072B756 /* VideosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1D1251BFA437C0072B756 /* VideosViewController.m */; };
+		1DC523861C01D0760017310B /* PerfectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC523851C01D0760017310B /* PerfectViewController.m */; };
 		1DD5A9D51BFB8EA800AE18DC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */; };
 		1DD5A9D71BFB90B700AE18DC /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD5A9D61BFB90B700AE18DC /* AVKit.framework */; };
 		1DD5A9DC1BFB9DA400AE18DC /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD5A9D91BFB9DA400AE18DC /* PSCollectionView.m */; };
@@ -163,6 +164,8 @@
 		1DB0B6A31BED0D1E00B573DB /* XiaChuFangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaChuFangCell.m; sourceTree = "<group>"; };
 		1DB1D1241BFA437C0072B756 /* VideosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideosViewController.h; sourceTree = "<group>"; };
 		1DB1D1251BFA437C0072B756 /* VideosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewController.m; sourceTree = "<group>"; };
+		1DC523841C01D0760017310B /* PerfectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerfectViewController.h; sourceTree = "<group>"; };
+		1DC523851C01D0760017310B /* PerfectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerfectViewController.m; sourceTree = "<group>"; };
 		1DD5A9D41BFB8EA800AE18DC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1DD5A9D61BFB90B700AE18DC /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		1DD5A9D81BFB9DA400AE18DC /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCollectionView.h; sourceTree = "<group>"; };
@@ -906,6 +909,8 @@
 				858C0B6B1BF354D300095CEE /* ReginstViewController.m */,
 				8517F5E51C003FC700C13A12 /* PhoneReginstViewController.h */,
 				8517F5E61C003FC700C13A12 /* PhoneReginstViewController.m */,
+				1DC523841C01D0760017310B /* PerfectViewController.h */,
+				1DC523851C01D0760017310B /* PerfectViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1108,6 +1113,7 @@
 				85C8963E1BFAF1D80061D5CD /* VideosCell.m in Sources */,
 				1D1BA5A71BF79D24008C9D5F /* CommunityViewModel.m in Sources */,
 				3886C09B1BD748830014E661 /* AppDelegate.m in Sources */,
+				1DC523861C01D0760017310B /* PerfectViewController.m in Sources */,
 				85D482731BF2269500E7D0AF /* LoginDetailViewController.m in Sources */,
 				1DD5A9DC1BFB9DA400AE18DC /* PSCollectionView.m in Sources */,
 				85118F4C1BF5696100C3783D /* TRImageView.m in Sources */,

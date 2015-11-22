@@ -30,7 +30,7 @@
 //收取验证码
 - (IBAction)verificationCharge:(id)sender {
     [SMSSDK getVerificationCodeByMethod:(SMSGetCodeMethodSMS) phoneNumber:self.phoneTextField.text zone:@"86" customIdentifier: nil result:^(NSError *error) {
-        if (error) {
+       /* if (error) {
             _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             _hud.delegate = self;
             //常用的设置
@@ -47,7 +47,7 @@
 
         }
         else
-        {
+        {*/
 //            [self showSuccessMsg:@"验证码发送成功"];
 //            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 //                        hud.mode = MBProgressHUDModeText;
@@ -59,7 +59,7 @@
             PhoneReginstViewController *vc = kVCFromSb(@"PhoneReginstViewController", @"Main");
             vc.phoneNumber = self.phoneTextField.text;
             [self.navigationController pushViewController:vc animated:YES];
-        }
+        //}
     }];
 
 }

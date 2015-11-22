@@ -54,7 +54,7 @@
 
 - (UIView *)acView
 {
-    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _activityView.bounds.size.width, self.activityView.bounds.size.height)];
+    UIView *acView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kWindowW-24, self.activityView.bounds.size.height)];
     _activityIc = [iCarousel new];
     _activityIc.delegate = self;
     _activityIc.dataSource = self;
@@ -63,7 +63,8 @@
     _activityIc.autoscroll = 0.1;
     [acView addSubview:_activityIc];
     [_activityIc mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.width.mas_equalTo(acView.mas_width);
+        make.top.left.bottom.mas_equalTo(0);
     }];
     return acView;
 }
@@ -304,7 +305,7 @@
             }];
         }
         TRImageView *imageView = (TRImageView *)[view viewWithTag:100];
-        imageView.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        //imageView.imageView.contentMode = UIViewContentModeScaleAspectFit;
         NSString *path = [[NSBundle mainBundle]pathForResource:@"bannerImage" ofType:@"bundle"];
         path = [path stringByAppendingPathComponent:self.bannerImages[index]];
         imageView.imageView.image = [UIImage imageWithContentsOfFile:path];
@@ -393,6 +394,7 @@
     
     
     [self.activityView addSubview:[self acView]];
+    
         
     [self.faXianBtn setBackgroundImage:[UIImage imageNamed:@"begin"] forState:(UIControlStateNormal)];
     

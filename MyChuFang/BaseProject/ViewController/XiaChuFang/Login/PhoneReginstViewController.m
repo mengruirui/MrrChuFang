@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"手机注册";
     [self.validationCodeTF becomeFirstResponder];
     self.nextBtn.layer.cornerRadius = 5;
     self.nextBtn.layer.masksToBounds = YES;
@@ -43,7 +44,7 @@
 //下一步
 - (IBAction)nextClick:(id)sender {
     [SMSSDK commitVerificationCode:self.validationCodeTF.text phoneNumber:self.phoneNumber zone:@"86" result:^(NSError *error) {
-        if (error) {
+      /*  if (error) {
           MBProgressHUD  *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.delegate = self;
             //常用的设置
@@ -60,7 +61,7 @@
         else
         {
             NSLog(@"验证码正确");
-        }
+        }*/
         
     }];
 
