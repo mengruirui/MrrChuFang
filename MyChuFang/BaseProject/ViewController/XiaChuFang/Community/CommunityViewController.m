@@ -56,6 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [Factory addMenuItemToVC:self];
     [self.tableView reloadData];
     self.tableView.separatorColor = [UIColor clearColor];
 }
