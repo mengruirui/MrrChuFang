@@ -110,6 +110,8 @@
 		856798CE1BFDB4CF00CCCB3F /* NecessitiesDeatilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856798CD1BFDB4CF00CCCB3F /* NecessitiesDeatilViewController.m */; };
 		8578416B1BFA160D007761C3 /* VideosViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8578416A1BFA160D007761C3 /* VideosViewModel.m */; };
 		858C0B6C1BF354D300095CEE /* ReginstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858C0B6B1BF354D300095CEE /* ReginstViewController.m */; };
+		858EA1C21C03441500362163 /* user.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 858EA1C11C03441500362163 /* user.bundle */; };
+		858EA1C51C03469F00362163 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858EA1C41C03469E00362163 /* UserModel.m */; };
 		859915E01BFD56E500D809EE /* NecessitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 859915DF1BFD56E500D809EE /* NecessitiesViewController.m */; };
 		859915EC1BFD945300D809EE /* NecessitiesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 859915EB1BFD945300D809EE /* NecessitiesCell.m */; };
 		85C8963E1BFAF1D80061D5CD /* VideosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C8963D1BFAF1D80061D5CD /* VideosCell.m */; };
@@ -302,6 +304,9 @@
 		8578416A1BFA160D007761C3 /* VideosViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideosViewModel.m; sourceTree = "<group>"; };
 		858C0B6A1BF354D300095CEE /* ReginstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReginstViewController.h; sourceTree = "<group>"; };
 		858C0B6B1BF354D300095CEE /* ReginstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReginstViewController.m; sourceTree = "<group>"; };
+		858EA1C11C03441500362163 /* user.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = user.bundle; sourceTree = "<group>"; };
+		858EA1C31C03469E00362163 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		858EA1C41C03469E00362163 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		859915DE1BFD56E500D809EE /* NecessitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NecessitiesViewController.h; sourceTree = "<group>"; };
 		859915DF1BFD56E500D809EE /* NecessitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NecessitiesViewController.m; sourceTree = "<group>"; };
 		859915EA1BFD945300D809EE /* NecessitiesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NecessitiesCell.h; sourceTree = "<group>"; };
@@ -741,6 +746,8 @@
 				1DB0B6911BED0C7500B573DB /* XiaChuFang */,
 				3886C0BF1BD74B090014E661 /* BaseModel.h */,
 				3886C0C01BD74B090014E661 /* BaseModel.m */,
+				858EA1C31C03469E00362163 /* UserModel.h */,
+				858EA1C41C03469E00362163 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -759,6 +766,7 @@
 		3886C0B21BD74A4A0014E661 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				858EA1C11C03441500362163 /* user.bundle */,
 				85118FA51BF615B500C3783D /* images.bundle */,
 				85FAD6BD1BFF54F60059D23E /* bannerImage.bundle */,
 				3886C0A21BD748830014E661 /* Assets.xcassets */,
@@ -1026,6 +1034,7 @@
 				85118FA61BF615B500C3783D /* images.bundle in Resources */,
 				3885C8E31BE8E8FB009441EA /* iOS-social-analytics-releasenote.html in Resources */,
 				3885C8D71BE8E8FB009441EA /* UMSCommentInputControlleriPad.xib in Resources */,
+				858EA1C21C03441500362163 /* user.bundle in Resources */,
 				3885C8D91BE8E8FB009441EA /* UMShareEditViewControlleriPad.xib in Resources */,
 				3886C0AE1BD749A00014E661 /* LaunchScreen.xib in Resources */,
 				3885C8EE1BE8E8FB009441EA /* markdown.css in Resources */,
@@ -1139,6 +1148,7 @@
 				1D40E2D71BF8D23700643064 /* MyHomeViewController.m in Sources */,
 				85FAD6B61BFF49780059D23E /* UIColor+Extension.m in Sources */,
 				856798CE1BFDB4CF00CCCB3F /* NecessitiesDeatilViewController.m in Sources */,
+				858EA1C51C03469F00362163 /* UserModel.m in Sources */,
 				1DB0B6941BED0C7500B573DB /* InitPageModel.m in Sources */,
 				1DB0B6A01BED0CEC00B573DB /* XiaChuFangViewModel.m in Sources */,
 				85C898331BFB53B10061D5CD /* TipsViewController.m in Sources */,

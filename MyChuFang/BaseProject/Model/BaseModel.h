@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface BaseModel : NSObject
-
+//单利模式,返回唯一的数据库对象
++ (FMDatabase *)defaultDatabase;
 @end

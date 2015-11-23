@@ -67,7 +67,7 @@
     //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     //[[UIApplication sharedApplication]setStatusBarHidden:YES];
     
-   
+   [self movePoetryDBToDoc];
     return YES;
 }
 
@@ -94,4 +94,23 @@
     }
     return _sideMenu;
 }
+
+/*
+ 因为要对数据库中的数据进行删除操作,但是 app 目录下的文件都是只读的,所以我们要复制一份到 document 文件夹下,以后就都对 document 文件夹下的数据库做操作
+ */
+- (void)movePoetryDBToDoc
+{
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"user" ofType:@"bundle"];
+    path = [path stringByAppendingPathComponent:@"sqlite.db"];
+    NSLog(@"path %@",path);
+    NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    docPath = [docPath stringByAppendingPathComponent:@"sqlite.db"];
+    NSLog(@"docPath %@",docPath);
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:docPath]) {
+        [fileManager moveItemAtPath:path toPath:docPath error:nil];
+    }
+}
+
 @end
