@@ -129,6 +129,7 @@
             make.left.right.bottom.mas_equalTo(0);
         }];
         [_webView loadRequest:[NSURLRequest requestWithURL:self.url]];
+        //[_webView loadHTMLString:self.url baseURL:nil];
     }
     return _webView;
 }

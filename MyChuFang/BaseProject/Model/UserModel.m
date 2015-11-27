@@ -49,7 +49,7 @@
 -(BOOL)addUserWithUserName:(NSString *)userName PassWord:(NSString *)passWord Image:(NSString *)image
 {
     FMDatabase *db = [UserModel defaultDatabase];
-    BOOL success = [db executeUpdateWithFormat:@"insert into user values ('%@', '%@' ,'%@')",userName,passWord,image];
+    BOOL success = [db executeUpdateWithFormat:@"insert into user values (%@, %@ ,%@)",userName,passWord,image];
     [db close];
     return success;
 }

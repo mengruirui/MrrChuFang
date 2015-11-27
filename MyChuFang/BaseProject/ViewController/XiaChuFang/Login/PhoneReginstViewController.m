@@ -9,6 +9,7 @@
 #import "PhoneReginstViewController.h"
 #import <SMS_SDK/SMSSDK.h>
 #import <MBProgressHUD.h>
+#import "userModel.h"
 
 @interface PhoneReginstViewController ()<MBProgressHUDDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLb;
@@ -44,7 +45,7 @@
 //下一步
 - (IBAction)nextClick:(id)sender {
     [SMSSDK commitVerificationCode:self.validationCodeTF.text phoneNumber:self.phoneNumber zone:@"86" result:^(NSError *error) {
-      /*  if (error) {
+        if (error) {
           MBProgressHUD  *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.delegate = self;
             //常用的设置
@@ -60,8 +61,15 @@
         }
         else
         {
-            NSLog(@"验证码正确");
-        }*/
+            UserModel *user = [UserModel new];
+            BOOL success = [user addUserWithUserName:self.phoneNumber PassWord:self.passWordTF.text Image:@"head"];
+            if (success) {
+                NSLog(@"注册成功");
+            }else {
+                DDLogVerbose(@"不成功");
+            }
+
+        }
         
     }];
 

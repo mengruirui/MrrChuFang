@@ -7,6 +7,7 @@
 //
 
 #import "LoginDetailViewController.h"
+#import "userModel.h"
 
 @interface LoginDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userTextFied;
@@ -46,7 +47,13 @@
 }
 //登录
 - (IBAction)login:(id)sender {
-    
+   NSArray *users = [UserModel userListWithUserName:self.userTextFied.text andPassWord:self.passWordTextField.text];
+    UserModel *user = users.firstObject;
+    if ([user.passWord isEqualToString:self.passWordTextField.text] && [user.userName isEqualToString:self.userTextFied.text]) {
+        DDLogVerbose(@"登陆成功");
+    }else{
+        DDLogVerbose(@"账号或密码错误");
+    }
 }
 //短信登录
 - (IBAction)loginSMS:(id)sender {

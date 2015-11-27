@@ -87,7 +87,9 @@
 //webView 请求地址
 - (NSURL *)htmlForRow:(NSInteger)row
 {
-    return [NSURL URLWithString:[self modeForRowInRecipes:row].recipeShortUrl];
+    NSString *str = [self modeForRowInRecipes:row].recipeUrl;
+        DDLogVerbose(@"....%@",str);
+    return [NSURL URLWithString:[self modeForRowInRecipes:row].recipeUrl];
 }
 - (NSArray *)howToVideosForRow:(NSInteger)row
 {
