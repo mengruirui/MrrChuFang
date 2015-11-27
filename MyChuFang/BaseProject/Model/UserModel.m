@@ -40,6 +40,7 @@
             UserModel *model = [self new];
             model.userName = [rs stringForColumn:@"userName"];
             model.passWord = [rs stringForColumn:@"passWord"];
+            model.image = [rs stringForColumn:@"image"];
             [dataArr addObject:model];
         }
         [db closeOpenResultSets];

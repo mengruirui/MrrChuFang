@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LoginDetailViewController;
+@protocol LoginDetailViewControllerDelegate <NSObject>
+
+- (void)loginDetailViewController:(LoginDetailViewController *)vc didImageName:(NSString *)imageName hidden:(BOOL)hidden;
+@end
 
 @interface LoginDetailViewController : UIViewController
-
+@property (nonatomic,weak)id<LoginDetailViewControllerDelegate> delegate;
 @end

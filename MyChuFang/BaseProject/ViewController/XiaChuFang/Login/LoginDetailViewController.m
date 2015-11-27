@@ -8,6 +8,8 @@
 
 #import "LoginDetailViewController.h"
 #import "userModel.h"
+#import "LeftViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userTextFied;
@@ -51,6 +53,13 @@
     UserModel *user = users.firstObject;
     if ([user.passWord isEqualToString:self.passWordTextField.text] && [user.userName isEqualToString:self.userTextFied.text]) {
         DDLogVerbose(@"登陆成功");
+        NSString *imageStr = user.image;
+        
+        [self.delegate loginDetailViewController:self didImageName:imageStr hidden:NO];
+        //跳主界面
+        UIWindow * window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = [AppDelegate new].sideMenu;
+    
     }else{
         DDLogVerbose(@"账号或密码错误");
     }

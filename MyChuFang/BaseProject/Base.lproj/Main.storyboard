@@ -271,7 +271,7 @@
         <!--登录-->
         <scene sceneID="5vB-7l-nd6">
             <objects>
-                <viewController id="myB-BD-QAR" customClass="LoginDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginDetailViewController" id="myB-BD-QAR" customClass="LoginDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2oV-4a-2D8"/>
                         <viewControllerLayoutGuide type="bottom" id="CVW-k9-vNR"/>

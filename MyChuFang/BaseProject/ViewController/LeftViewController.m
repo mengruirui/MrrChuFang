@@ -12,8 +12,9 @@
 #import "MyChuFangTabBarController.h"
 #import "TipsViewController.h"
 #import "NecessitiesViewController.h"
+#import "LoginDetailViewController.h"
 
-@interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LeftViewController ()<UITableViewDelegate, UITableViewDataSource, LoginDetailViewControllerDelegate>
 @property(nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSArray *itemNames;
 @end
@@ -40,6 +41,7 @@
     }
     return _tableView;
 }
+
 #pragma mark - UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.itemNames.count;
@@ -97,8 +99,30 @@ kRemoveCellSeparator
 //必须触发一下tableView的懒加载才可以
     [self.tableView reloadData];
     
+    self.headImageView = [UIImageView new];
+    self.headImageView.layer.cornerRadius = 30;
+    self.headImageView.layer.masksToBounds = YES;
+    [self.view addSubview:self.headImageView];
+    [self.headImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 60));
+        make.left.mas_equalTo(30);
+        make.bottom.mas_equalTo(self.tableView.mas_top).mas_equalTo(-10);
+    }];
+    self.headImageView.image = [UIImage imageNamed:@"head"];
+    self.headImageView.hidden = YES;
+    
 }
-
+-(void)loginDetailViewController:(LoginDetailViewController *)vc didImageName:(NSString *)imageName hidden:(BOOL)hidden
+{
+    self.headImageView.hidden = hidden;
+    DDLogVerbose(@"%@",imageName);
+    self.headImageView.image = [UIImage imageNamed:imageName];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
